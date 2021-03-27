@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Header from './Header';
+import FinalRating from './FinalRating';
 
 const backgroundImages = [
   // default
@@ -16,11 +18,12 @@ const backgroundImages = [
   // threatAndHorror
   "/img/bg-3.svg", 
 ]
+
 const topics = [
   // Dangerous behaviour
   {
     categoryTitle: "Dangerous Behaviour",
-    categoryDescription: "Potentially dangerous or anti-social behaviour which young children may copy must be clearly disapproved of. No emphasis on realistic or easily accessible weapons.",
+    categoryDescription: "Potentially dangerous or anti-social behaviour is clearly disapproved of. No emphasis on realistic or easily accessible weapons.",
     answerOptions: [
       {
         answerText:
@@ -29,7 +32,7 @@ const topics = [
       },
       {
         answerText:
-          "No detail of potentially dangerous behaviour, if that behaviour is presented as safe or fun. No glamorisation of weapons such as knives. No focus on anti-social behaviour.",
+          "Potentially dangerous behaviour is presented as safe or fun, but no detail is shown. Weapons (such as knives) are featured, but are not glamorised. No focus on anti-social behaviour.",
         ageRating: "PG"
       },
       {
@@ -54,11 +57,11 @@ const topics = [
     categoryTitle: "Discrimination",
     categoryDescription: "The work as a whole must not endorse discriminatory language or behaviour, although there may be racist, homophobic or other discriminatory themes and language.",
     answerOptions: [
-      { answerText: "U - Discrimination", ageRating: "U" },
-      { answerText: "PG - Discrimination", ageRating: "PG" },
-      { answerText: "12 - Discrimination", ageRating: "12" },
-      { answerText: "15 - Discrimination", ageRating: "15" },
-      { answerText: "18 - Discrimination", ageRating: "18" }
+      { answerText: "Discriminatory language does not feature at all, or is clearly disapproved of within the film.", ageRating: "U" },
+      { answerText: "Discriminatory language or behaviour features a small amount but is clearly disapproved of, or is in an educational or historical context.", ageRating: "PG" },
+      { answerText: "Discriminatory language or behaviour features but is not endorsed by the work as a whole. Aggressive discriminatory language or behaviour features but is clearly condemned.", ageRating: "12" },
+      { answerText: "The work as a whole must not endorse discriminatory language or behaviour, although there may be racist, homophobic or other discriminatory themes and language.", ageRating: "15" },
+      { answerText: "Discriminatory language or behaviour features regularly throughout the film.", ageRating: "18" }
     ]
   },
   // Drugs
@@ -66,11 +69,11 @@ const topics = [
     categoryTitle: "Drugs",
     categoryDescription: "Drug taking may be shown but the work as a whole must not promote or encourage drug misuse (for example, through detailed instruction). The misuse of easily accessible and highly dangerous substances (for example, aerosols or solvents) is unlikely to be acceptable.",
     answerOptions: [
-      { answerText: "U - Drugs", ageRating: "U" },
-      { answerText: "PG - Drugs", ageRating: "PG" },
-      { answerText: "12 - Drugs", ageRating: "12" },
-      { answerText: "15 - Drugs", ageRating: "15" },
-      { answerText: "18 - Drugs", ageRating: "18" }
+      { answerText: "No mention of drugs, or references to illegal drugs or drug misuse are infrequent, or have a clear educational purpose or anti-drug message suitable for young children.", ageRating: "U" },
+      { answerText: "References to illegal drugs or drug misuse are innocuous or carry a suitable anti-drug message.", ageRating: "PG" },
+      { answerText: "Misuse of drugs is infrequent and does not glamorise or give detailed instruction.", ageRating: "12" },
+      { answerText: "Drug taking is shown but the work as a whole does not promote or encourage drug misuse (eg: through detailed instruction). Easily accessible and highly dangerous substances (for example, aerosols or solvents) do not feature.", ageRating: "15" },
+      { answerText: "Strong, frequent drug use or abuse of easily accessible and highly dangerous substances feature throughout the film.", ageRating: "18" }
     ]
   },
   // Language
@@ -78,11 +81,11 @@ const topics = [
     categoryTitle: "Language",
     categoryDescription: "There may be strong language. Very strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.",
     answerOptions: [
-      { answerText: "U - Language", ageRating: "U" },
-      { answerText: "PG - Language", ageRating: "PG" },
-      { answerText: "12 - Language", ageRating: "12" },
-      { answerText: "15 - Language", ageRating: "15" },
-      { answerText: "18 - Language", ageRating: "18" }
+      { answerText: "Infrequent use only of very mild bad language.", ageRating: "U" },
+      { answerText: "Mild bad language only. Aggressive or very frequent use of mild bad language may result in a work being passed at a higher category.", ageRating: "PG" },
+      { answerText: "There may be moderate bad language. Strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.", ageRating: "12" },
+      { answerText: "There may be strong language. Very strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.", ageRating: "15" },
+      { answerText: "Strong language features frequently throughout the film.", ageRating: "18" }
     ]
   },
   // Sex and Nudity
@@ -90,11 +93,11 @@ const topics = [
     categoryTitle: "Sex and Nudity",
     categoryDescription: "There are no constraints on nudity in a non-sexual or educational context. Sexual nudity may be permitted but strong detail is likely to be brief or presented in a comic context.",
     answerOptions: [
-      { answerText: "U - Sex and nudity", ageRating: "U" },
-      { answerText: "PG - Sex and nudity", ageRating: "PG" },
-      { answerText: "12 - Sex and nudity", ageRating: "12" },
-      { answerText: "15 - Sex and nudity", ageRating: "15" },
-      { answerText: "18 - Sex and nudity", ageRating: "18" }
+      { answerText: "Occasional nudity, with no sexual context.", ageRating: "U" },
+      { answerText: "Some nudity, with no sexual context. Sexual activity is implied, but is discreet and infrequent. Some mild sex references and innuendo are featured.", ageRating: "PG" },
+      { answerText: "Some nudity, but in a sexual context it is brief and discreet.", ageRating: "12" },
+      { answerText: "Sexual activity, but without strong detail. There may be strong verbal references to sexual behaviour, but any depiction of the stronger forms of sexual violence is not detailed or prolonged.", ageRating: "15" },
+      { answerText: "Sexual activity, with some strong detail. Repeated strong verbal references to sexual behaviour, and references to sexual threat are more prolonged.", ageRating: "18" }
     ]
   },
   // Threat and Horror
@@ -102,11 +105,11 @@ const topics = [
     categoryTitle: "Threat and Horror",
     categoryDescription: "There may be strong threat and horror. A sustained focus on sadistic threat is unlikely to be acceptable.",
     answerOptions: [
-      { answerText: "U - Threat and horror", ageRating: "U" },
-      { answerText: "PG - Threat and horror", ageRating: "PG" },
-      { answerText: "12 - Threat and horror", ageRating: "12" },
-      { answerText: "15 - Threat and horror", ageRating: "15" },
-      { answerText: "18 - Threat and horror", ageRating: "18" }
+      { answerText: "Scary or potentially unsettling sequences are mild, brief and unlikely to cause undue anxiety to young children. The outcome is reassuring.", ageRating: "U" },
+      { answerText: "Frightening sequences or situations where characters are in danger are prolonged or intense. Fantasy settings and comedy may be mitigating factors.", ageRating: "PG" },
+      { answerText: "Moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone is not. Horror sequences are frequent or sustained.", ageRating: "12" },
+      { answerText: "Strong threat and horror, however there is not sustained focus on sadistic threat.", ageRating: "15" },
+      { answerText: "Strong threat and horror feature regularly, and sadistic threat features is more prolonged.", ageRating: "18" }
     ]
   },
   // Violence
@@ -114,11 +117,11 @@ const topics = [
     categoryTitle: "Violence",
     categoryDescription: "Violence may be strong but should not dwell on the infliction of pain or injury. The strongest gory images are unlikely to be acceptable. Strong sadistic violence is also unlikely to be acceptable.",
     answerOptions: [
-      { answerText: "U - Violence", ageRating: "U" },
-      { answerText: "PG - Violence", ageRating: "PG" },
-      { answerText: "12 - Violence", ageRating: "12" },
-      { answerText: "15 - Violence", ageRating: "15" },
-      { answerText: "18 - Violence", ageRating: "18" }
+      { answerText: "Violence is generally very mild. Some mild violence features but is justified by context (for example, comedic, animated, wholly unrealistic).", ageRating: "U" },
+      { answerText: "Violence is mild. Some moderate violence, without detail, and it is justified by its context (for example, history, comedy or fantasy).", ageRating: "PG" },
+      { answerText: "Moderate violence but it does not dwell on detail. No emphasis on injuries or blood, but occasional gory moments feature and are justified by the context.", ageRating: "12" },
+      { answerText: "Strong violence features but it does not dwell on the infliction of pain or injury. No strong gory images, and no strong sadistic violence.", ageRating: "15" },
+      { answerText: "Strong or gory violence, with some detail of the infliction of pain or injury.", ageRating: "18" }
     ]
   }
 ];
@@ -160,18 +163,19 @@ export default function App() {
 
     const ratingRank = ratingsList.findIndex((rating) => rating === ageRating);
 
-    if (finalAgeRating < ratingRank) {
-      setFinalAgeRating(ratingRank);
-    }
-
-    setSiteBackgroundImage(document.body.style.backgroundImage = `url(${backgroundImages[answers.length]})`)
-
     const nextQuestion = currentTopic + 1;
     if (nextQuestion < topics.length) {
       setCurrentTopic(nextQuestion);
     } else {
       setShowRating(true);
     }
+
+    setSiteBackgroundImage(document.body.style.backgroundImage = `url(${backgroundImages[answers.length]})`);
+
+    if (finalAgeRating < ratingRank) {
+      setFinalAgeRating(ratingRank);
+    }
+
   };
 
   useEffect(() => {
@@ -184,49 +188,10 @@ export default function App() {
 
   return (
     <>
-    <div className="header">
-      <div>
-        <a href="index.html"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo" /></a>
-      </div>
-      <nav>
-        <a href="http://">About</a>
-        <a href="http://">Donate</a>
-        <a href="http://">Visit BBFC</a>
-        <a href="http://">Contact</a>
-      </nav>
-    </div>
+    <Header />
     <div className="app d-flex flex-column">
       {showRating ? (
-        <div className="ratings-container d-flex flex-column">
-          <div className="ratings-final d-flex align-items-center">
-            {(finalAgeRating || finalAgeRating === 0) ? (
-              <div>
-                <h3>The BBFC would probably rate this film: <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span></h3>
-                <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat ornare maximus. Praesent porta felis eu tortor facilisis placerat. Phasellus rutrum dapibus auctor. Phasellus vulputate, nisl sit amet elementum imperdiet, metus leo pellentesque turpis, sed fermentum quam nulla quis libero. Ut sit amet orci semper, euismod leo sit amet, bibendum mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p>
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a lorem in mauris auctor mattis at eget leo. Suspendisse finibus viverra nisi, a fringilla leo pellentesque id. Vestibulum ac tortor neque.
-                </p>
-              </div>
-            ) : (
-              <>
-              </>
-            )}
-          </div>
-          <div className="ratings-section d-flex flex-column p-2">
-            <h2>The ratings are:</h2>
-            <div className="ratings-overview d-flex flex-row flex-wrap">
-              {answers.map((answer, i) => (
-                <div key={i} className="ratings-overview-item">
-                  <img src={`/img/icon-${answer.categoryRating}.svg`} alt="" />
-                    <p className="d-flex flex-column justify-content-center">{answer.categoryTitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} ratingsList={ratingsList} answers={answers} />
       ) : (
         <div className="d-flex flex-column">
           <div className="question-section d-flex flex-column align-items-start">
