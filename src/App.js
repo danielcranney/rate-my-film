@@ -158,9 +158,7 @@ export default function App() {
   const handleAnswerOptionClick = (ageRating, category) => {
     setAnswers([...answers, addRatingItem(category, ageRating)]);
 
-    console.log(answers);
     const ratingRank = ratingsList.findIndex((rating) => rating === ageRating);
-    console.log(ratingRank)
 
     if (finalAgeRating < ratingRank) {
       setFinalAgeRating(ratingRank);
@@ -187,80 +185,82 @@ export default function App() {
   return (
     <>
     <div className="header">
-      <div><a href="index.html"><img src="/img/logo.svg" width="200px" height="71px" /></a></div>
+      <div>
+        <a href="index.html"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo" /></a>
+      </div>
       <nav>
-        <a href="">About</a>
-        <a href="">Donate</a>
-        <a href="">Visit BBFC</a>
-        <a href="">Contact</a>
+        <a href="http://">About</a>
+        <a href="http://">Donate</a>
+        <a href="http://">Visit BBFC</a>
+        <a href="http://">Contact</a>
       </nav>
     </div>
     <div className="app d-flex flex-column">
-          {showRating ? (
-            <div className="ratings-container d-flex flex-column">
-              <div className="ratings-final d-flex align-items-center">
-                {(finalAgeRating || finalAgeRating == 0) ? (
-                  <div>
-                    <h3>The BBFC would probably rate this film: <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span></h3>
-                    <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat ornare maximus. Praesent porta felis eu tortor facilisis placerat. Phasellus rutrum dapibus auctor. Phasellus vulputate, nisl sit amet elementum imperdiet, metus leo pellentesque turpis, sed fermentum quam nulla quis libero. Ut sit amet orci semper, euismod leo sit amet, bibendum mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <p>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a lorem in mauris auctor mattis at eget leo. Suspendisse finibus viverra nisi, a fringilla leo pellentesque id. Vestibulum ac tortor neque.
-                    </p>
-                  </div>
-                ) : (
-                  <>
-                  </>
-                )}
+      {showRating ? (
+        <div className="ratings-container d-flex flex-column">
+          <div className="ratings-final d-flex align-items-center">
+            {(finalAgeRating || finalAgeRating === 0) ? (
+              <div>
+                <h3>The BBFC would probably rate this film: <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span></h3>
+                <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat ornare maximus. Praesent porta felis eu tortor facilisis placerat. Phasellus rutrum dapibus auctor. Phasellus vulputate, nisl sit amet elementum imperdiet, metus leo pellentesque turpis, sed fermentum quam nulla quis libero. Ut sit amet orci semper, euismod leo sit amet, bibendum mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <p>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a lorem in mauris auctor mattis at eget leo. Suspendisse finibus viverra nisi, a fringilla leo pellentesque id. Vestibulum ac tortor neque.
+                </p>
               </div>
-              <div className="ratings-section d-flex flex-column p-2">
-                <h2>The ratings are:</h2>
-                <div className="ratings-overview d-flex flex-row flex-wrap">
-                  {answers.map((answer, i) => (
-                    <div key={i} className="ratings-overview-item">
-                      <img src={`/img/icon-${answer.categoryRating}.svg`}/>
-                        <p className="d-flex flex-column justify-content-center">{answer.categoryTitle}</p>
-                    </div>
-                  ))}
+            ) : (
+              <>
+              </>
+            )}
+          </div>
+          <div className="ratings-section d-flex flex-column p-2">
+            <h2>The ratings are:</h2>
+            <div className="ratings-overview d-flex flex-row flex-wrap">
+              {answers.map((answer, i) => (
+                <div key={i} className="ratings-overview-item">
+                  <img src={`/img/icon-${answer.categoryRating}.svg`} alt="" />
+                    <p className="d-flex flex-column justify-content-center">{answer.categoryTitle}</p>
                 </div>
-              </div>
+              ))}
             </div>
-          ) : (
-            <div className="d-flex flex-column">
-              <div className="question-section d-flex flex-column align-items-start">
-                <div className="question-text">
-                  <h2>{topics[currentTopic].categoryTitle}</h2>
-                  <p>{topics[currentTopic].categoryDescription}</p>
-                </div>
-              </div>
-              <div className="answer-section d-flex">
-                {topics[currentTopic].answerOptions.map((answerOption) => (
-                  <div className="answer-item">
-                    <button
-                      onClick={() =>
-                        handleAnswerOptionClick(
-                          answerOption.ageRating,
-                          topics[currentTopic].categoryTitle
-                        )
-                      }
-                      key={i++}
-                    >
-                      <span className="d-flex align-items-center">
-                        <img src={`/img/circle-${answerOption.ageRating}.svg`}/>
-                        {answerOption.answerText}
-                      </span>
-                    </button>
-                  </div>
-                ))}
-              </div>
-              <div className="question-count ml-auto">
-                  <span className="font-weight-bold">{currentTopic + 1}</span>/{topics.length}
-                </div>
+          </div>
+        </div>
+      ) : (
+        <div className="d-flex flex-column">
+          <div className="question-section d-flex flex-column align-items-start">
+            <div className="question-text">
+              <h2>{topics[currentTopic].categoryTitle}</h2>
+              <p>{topics[currentTopic].categoryDescription}</p>
             </div>
-          )}
-      </div>
+          </div>
+          <div className="answer-section d-flex">
+            {topics[currentTopic].answerOptions.map((answerOption) => (
+              <div className="answer-item">
+                <button
+                  onClick={() =>
+                    handleAnswerOptionClick(
+                      answerOption.ageRating,
+                      topics[currentTopic].categoryTitle
+                    )
+                  }
+                  key={i++}
+                >
+                  <span className="d-flex align-items-center">
+                    <img src={`/img/circle-${answerOption.ageRating}.svg`} alt=""/>
+                    {answerOption.answerText}
+                  </span>
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="question-count ml-auto">
+              <span className="font-weight-bold">{currentTopic + 1}</span>/{topics.length}
+            </div>
+        </div>
+      )}
+    </div>
   </>
   );
 }
