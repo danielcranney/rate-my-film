@@ -1,0 +1,12 @@
+1.0.0 - Basic app setup.
+        Data stored in questions object.
+        Ratings object built by user when selections made.
+        Save the ratings in an object called ratings.
+        Extract entries into an array called arrOfRatings.
+        Loop through arrOfRatings, and switch value to numerical value.
+        Switch array into object called objOfNumeredRatings, which features numerical values.
+        Switch objOfNumeredRatings into array called arrOfNumberedRatings.
+        Iterate through values and check for min and max.
+        Maximum becomes main value.
+1.0.1 - finalRating value published on page, as numerical value.
+1.0.3 - Long-form functions whe answers are complete.
