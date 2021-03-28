@@ -149,6 +149,7 @@ const addRatingItem = (category, ageRating) => {
 };
 
 export default function App() {
+
   let i = 0;
 
   const [currentTopic, setCurrentTopic] = useState(0);
@@ -179,55 +180,54 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (finalAgeRating === 1) {
-      console.log(`Set the color here: ${finalAgeRating}`)
-    }
-
     setRatingColor(colors[finalAgeRating])
   }, [finalAgeRating]);
+
 
   return (
     <>
     <Header />
-    <div className="app d-flex flex-column">
+    
       {showRating ? (
         <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} ratingsList={ratingsList} answers={answers} />
       ) : (
         <>
-          <div className="question-section">
-            <div className="question-title">
-              <h2>{topics[currentTopic].categoryTitle}</h2>
-              <div className="question-count">
-                Step {currentTopic + 1} of {topics.length}
+          <div className="app d-flex flex-column">
+            <div className="question-section">
+              <div className="question-title">
+                <h2>{topics[currentTopic].categoryTitle}</h2>
+                <div className="question-count">
+                  Step {currentTopic + 1} of {topics.length}
+                </div>
+              </div>
+              <div className="question-description">
+                <p>{topics[currentTopic].categoryDescription}</p>
               </div>
             </div>
-            <div className="question-description">
-              <p>{topics[currentTopic].categoryDescription}</p>
+            <div className="answer-section d-flex">
+              {topics[currentTopic].answerOptions.map((answerOption) => (
+                <div className="answer-item">
+                  <button
+                    onClick={() =>
+                      handleAnswerOptionClick(
+                        answerOption.ageRating,
+                        topics[currentTopic].categoryTitle
+                      )
+                    }
+                    key={i++}
+                  >
+                    <span className="d-flex align-items-center">
+                      <img src={`/img/circle-${answerOption.ageRating}.svg`} alt=""/>
+                      {answerOption.answerText}
+                    </span>
+                  </button>
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="answer-section d-flex">
-            {topics[currentTopic].answerOptions.map((answerOption) => (
-              <div className="answer-item">
-                <button
-                  onClick={() =>
-                    handleAnswerOptionClick(
-                      answerOption.ageRating,
-                      topics[currentTopic].categoryTitle
-                    )
-                  }
-                  key={i++}
-                >
-                  <span className="d-flex align-items-center">
-                    <img src={`/img/circle-${answerOption.ageRating}.svg`} alt=""/>
-                    {answerOption.answerText}
-                  </span>
-                </button>
-              </div>
-            ))}
           </div>
         </>
       )}
-    </div>
+
   </>
   );
 }

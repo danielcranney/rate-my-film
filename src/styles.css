@@ -183,10 +183,15 @@ button svg {
   text-align: center;
 }
 
+.overview-section h3 {
+  margin-bottom: 1rem;
+}
+
 .overview-item-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content:flex-start;
 }
 
 .overview-item {
@@ -231,12 +236,12 @@ button svg {
     width: 560px;
   }
 
-  .overview-item img {
-    width: 20%;
-  }
-
   .overview-section {
     text-align: left;
+  }
+
+  .overview-item img {
+    width: 20%;
   }
 
 }
@@ -246,6 +251,10 @@ button svg {
 
   .app {
     width: 718px;
+  }
+
+  .overview-item-container {
+    justify-content: center;
   }
 
   .overview-item {
@@ -271,9 +280,15 @@ button svg {
     width: 942px;
   }
 
+  .overview-item-container {
+    justify-content:flex-start;
+  }
+
   .overview-item {
     width: 25%;
   }
+
+  
 
   .overview-item img {
     width: 20%;
