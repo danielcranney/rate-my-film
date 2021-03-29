@@ -3,9 +3,9 @@ import axios from "axios";
 
 const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
 
-  const [filmData, setFilmData] = useState({});
+  const [filmData, setFilmData] = useState(null);
 
-  const filmListUrl = `https://api.themoviedb.org/3/discover/movie?api_key=8af1272c35921dca7a2a0cba4b65f165&certification_country=GB&certification=12&with_original_language=en&sort_by=revenue.desc`;
+  const filmListUrl = `https://api.themoviedb.org/3/discover/movie?api_key=8af1272c35921dca7a2a0cba4b65f165&certification_country=GB&certification=${ratingsList[finalAgeRating]}&with_original_language=en&sort_by=revenue.desc`;
 
   useEffect(() => {
     const getFilmData = async () => {
@@ -54,8 +54,28 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
           </div>
 
           <div className="app d-flex flex-column">
+            
+            { filmData ? 
+            <div class="film-items">
+              <div className="item">
+                <img src={`https://image.tmdb.org/t/p/original/${filmData[0].poster_path}`} />
+                <h5 className="info-item">{filmData[0].original_title} ({filmData[0].release_date.substr(0,4)})</h5>
+                <p>{filmData[0].overview.substr(0,200)}...</p>
+              </div>
 
-            {/* <h5 className="info-item">{filmData[0].original_title}</h5> */}
+              <div className="item">
+                <img src={`https://image.tmdb.org/t/p/original/${filmData[1].poster_path}`} />
+                <h5 className="info-item">{filmData[1].original_title} ({filmData[1].release_date.substr(0,4)})</h5>
+                <p>{filmData[1].overview.substr(0,200)}...</p>
+              </div>
+
+              <div className="item">
+                <img src={`https://image.tmdb.org/t/p/original/${filmData[2].poster_path}`} />
+                <h5 className="info-item">{filmData[2].original_title} ({filmData[2].release_date.substr(0,4)})</h5>
+                <p>{filmData[2].overview.substr(0,200)}...</p>
+              </div>
+            </div>
+            : "Not rendered"}
             {/* <h5 className="info-item">{filmData.location}</h5>
             <h5 className="info-item">{filmData.blog}</h5>
             <h5 className="info-item">{filmData.company}</h5> */}

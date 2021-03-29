@@ -213,6 +213,23 @@ button svg {
   margin-bottom: 0px;
 }
 
+/* Film Item */
+.film-items {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.film-items .item {
+  width: 33%;
+  padding: 10px;
+}
+.film-items .item img {
+  width: 150px;
+  height: 200px;
+  float:left;
+  margin-right: 15px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .app {
