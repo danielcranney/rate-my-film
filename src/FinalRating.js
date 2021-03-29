@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 
 const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
 
@@ -41,7 +40,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
           <div className="app d-flex flex-column">
             <div className="overview-section">
-                <h3>Here's the details...</h3>
+                <h3>Ratings by Category</h3>
                 <div className="overview-item-container">
                   {answers.map((answer, i) => (
                     <div key={i} className="overview-item">
@@ -56,6 +55,8 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
           <div className="app d-flex flex-column">
             
             { filmData ? 
+            <>
+            <h2>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span> Films</h2>
             <div class="film-items">
               <div className="item">
                 <img src={`https://image.tmdb.org/t/p/original/${filmData[0].poster_path}`} />
@@ -75,6 +76,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                 <p>{filmData[2].overview.substr(0,200)}...</p>
               </div>
             </div>
+            </>
             : "Not rendered"}
             {/* <h5 className="info-item">{filmData.location}</h5>
             <h5 className="info-item">{filmData.blog}</h5>
