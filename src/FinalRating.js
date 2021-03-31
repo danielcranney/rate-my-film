@@ -14,11 +14,11 @@ function search(objectItem, answersArray){
 }
 
 const ratingDescription = {
-  U: `A U film should be suitable for audiences aged four years and over, although it is impossible to predict what might upset any particular child. U films should be set within a positive framework and should offer reassuring counterbalances to any violence, threat or horror.`,
-  PG: `General viewing, but some scenes may be unsuitable for young children. A PG film should not unsettle a child aged around eight or older. Unaccompanied children of any age may watch, but parents are advised to consider whether the content may upset younger, or more sensitive, children.`,
-  12: `Films classified 12A and video works classified 12 contain material that is not generally suitable for children aged under 12. No one younger than 12 may see a 12A film in a cinema unless accompanied by an adult. Adults planning to take a child under 12 to view a 12A film should consider whether the film is suitable for that child. To help them decide, we recommend that they check the Ratings Info for that film in advance. No one younger than 12 may rent or buy a 12 rated video work.`,
-  15: `No one younger than 15 may see a 15 film in a cinema. No one younger than 15 may rent or buy a 15 rated video work.`,
-  18: `No one younger than 18 may see an 18 film in a cinema. No one younger than 18 may rent or buy an 18 rated video work. Adults should be free to choose their own entertainment.`
+  U: `A U-rated film is likely to be suitable for audiences aged four years and over, although it is impossible to predict what might upset any particular child. U films should be set within a positive framework and should offer reassuring counterbalances to any violence, threat or horror that might exist.`,
+  PG: `A PG-rated film might feature scenes unsuitable for young children, though it should not unsettle a child aged around eight or older. Unaccompanied children of any age may watch a film like this, but parents are advised to consider whether the content may upset younger, or more sensitive, children.`,
+  12: `A 12 or 12A-rated film contain material that is not generally suitable for children aged under 12. The 12A rating is given to films when they are displayed in a cinema, and mean that no one younger than 12 may see this unless accompanied by an adult. Adults planning to take a child under 12 to view a 12A film should consider whether the film is suitable for that child, and the BBFC provide ratings information to help adults decide. No one younger than 12 may rent or buy a 12 rated video work.`,
+  15: `A 15-rated film is likely to contain content that is unsuitable for younger children, and so no one younger than 15 may see one of these films in a cinema, or rent or buy a 15-rated video work.`,
+  18: `An 18-rated film is considered to be unsuitable for children, and so no one younger than 18 may see an 18 film in a cinema. In addition to this, no one younger than 18 may rent or buy an 18 rated video work. However, the BBFC say that adults should be free to choose their own entertainment.`
 }
 
 const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
@@ -68,7 +68,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                     
                       {ratedCategoryList.length !== 0 ? (
                         <p>
-                        This film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 900}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for this age group.
+                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 900}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for an audience of this age.
                         </p>) : ("Oops, sorry this information is missing!")}
                   
                   </div>
