@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -0.03em;
 }
 
+h3 {
+  margin-bottom: 1rem;
+}
+
 .app {
   background-color: #fff;
   min-height: 200px;
@@ -72,12 +76,13 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
 .ratings-final .ratings-content img {
   width: 50%;
   margin-right: 0px;
+  margin-bottom: 10px;
 }
 
 .ratings-final h2 {
@@ -184,10 +189,6 @@ button svg {
   text-align: center;
 }
 
-.overview-section h3 {
-  margin-bottom: 1rem;
-}
-
 .overview-item-container {
   display: flex;
   flex-direction: row;
@@ -216,20 +217,32 @@ button svg {
 
 /* Film Item */
 .film-items {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .film-items .item {
-  width: 33%;
-  padding: 10px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
 }
-.film-items .item img {
-  width: 150px;
-  height: 200px;
-  float:left;
-  margin-right: 15px;
+
+.film-items .item .image {
+  width: 30%;
+  margin-right: 10px;
   margin-bottom: 0px;
+}
+
+.film-items .item .image img {
+  width: 100%;
+}
+
+.film-items .item .info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -288,7 +301,33 @@ button svg {
 
   .ratings-final .ratings-content img {
     width: 25%;
-    margin-right: 12px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+  }
+
+
+  /* Film Item */
+  .film-items {
+    justify-content: space-around;
+    flex-direction: row
+  }
+
+  .film-items .item {
+    width: 33%;
+    margin-bottom: 0px;
+  }
+
+  .film-items .item .image {
+    width: 30%;
+  }
+
+  .film-items .item .image img {
+    width: 100%;
+  }
+
+  .film-items .item .info {
+    width: 70%;
+    justify-content:flex-start;
   }
 
 }

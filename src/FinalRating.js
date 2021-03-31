@@ -28,21 +28,6 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
   const filmListUrl = `https://api.themoviedb.org/3/discover/movie?api_key=8af1272c35921dca7a2a0cba4b65f165&certification_country=GB&certification=${ratingsList[finalAgeRating]}&with_original_language=en&sort_by=revenue.desc`;
   
   useEffect(() => {
-    search(ratingsList[finalAgeRating], answers);
-
-    ratedCategoryList.push(ratedCategories.slice(0, -1).join(", "));
-
-    if (ratedCategories.length === 1) {
-    ratedCategoryLastItem.push(`${ratedCategories.splice(-1)}`);
-    } else if (ratedCategories.length > 1) {
-      ratedCategoryLastItem.push(`and ${ratedCategories.splice(-1)}`);
-      } else {
-      console.log(`The other condition`); 
-    }
-  }, [ratingsList, finalAgeRating, answers]);
-
-
-  useEffect(() => {
     const getFilmData = async () => {
       const response = await fetch(filmListUrl);
       const jsonData = await response.json();
@@ -51,6 +36,22 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
     getFilmData();
   }, [filmListUrl]);
+
+  useEffect(() => {
+    search(ratingsList[finalAgeRating], answers);
+
+    ratedCategoryList.push(ratedCategories.slice(0, -1).join(", "));
+
+    if (ratedCategories.length === 1) {
+    ratedCategoryLastItem.push(`${ratedCategories.splice(-1)}`);
+    console.log(`The last item is ${ratedCategoryLastItem}`);
+    } else if (ratedCategories.length > 1) {
+      ratedCategoryLastItem.push(`and ${ratedCategories.splice(-1)}`);
+      console.log(`There is more than one item and it is ${ratedCategoryLastItem}`);
+      } else {
+      console.log(`The other condition`); 
+    }
+  }, [ratingsList, finalAgeRating, answers]);
 
     return (
         <>
@@ -61,7 +62,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                 <div className="ratings-content">
                   <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
                   <div className="ratings-title">
-                    <h2>Your film is a <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span> rated film</h2>
+                    <h2>Your film is a <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> film</h2>
                     <p>
                     {ratingDescription[`${ratingsList[finalAgeRating]}`]}
                     </p>
@@ -69,7 +70,11 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                       {ratedCategoryList.length !== 0 ? (
                         <p>
                         Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 900}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for an audience of this age.
-                        </p>) : ("Oops, sorry this information is missing!")}
+                        </p>) : (
+                          <p>
+                            Please while we load your rating information...
+                          </p>
+                        )}
                   
                   </div>
                 </div>
@@ -98,7 +103,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             
             { filmData ? 
             <>
-            <h2>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}</span> Films</h2>
+            <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
             <div className="film-items">
 
               {filmData.slice(0, 3).map((film, index) => (
@@ -107,7 +112,9 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
             </div>
             </>
-            : "Not rendered"}
+            : (
+              <p>Please wait...</p>
+            )}
           </div>
         </>
     )

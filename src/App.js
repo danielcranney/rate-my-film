@@ -109,7 +109,7 @@ const topics = [
       { answerText: "Frightening sequences or situations where characters are in danger are prolonged or intense. Fantasy settings and comedy may be mitigating factors.", ageRating: "PG" },
       { answerText: "Moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone is not. Horror sequences are frequent or sustained.", ageRating: "12" },
       { answerText: "Strong threat and horror, however there is not sustained focus on sadistic threat.", ageRating: "15" },
-      { answerText: "Strong threat and horror feature regularly, and sadistic threat features is more prolonged.", ageRating: "18" }
+      { answerText: "Strong threat and horror feature regularly, and sadistic threat is more prolonged.", ageRating: "18" }
     ]
   },
   // Violence
