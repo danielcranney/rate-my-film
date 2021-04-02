@@ -44,18 +44,16 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
     if (ratedCategories.length === 1) {
     ratedCategoryLastItem.push(`${ratedCategories.splice(-1)}`);
-    console.log(`The last item is ${ratedCategoryLastItem}`);
     } else if (ratedCategories.length > 1) {
-      ratedCategoryLastItem.push(`and ${ratedCategories.splice(-1)}`);
-      console.log(`There is more than one item and it is ${ratedCategoryLastItem}`);
-      } else {
-      console.log(`The other condition`); 
+    ratedCategoryLastItem.push(`and ${ratedCategories.splice(-1)}`);
+    } else {
+    console.log(`No conditions have been met`); 
     }
   }, [ratingsList, finalAgeRating, answers]);
 
     return (
         <>
-          <div className="app d-flex flex-column">
+          <div className="wrapper">
             <div className="ratings-final align-items-center">
               {(finalAgeRating || finalAgeRating === 0) ? (
 
@@ -85,7 +83,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="app d-flex flex-column">
+          <div className="wrapper">
             <div className="overview-section">
                 <h3>Ratings by Category</h3>
                 <div className="overview-item-container">
@@ -99,8 +97,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="app d-flex flex-column">
-            
+          <div className="wrapper column">
             { filmData ? 
             <>
             <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
