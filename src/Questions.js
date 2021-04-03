@@ -2,7 +2,7 @@ import React from 'react'
 
 const Questions = ( { topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic }) => {
     return (
-        <div className="wrapper d-flex flex-column">
+        <div className="wrapper column mb-30">
             <div className="question-section">
               <div className="question-title">
                 <h2>{topics[currentTopic].categoryTitle}</h2>
