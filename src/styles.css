@@ -339,6 +339,10 @@ button svg {
   margin-right: 10px;
 }
 
+.film-items .item .info p {
+  font-size: 0.9em;
+}
+
 footer {
   height: 40px;
   display:flex;
