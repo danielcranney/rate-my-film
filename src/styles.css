@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: bilo, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,13 +14,12 @@ body {
 
 body {
   background-color: rgb(46 53 58 / 05%);
-  background-image: url(bg-4.svg);
+  background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items:flex-start;
 }
 
 h1, h2, h3, h4, h5 {
@@ -32,40 +31,131 @@ h3 {
   margin-bottom: 1rem;
 }
 
-.wrapper {
-  background-color: #fff;
-  min-height: 200px;
-  height: min-content;
-  border-radius: 15px;
-  padding: 25px 30px;
-  box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 30px;
+a {
+  color: rgba(251, 79, 147, 1);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: rgba(46, 53, 58, 1);
+  transition: 0.3s;
 }
 
 .column {
   flex-direction: column;
 }
 
-.header {
-  margin-bottom:10px;
-  margin-top: 10px;
+/* 
+Site Wrapper
+ */
+#site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*
+Header
+*/
+
+header {
   display: flex;
   align-items: center;
 }
 
-.header nav {
+header nav {
   margin-left: auto;
 }
 
-.header a {
+header a {
   color: rgb(46 53 58 / 50%);
   text-transform: lowercase;
   padding: 0px 10px;
 }
 
+/* 
+Landing Page Wrapper
+*/
 
+.main-wrapper {
+  background-color: transparent;
+  height: calc(100vh - 111px);
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+
+.landing-left {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.landing-left h1 {
+  font-size: 3.2rem;
+}
+
+.landing-left h2 {
+  color: rgba(46, 53, 58, 0.5);
+}
+
+.landing-left p {
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+
+.circle-bg {
+  display: flex;
+  flex-direction: column;
+  background-image: url(triangle-bg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  min-height: 490px;
+  justify-content: center;
+}
+
+.mockup {
+  width: 100%;
+}
+
+.start-button {
+  background-color: #fb4f93;
+  border-color: #fb4f93;
+  width: fit-content;
+  padding: 6px 15px;
+  border-radius: 22px;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+}
+
+.start-button:hover {
+  background-color: #2e353a;
+  border-color: #2e353a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* 
+Questions and Ratings Styling
+*/
+
+.wrapper {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+/* Ratings Final Section */
 .ratings-final {
   display:flex;
   flex-direction: column;
@@ -249,18 +339,47 @@ button svg {
   margin-right: 10px;
 }
 
+footer {
+  height: 40px;
+  display:flex;
+  margin-top:auto;
+}
+
+footer p {
+  color: rgba(46, 53, 58, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 0px;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .wrapper {
+
+  .wrapper, .main-wrapper {
     width: 440px;
   }
 
-  .header {
+  header {
+    flex-direction: column;
+    margin-bottom:15px;
+  }
+
+  header nav {
+    margin: auto;
+  }
+
+  .question-title {
     flex-direction: column;
   }
 
-  .header nav {
-    margin: auto;
+  .question-count {
+    margin-left: 0px;
+    margin-bottom:10px;
   }
 
 
@@ -268,7 +387,7 @@ button svg {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .wrapper {
+  .wrapper, .main-wrapper {
     width: 560px;
   }
 
@@ -285,7 +404,12 @@ button svg {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-  .wrapper {
+  body {
+    background-image: url(bg.svg);
+    /* background-position: right center; */
+  }
+
+  .wrapper, .main-wrapper {
     width: 718px;
   }
 
@@ -339,7 +463,7 @@ button svg {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
-  .wrapper {
+  .wrapper, .main-wrapper {
     width: 942px;
   }
 
@@ -361,7 +485,7 @@ button svg {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .wrapper {
+  .wrapper, .main-wrapper {
     width: 1100px;
   }
 

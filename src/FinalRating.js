@@ -53,7 +53,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
     return (
         <>
-          <div className="wrapper">
+          <div className="wrapper mb-30">
             <div className="ratings-final align-items-center">
               {(finalAgeRating || finalAgeRating === 0) ? (
 
@@ -83,7 +83,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="wrapper">
+          <div className="wrapper mb-30">
             <div className="overview-section">
                 <h3>Ratings by Category</h3>
                 <div className="overview-item-container">
@@ -97,7 +97,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="wrapper column">
+          <div className="wrapper column mb-30">
             { filmData ? 
             <>
             <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
