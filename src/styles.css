@@ -61,9 +61,9 @@ Site Wrapper
   align-items: center;
 }
 
-/* 
-Animated Background
-*/
+  /* 
+  Animated Background
+  */
 
 #background-container {
   position: fixed;
@@ -151,7 +151,7 @@ Landing Page Wrapper
 
 .main-wrapper {
   background-color: transparent;
-  height: calc(100vh - 114px);
+  height: calc(100vh - 155px);
   display: flex;
   align-items: center;
 }
@@ -224,7 +224,7 @@ Questions and Ratings Styling
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 /* Ratings Final Section */
@@ -419,6 +419,7 @@ footer {
 }
 
 footer p {
+  font-size: 0.9em;
   color: rgba(46, 53, 58, 0.5);
   text-align: center;
   margin-left: auto;
@@ -433,10 +434,6 @@ footer p {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
   
-  #background-container {
-    display:none;
-  }
-
   .wrapper, .main-wrapper {
     width: 320px;
   }
@@ -534,6 +531,10 @@ footer p {
     font-size: 2.6rem;
   }
 
+  #background-container {
+    display:block;
+  }
+
   .wrapper, .main-wrapper {
     width: 95%;
   }
@@ -544,7 +545,8 @@ footer p {
     padding: 25px 30px;
     box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-bottom: auto;
   }
 
   .main-wrapper {
@@ -553,7 +555,8 @@ footer p {
 
   header {
     flex-direction: row;
-    padding: 0px 20px;
+    padding: 0px;
+    width: 728px;
     background: none;
   }
 
@@ -583,6 +586,10 @@ footer p {
     width: 25%;
     margin-right: 20px;
     margin-bottom: 0px;
+  }
+
+  footer p {
+    font-size: 0.9em;
   }
 
 
