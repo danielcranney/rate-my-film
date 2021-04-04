@@ -5,6 +5,7 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height:normal;
 }
 * {
   font-family: bilo, sans-serif;
@@ -13,13 +14,14 @@ body {
 }
 
 body {
+  position: relative;
   background-color: rgb(46 53 58 / 05%);
   background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items:flex-start;
+  align-items: stretch;
 }
 
 h1, h2, h3, h4, h5 {
@@ -53,6 +55,71 @@ Site Wrapper
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* 
+Animated Background
+*/
+
+#background-container {
+  position: fixed;
+  background-color: none;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+  align-self: stretch;
+}
+
+#background-container .shape-1 svg, #background-container .shape-2 svg, #background-container .shape-3 svg {
+  position: absolute;
+  z-index: -1;
+  animation: rotate 13s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+/* Blue Triangle */
+.shape-1 svg {
+  width: 700px;
+  bottom: -400px;
+  left: -350px;
+}
+
+/* Orange Triangle */
+.shape-2 svg {
+  width: 700px;
+  bottom: -50px;
+  right: -590px;
+}
+
+/* Green Circle */
+.shape-3 svg {
+  width: 570px;
+  top: -100px;
+  left: -500px;
+}
+
+.shape-1 svg path {
+  fill: #006ed2;
+}
+
+.shape-2 svg path {
+  fill: #fbad00;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 /*
 Header
@@ -408,10 +475,10 @@ footer p {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-  body {
+  /* body {
     background-image: url(bg.svg);
-    /* background-position: right center; */
-  }
+    background-position: top center;
+  } */
 
   .wrapper, .main-wrapper {
     width: 718px;
