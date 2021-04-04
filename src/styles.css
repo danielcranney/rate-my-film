@@ -54,6 +54,7 @@ Site Wrapper
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
 /* 
@@ -155,6 +156,7 @@ Landing Page Wrapper
 .landing-left {
   margin-top: 10px;
   margin-right: 20px;
+  width: 50%;
 }
 
 .landing-left h2 {
@@ -179,6 +181,7 @@ Landing Page Wrapper
 
 .landing-right {
   display:none;
+  width: 0%;
 }
 
 .mockup {
@@ -263,10 +266,6 @@ Questions and Ratings Styling
   margin-left: auto;
   color: rgb(46 53 58 / 50%);
 }
-
-/* .question-count span {
-  font-size: 28px;
-} */
 
 .question-title {
   display: flex;
@@ -428,11 +427,11 @@ footer p {
   box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  
   .wrapper, .main-wrapper {
-    width: 440px;
+    width: 320px;
   }
 
   header {
@@ -444,8 +443,6 @@ footer p {
     margin: auto;
   }
 
-
-
   .question-title {
     flex-direction: column;
   }
@@ -455,10 +452,49 @@ footer p {
     margin-bottom:10px;
   }
 
-
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    
+    .shape-1 svg {
+      bottom: -470px;
+    }
+
+    .shape-2 svg {
+      bottom: -430px;
+    }
+
+    .wrapper, .main-wrapper {
+      width: 350px;
+    }
+
+    .main-wrapper {
+      height: calc(100vh - 140px)
+    }
+
+    header {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .landing-left {
+      width: 100%;
+    }
+
+    .landing-right {
+      width: 0%;
+      display:none;
+    }
+
+    .overview-item p {
+      font-size: 0.7em;
+      text-align: left;
+    }
+
+  }
+
+/* Small - Medium devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
   .wrapper, .main-wrapper {
@@ -466,7 +502,7 @@ footer p {
   }
 
   .landing-right {
-    display:flex;
+    display:none;
   }
 
   .overview-section {
