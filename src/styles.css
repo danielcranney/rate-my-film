@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: bilo, sans-serif;
+  font-family: neue-haas-unica, sans-serif;
   font-size: 18px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -8,7 +8,7 @@ body {
   line-height:normal;
 }
 * {
-  font-family: bilo, sans-serif;
+  font-family: neue-haas-unica, sans-serif;
   font-style: normal;
   color: #2e353a;
 }
