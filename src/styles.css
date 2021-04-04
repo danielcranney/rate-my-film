@@ -24,6 +24,10 @@ body {
   align-items: stretch;
 }
 
+#root {
+  width:100%;
+}
+
 h1, h2, h3, h4, h5 {
   font-weight: 900;
   letter-spacing: -0.03em;
@@ -147,9 +151,8 @@ Landing Page Wrapper
 
 .main-wrapper {
   background-color: transparent;
-  height: calc(100vh - 111px);
+  height: calc(100vh - 114px);
   display: flex;
-  /* justify-content: space-evenly; */
   align-items: center;
 }
 
@@ -213,10 +216,9 @@ Questions and Ratings Styling
 */
 
 .wrapper {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 25px 30px;
-  box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+  /* background-color: #fff; */
+  padding: 25px 20px;
+  /* box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%); */
   display: flex;
   justify-content: space-evenly;
 }
@@ -262,9 +264,11 @@ Questions and Ratings Styling
 
 .question-count {
   display: flex;
+  width:50%;
   align-items: center;
   margin-left: auto;
   color: rgb(46 53 58 / 50%);
+  justify-content: flex-end;
 }
 
 .question-title {
@@ -410,9 +414,8 @@ button svg {
 }
 
 footer {
-  height: 40px;
+  height: 43px;
   display:flex;
-  margin-top:auto;
 }
 
 footer p {
@@ -430,6 +433,10 @@ footer p {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
   
+  #background-container {
+    display:none;
+  }
+
   .wrapper, .main-wrapper {
     width: 320px;
   }
@@ -457,29 +464,34 @@ footer p {
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
     
-    .shape-1 svg {
-      bottom: -470px;
-    }
-
-    .shape-2 svg {
-      bottom: -430px;
+    #background-container {
+      display:none;
     }
 
     .wrapper, .main-wrapper {
-      width: 350px;
+      width: 100%;
     }
 
     .main-wrapper {
-      height: calc(100vh - 140px)
+      height: calc(100vh - 155px)
     }
 
     header {
       flex-direction: column;
-      margin-bottom: 15px;
+      width:100%;
+      background: rgba(255, 255, 255, 0.9);
+      padding-bottom: 15px;
+    }
+
+    header nav {
+      margin-left: 0;
     }
 
     .landing-left {
       width: 100%;
+      margin-right: 0px;
+      margin-top: 0px;
+      padding: 30px;
     }
 
     .landing-right {
@@ -519,11 +531,38 @@ footer p {
 @media only screen and (min-width: 768px) {
 
   h1 {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
   }
 
   .wrapper, .main-wrapper {
-    width: 718px;
+    width: 95%;
+  }
+
+  .wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .main-wrapper {
+    height: calc(100vh - 114px);
+  }
+
+  header {
+    flex-direction: row;
+    padding: 0px 20px;
+    background: none;
+  }
+
+  header nav {
+    margin-left: auto;
+  }
+
+  .landing-left {
+    padding: 0px 30px;
   }
 
   .overview-item-container {
@@ -576,7 +615,7 @@ footer p {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
-  .wrapper, .main-wrapper {
+  .wrapper, .main-wrapper, header {
     width: 942px;
   }
 
@@ -598,7 +637,7 @@ footer p {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .wrapper, .main-wrapper {
+  .wrapper, .main-wrapper, header {
     width: 1100px;
   }
 
