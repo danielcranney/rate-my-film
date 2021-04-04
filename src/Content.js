@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import FinalRating from './FinalRating';
 import Questions from "./Questions";
 
-    const backgroundImages = [
-        // default
-        "/img/bg-4.svg",
-        // dangerousBehaviour
-        "/img/bg-2.svg",
-        // discrimination
-        "/img/bg-3.svg",
-        // drugs
-        "/img/bg-4.svg",
-        // language
-        "/img/bg-2.svg",
-        // sexAndNudity
-        "/img/bg-1.svg",
-        // threatAndHorror
-        "/img/bg-3.svg", 
-    ]
+    // const backgroundImages = [
+    //     // default
+    //     "/img/bg-4.svg",
+    //     // dangerousBehaviour
+    //     "/img/bg-2.svg",
+    //     // discrimination
+    //     "/img/bg-3.svg",
+    //     // drugs
+    //     "/img/bg-4.svg",
+    //     // language
+    //     "/img/bg-2.svg",
+    //     // sexAndNudity
+    //     "/img/bg-1.svg",
+    //     // threatAndHorror
+    //     "/img/bg-3.svg", 
+    // ]
 
     const topics = [
         // Dangerous behaviour
@@ -155,7 +155,7 @@ const Content = () => {
     const [showRating, setShowRating] = useState(false);
     const [finalAgeRating, setFinalAgeRating] = useState(0);
     const [answers, setAnswers] = useState([]);
-    const [siteBackgroundImage, setSiteBackgroundImage] = useState("")
+    // const [siteBackgroundImage, setSiteBackgroundImage] = useState("")
     const [ratingColor, setRatingColor] = useState("")
 
     const handleAnswerOptionClick = (ageRating, category) => {
@@ -170,7 +170,7 @@ const Content = () => {
         setShowRating(true);
     }
 
-    setSiteBackgroundImage(document.body.style.backgroundImage = `url(${backgroundImages[answers.length]})`);
+    // setSiteBackgroundImage(document.body.style.backgroundImage = `url(${backgroundImages[answers.length]})`);
 
     if (finalAgeRating < ratingRank) {
         setFinalAgeRating(ratingRank);
