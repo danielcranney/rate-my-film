@@ -157,10 +157,6 @@ Landing Page Wrapper
   margin-right: 20px;
 }
 
-.landing-left h1 {
-  font-size: 3.2rem;
-}
-
 .landing-left h2 {
   color: rgba(46, 53, 58, 0.5);
 }
@@ -475,10 +471,9 @@ footer p {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-  /* body {
-    background-image: url(bg.svg);
-    background-position: top center;
-  } */
+  h1 {
+    font-size: 3.2rem;
+  }
 
   .wrapper, .main-wrapper {
     width: 718px;
