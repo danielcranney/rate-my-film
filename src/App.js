@@ -62,8 +62,8 @@ const App = () => {
             style={longDelay} 
             className="start-button">Get Started</animated.button>
         </div>
-        <animated.div style={shortDelay} className="w-50 p-2 circle-bg">
-        <animated.img src="/img/rmf-export.png" style={mediumDelay} className="mockup" />
+        <animated.div style={shortDelay} className="w-50 p-2 circle-bg landing-right">
+          <animated.img src="/img/rmf-export.png" style={mediumDelay} className="mockup" />
         </animated.div>
 
       </main>

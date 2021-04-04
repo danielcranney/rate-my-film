@@ -177,6 +177,10 @@ Landing Page Wrapper
   justify-content: center;
 }
 
+.landing-right {
+  display:none;
+}
+
 .mockup {
   width: 100%;
 }
@@ -440,6 +444,8 @@ footer p {
     margin: auto;
   }
 
+
+
   .question-title {
     flex-direction: column;
   }
@@ -454,8 +460,13 @@ footer p {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+
   .wrapper, .main-wrapper {
     width: 560px;
+  }
+
+  .landing-right {
+    display:flex;
   }
 
   .overview-section {
