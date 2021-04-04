@@ -4,7 +4,7 @@ const Footer = () => {
     return (
     <footer>
         <p>
-        A project by <a href="http://www.danielcranney.com" target="_blank">Daniel Cranney</a>
+        A project by <a href="http://www.danielcranney.com" target="_blank" rel="noreferrer">Daniel Cranney</a>
         </p>
     </footer>
     )

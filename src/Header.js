@@ -9,7 +9,7 @@ const Header = () => {
       <nav>
         <a href="http://">About</a>
         <a href="http://">Donate</a>
-        <a href="https://www.bbfc.co.uk/" target="_blank">Visit BBFC</a>
+        <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer">Visit BBFC</a>
         <a href="http://">Contact</a>
       </nav>
     </header>
