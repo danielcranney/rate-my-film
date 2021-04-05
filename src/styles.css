@@ -183,7 +183,7 @@ LANDING PAGE WRAPPER
 
 .main-wrapper {
   background-color: transparent;
-  height: calc(100vh - 155px);
+  height: calc(100vh - 114px);
   display: flex;
   align-items: center;
 }
@@ -539,7 +539,7 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   */
   .main-wrapper {
     width: 100%;
-    height: calc(100vh - 155px);
+    height: calc(100vh - 114px);
     padding: 30px;
   }
 
@@ -578,7 +578,7 @@ SMALL DEVICES UNDER 600px
 @media screen and (max-width: 600px) {
   header nav a:not(:first-child) {
     display: none;
-    padding: 8px 10px;
+    padding: 8px 18px;
   }
   header nav a.icon {
     float: right;
@@ -594,7 +594,8 @@ header nav .logo {
 
 @media screen and (max-width: 600px) {
   header nav.responsive {
-    position: relative
+    position: relative;
+    padding-bottom: 12px;
   }
 
   header nav.responsive a {
@@ -619,6 +620,19 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 
   .landing-right {
     display:none;
+  }
+
+  /*
+  NAVIGATION
+  */
+  header nav .logo {
+    width: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+
+  header nav .block {
+    width: auto;
   }
 
   /*

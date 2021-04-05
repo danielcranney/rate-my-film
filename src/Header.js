@@ -4,9 +4,10 @@ const Header = () => {
 
     return (
         <header>
-          <nav class="navigation" id="navBar">
-            <a href={'/index.html'} class="active logo"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo" /></a>
-            <a href="javascript:void(0);" class="icon" onClick={ () => {
+          <nav className="navigation" id="navBar">
+            <a href={'/index.html'} className="active logo"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo" /></a>
+            <a href='index.html' className="icon" onClick={ (e) => {
+                e.preventDefault();
                 var nav = document.getElementById("navBar");
                   if (nav.className === "navigation") {
                     nav.className += " responsive";
@@ -14,7 +15,7 @@ const Header = () => {
                     nav.className = "navigation";
                   }
               }}>
-                <i class="fa fa-bars"></i>
+                <i className="fa fa-bars"></i>
               </a>
               
             <a href="http://" className="block">About</a>
