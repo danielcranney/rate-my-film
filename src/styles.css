@@ -366,6 +366,7 @@ button svg {
   margin-bottom: 8px;
   margin-top: 2px;
   width: 50%;
+  max-height: 40px;
 }
 
 .overview-item img {
@@ -434,6 +435,10 @@ footer p {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
   
+  #background-container {
+    display:none;
+  }
+
   .wrapper, .main-wrapper {
     width: 320px;
   }
@@ -464,7 +469,7 @@ footer p {
     #background-container {
       display:none;
     }
-
+  
     .wrapper, .main-wrapper {
       width: 100%;
     }
@@ -478,6 +483,7 @@ footer p {
       width:100%;
       background: rgba(255, 255, 255, 0.9);
       padding-bottom: 15px;
+      box-shadow: 0 0 18px 2px rgb(46 53 58 / 15%);
     }
 
     header nav {
@@ -518,6 +524,10 @@ footer p {
     text-align: left;
   }
 
+  .overview-item p {
+    font-size: 1em;
+  }
+
   .overview-item img {
     width: 20%;
   }
@@ -532,7 +542,7 @@ footer p {
   }
 
   #background-container {
-    display:block;
+    display: block;
   }
 
   .wrapper, .main-wrapper {
@@ -558,6 +568,7 @@ footer p {
     padding: 0px;
     width: 95%;
     background: none;
+    box-shadow: 0 0 0 0;
   }
 
   header nav {
