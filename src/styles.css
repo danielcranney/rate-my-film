@@ -509,7 +509,8 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   ANIMATED BACKGROUND
   */
   #background-container {
-    display:none;
+      background-image: url(minimal-bg.png);
+      background-size: cover;
   }
 
   /*
@@ -576,6 +577,7 @@ SMARTPHONES (LANDSCAPE) OVER 321px
 SMALL DEVICES UNDER 600px
 ------------------------------------------ */
 @media screen and (max-width: 600px) {
+
   header nav a:not(:first-child) {
     display: none;
     padding: 8px 18px;
