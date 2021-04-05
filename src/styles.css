@@ -1,3 +1,7 @@
+/* --------------------
+CORE STYLES
+-------------------- */
+
 body {
   margin: 0;
   font-family: neue-haas-unica, sans-serif;
@@ -28,6 +32,14 @@ body {
   width:100%;
 }
 
+.column {
+  flex-direction: column;
+}
+
+/* --------------------
+TYPOGRAPHY STYLES
+-------------------- */
+
 h1, h2, h3, h4, h5 {
   font-weight: 900;
   letter-spacing: -0.03em;
@@ -47,23 +59,19 @@ a:hover {
   transition: 0.3s;
 }
 
-.column {
-  flex-direction: column;
-}
-
-/* 
-Site Wrapper
- */
+/* -------------------- 
+SITE WRAPPER
+-------------------- */
 #site-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   align-items: center;
 }
 
-  /* 
-  Animated Background
-  */
+/* --------------------
+ANIMATED BACKGROUND
+-------------------- */
 
 #background-container {
   position: fixed;
@@ -89,33 +97,33 @@ Site Wrapper
   animation-fill-mode: both;
 }
 
-/* Blue Triangle */
+/* BLUE BG TRIANGLE */
 .shape-1 svg {
   width: 700px;
   bottom: -400px;
   left: -350px;
 }
 
-/* Orange Triangle */
+.shape-1 svg path {
+  fill: #006ed2;
+}
+
+/* ORANGE BG TRIANGLE */
 .shape-2 svg {
   width: 700px;
   bottom: -50px;
   right: -590px;
 }
 
-/* Green Circle */
+.shape-2 svg path {
+  fill: #fbad00;
+}
+
+/* GREEN BG CIRCLE */
 .shape-3 svg {
   width: 570px;
   top: -100px;
   left: -500px;
-}
-
-.shape-1 svg path {
-  fill: #006ed2;
-}
-
-.shape-2 svg path {
-  fill: #fbad00;
 }
 
 @keyframes rotate {
@@ -125,10 +133,9 @@ Site Wrapper
 }
 
 
-
-/*
-Header
-*/
+/* --------------------
+HEADER
+-------------------- */
 
 header {
   display: flex;
@@ -145,9 +152,9 @@ header a {
   padding: 0px 10px;
 }
 
-/* 
-Landing Page Wrapper
-*/
+/* --------------------
+LANDING PAGE WRAPPER
+-------------------- */
 
 .main-wrapper {
   background-color: transparent;
@@ -156,6 +163,7 @@ Landing Page Wrapper
   align-items: center;
 }
 
+/* LANDING PAGE LEFT COLUMN */
 .landing-left {
   margin-top: 10px;
   margin-right: 20px;
@@ -169,26 +177,6 @@ Landing Page Wrapper
 .landing-left p {
   line-height: 1.6em;
   margin-bottom: 20px;
-}
-
-.circle-bg {
-  display: flex;
-  flex-direction: column;
-  background-image: url(triangle-bg.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
-  min-height: 490px;
-  justify-content: center;
-}
-
-.landing-right {
-  display:none;
-  width: 0%;
-}
-
-.mockup {
-  width: 100%;
 }
 
 .start-button {
@@ -211,14 +199,32 @@ Landing Page Wrapper
   transition: 0.3s;
 }
 
-/* 
-Questions and Ratings Styling
-*/
+/* LANDING PAGE RIGHT COLUMN */
+.landing-right {
+  display:none;
+}
+
+.circle-bg {
+  display: flex;
+  flex-direction: column;
+  background-image: url(triangle-bg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  min-height: 490px;
+  justify-content: center;
+}
+
+.mockup {
+  width: 100%;
+}
+
+/* ----------------------------------------
+QUESTIONS, ANSWERS & RATINGS SECTION
+---------------------------------------- */
 
 .wrapper {
-  /* background-color: #fff; */
   padding: 25px 20px;
-  /* box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%); */
   display: flex;
   justify-content: space-evenly;
 }
@@ -227,7 +233,81 @@ Questions and Ratings Styling
   margin-bottom: 30px !important;
 }
 
-/* Ratings Final Section */
+/* ------------------------
+QUESTIONS SECTION
+------------------------ */
+
+/* QUESTIONS */
+.question-section {
+  width: 100%;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.question-count {
+  display: flex;
+  width:50%;
+  align-items: center;
+  margin-left: auto;
+  color: rgb(46 53 58 / 50%);
+  justify-content: flex-end;
+}
+
+.question-title {
+  display: flex;
+}
+
+.question-description p {
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+
+/* ANSWERS */
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  font-size: 1.1rem;
+  color: #2e353a;
+  background-color: rgb(0 0 0 / 05%);
+  border-radius: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid rgb(0 0 0 / 10%);
+  margin: 10px 0px;
+  cursor: pointer;
+  text-align: left;
+}
+
+button span img {
+  width: 20px;
+  height: 20px;
+  margin: 0px 12px;
+}
+
+button:hover {
+  background-color: rgb(0 0 0 / 10%);
+  border: 1px solid rgb(0 0 0 / 10%);
+}
+
+button:focus {
+  outline: none;
+}
+
+button svg {
+  margin-right: 5px;
+}
+
+/* --------------------
+FINAL RATING SECTION
+-------------------- */
 .ratings-final {
   display:flex;
   flex-direction: column;
@@ -255,98 +335,13 @@ Questions and Ratings Styling
   margin-bottom: 1rem;
 }
 
-/* QUESTION/TIMER/LEFT SECTION */
-.question-section {
-  width: 100%;
-  position: relative;
-  margin-bottom: 12px;
-}
-
-.question-count {
-  display: flex;
-  width:50%;
-  align-items: center;
-  margin-left: auto;
-  color: rgb(46 53 58 / 50%);
-  justify-content: flex-end;
-}
-
-.question-title {
-  display: flex;
-}
-
-.question-description p {
-  font-size: 1.2rem;
-  margin-bottom: 0px;
-}
-
-.timer-text {
-  background: rgb(230, 153, 12);
-  padding: 15px;
-  margin-top: 20px;
-  margin-right: 20px;
-  border: 5px solid rgb(255, 189, 67);
-  border-radius: 15px;
-  text-align: center;
-}
-
-/* ANSWERS/RIGHT SECTION */
-.answer-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-button {
-  width: 100%;
-  font-size: 1.1rem;
-  color: #2e353a;
-  background-color: rgb(0 0 0 / 05%);
-  border-radius: 5px;
-  display: flex;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 1px solid rgb(0 0 0 / 10%);
-  margin: 10px 0px;
-  cursor: pointer;
-  text-align: left;
-}
-
-button span img {
-  width: 20px;
-  height: 20px;
-  margin: 0px 12px;
-}
-
-.correct {
-  background-color: #2f922f;
-}
-
-.incorrect {
-  background-color: #ff3333;
-}
-
-button:hover {
-  background-color: rgb(0 0 0 / 10%);
-  border: 1px solid rgb(0 0 0 / 10%);
-}
-
-button:focus {
-  outline: none;
-}
-
-button svg {
-  margin-right: 5px;
-}
-
 .ratings-final p {
   font-size: 1.2rem;
 }
 
-/* Overview Section (Bottom) */
+/* --------------------
+RATINGS OVERVIEW SECTION
+-------------------- */
 .overview-section {
   display: flex;
   flex-direction: column;
@@ -379,7 +374,10 @@ button svg {
   margin-bottom: 0px;
 }
 
-/* Film Item */
+/* --------------------
+SIMILAR FILMS SECTION
+-------------------- */
+
 .film-items {
   display: flex;
   flex-wrap: wrap;
@@ -414,6 +412,10 @@ button svg {
   font-size: 0.9em;
 }
 
+/* --------------------
+FOOTER
+-------------------- */
+
 footer {
   height: 43px;
   display:flex;
@@ -432,16 +434,25 @@ footer p {
   box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
 }
 
-/* Smartphones (portrait) ----------- */
+/* -------------------------------------------------------------------------
+  MEDIA QUERIES BEYOND THIS POINT
+------------------------------------------------------------------------- */
+
+/* ------------------------------
+SMARTPHONES (PORTRAIT) UNDER 320px
+------------------------------ */
 @media only screen and (max-width : 320px) {
-  
+  /* 
+  ANIMATED BACKGROUND
+  */
+
   #background-container {
     display:none;
   }
 
-  .wrapper, .main-wrapper {
-    width: 320px;
-  }
+  /*
+  HEADER
+  */
 
   header {
     flex-direction: column;
@@ -450,6 +461,20 @@ footer p {
 
   header nav {
     margin: auto;
+  }
+
+  /*
+  LANDING PAGE STYLES
+  */
+  .main-wrapper {
+    width: 320px;
+  }
+
+  /*
+  QUESTIONS AND ANSWERS SECTION
+  */
+  .wrapper {
+    width: 320px;
   }
 
   .question-title {
@@ -463,56 +488,77 @@ footer p {
 
 }
 
-/* Smartphones (landscape) ----------- */
+/* ------------------------------
+SMARTPHONES (LANDSCAPE) OVER 321px
+------------------------------ */
 @media only screen and (min-width : 321px) {
-    
-    #background-container {
-      display:none;
-    }
-  
-    .wrapper, .main-wrapper {
-      width: 100%;
-    }
-
-    .main-wrapper {
-      height: calc(100vh - 155px)
-    }
-
-    header {
-      flex-direction: column;
-      width:100%;
-      background: rgba(255, 255, 255, 0.9);
-      padding-bottom: 15px;
-      box-shadow: 0 0 18px 2px rgb(46 53 58 / 15%);
-    }
-
-    header nav {
-      margin-left: 0;
-    }
-
-    .landing-left {
-      width: 100%;
-      margin-right: 0px;
-      margin-top: 0px;
-      padding: 30px;
-    }
-
-    .landing-right {
-      width: 0%;
-      display:none;
-    }
-
-    .overview-item p {
-      font-size: 0.7em;
-      text-align: left;
-    }
-
+  /* 
+  ANIMATED BACKGROUND
+  */
+  #background-container {
+    display:none;
   }
 
-/* Small - Medium devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+  /*
+  HEADER
+  */
+  header {
+    flex-direction: column;
+    width:100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding-bottom: 15px;
+    box-shadow: 0 0 18px 2px rgb(46 53 58 / 15%);
+  }
 
-  .wrapper, .main-wrapper {
+  header nav {
+    margin-left: 0;
+  }
+
+  /*
+  LANDING PAGE STYLES
+  */
+  .main-wrapper {
+    width: 100%;
+    height: calc(100vh - 155px)
+  }
+
+  .landing-left {
+    width: 100%;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding: 30px;
+  }
+
+  .landing-right {
+    width: 0%;
+    display: none;
+  }
+
+  /*
+  QUESTIONS AND ANSWERS SECTION
+  */
+  .wrapper {
+    width: 100%;
+  }
+
+  /*
+  RATINGS OVERVIEW SECTION
+  */
+  .overview-item p {
+    font-size: 0.7em;
+    text-align: left;
+  }
+
+}
+
+/* ------------------------------------------
+TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
+------------------------------------------ */
+@media only screen and (min-width: 600px) {
+  /*
+  LANDING PAGE
+  */
+  .main-wrapper {
     width: 560px;
   }
 
@@ -520,6 +566,16 @@ footer p {
     display:none;
   }
 
+  /*
+  QUESTIONS & ANSWERS SECTION
+  */
+  .wrapper {
+    width: 560px;
+  }
+
+  /*
+  RATINGS OVERVIEW
+  */
   .overview-section {
     text-align: left;
   }
@@ -534,35 +590,52 @@ footer p {
 
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+/* ---------------------------
+LANDSCAPE SMARTPHONES (iPhone X)
+--------------------------- */
+@media only screen 
+    and (device-width : 812px) 
+    and (device-height : 375px) 
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation : landscape) {
+
+      /*
+      BACKGROUND CONTAINER
+      */
+      #background-container {
+        display: none !important;
+      }
+
+      /*
+      FOOTER 
+      */
+      footer {
+        margin-left: auto;
+      }
+
+     }
+
+/* ---------------------------
+TABLETS (LANDSCAPE) OVER 768px
+--------------------------- */
 @media only screen and (min-width: 768px) {
-
-  h1 {
-    font-size: 2.6rem;
-  }
-
+  /*
+  BACKGROUND CONTAINER
+  */
   #background-container {
     display: block;
   }
 
-  .wrapper, .main-wrapper {
-    width: 95%;
+  /*
+  TYPOGRAPHY
+  */
+  h1 {
+    font-size: 2.6rem;
   }
 
-  .wrapper {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 25px 30px;
-    box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: auto;
-  }
-
-  .main-wrapper {
-    height: calc(100vh - 114px);
-  }
-
+  /*
+  HEADER
+  */
   header {
     flex-direction: row;
     padding: 0px;
@@ -575,10 +648,36 @@ footer p {
     margin-left: auto;
   }
 
+  /*
+  LANDING PAGE
+  */
+  .main-wrapper {
+    width: 95%;
+    min-height: calc(100vh - 114px)
+    
+  }
+
   .landing-left {
     padding: 0px 30px;
   }
 
+  /*
+  QUESTIONS & ANSWERS SECTION
+  */
+  .wrapper {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: auto;
+  }
+
+  /*
+  RATINGS OVERVIEW SECTION
+  */
   .overview-item-container {
     justify-content: center;
   }
@@ -587,6 +686,9 @@ footer p {
     width: 33%;
   }
 
+  /*
+  FINAL RATINGS SECTION
+  */
   .ratings-final .ratings-content {
     flex-direction: row;
     text-align: left;
@@ -599,12 +701,16 @@ footer p {
     margin-bottom: 0px;
   }
 
+  /*
+  FOOTER
+  */
   footer p {
     font-size: 0.9em;
   }
 
-
-  /* Film Item */
+  /*
+  SIMILAR FILMS SECTION
+  */
   .film-items {
     justify-content: space-around;
     flex-direction: row
@@ -630,13 +736,34 @@ footer p {
 
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
+/* ------------------------------------------
+LAPTOPS/DESKTOPS OVER 992px
+------------------------------------------ */
 @media only screen and (min-width: 992px) {
-
-  .wrapper, .main-wrapper, header {
+  /*
+  HEADER
+  */
+  header {
     width: 942px;
   }
 
+  /*
+  LANDING PAGE
+  */
+  .main-wrapper{
+    width: 942px;
+  }
+
+  /*
+  QUESTIONS & ANSWERS SECTION
+  */
+  .wrapper {
+    width: 942px;
+  }
+
+  /*
+  RATINGS OVERVIEW SECTION
+  */
   .overview-item-container {
     justify-content:flex-start;
   }
@@ -645,17 +772,34 @@ footer p {
     width: 25%;
   }
 
-  
-
   .overview-item img {
     width: 20%;
   }
 
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* ------------------------------------------
+LARGE LAPTOPS/DESKTOPS OVER 1200px
+------------------------------------------ */
 @media only screen and (min-width: 1200px) {
-  .wrapper, .main-wrapper, header {
+  /*
+  HEADER
+  */
+  header {
+    width: 1100px;
+  }
+
+  /*
+  LANDING PAGE
+  */
+  .main-wrapper{
+    width: 1100px;
+  }
+
+  /*
+  QUESTIONS & ANSWERS SECTION
+  */
+  .wrapper {
     width: 1100px;
   }
 
