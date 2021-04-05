@@ -5,7 +5,7 @@ CORE STYLES
 body {
   margin: 0;
   font-family: neue-haas-unica, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -248,17 +248,18 @@ QUESTIONS SECTION
   display: flex;
   width:50%;
   align-items: center;
-  margin-left: auto;
   color: rgb(46 53 58 / 50%);
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .question-title {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .question-description p {
-  font-size: 1.2rem;
   margin-bottom: 0px;
 }
 
@@ -272,7 +273,6 @@ QUESTIONS SECTION
 
 button {
   width: 100%;
-  font-size: 1.1rem;
   color: #2e353a;
   background-color: rgb(0 0 0 / 05%);
   border-radius: 5px;
@@ -325,18 +325,14 @@ FINAL RATING SECTION
   margin-bottom: 0px;
 }
 
+.ratings-title p {
+  font-size: 1.1rem;
+}
+
 .ratings-final .ratings-content img {
   width: 50%;
   margin-right: 0px;
   margin-bottom: 10px;
-}
-
-.ratings-final h2 {
-  margin-bottom: 1rem;
-}
-
-.ratings-final p {
-  font-size: 1.2rem;
 }
 
 /* --------------------
@@ -409,7 +405,6 @@ SIMILAR FILMS SECTION
 }
 
 .film-items .item .info p {
-  font-size: 0.9em;
 }
 
 /* --------------------
@@ -422,7 +417,7 @@ footer {
 }
 
 footer p {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   color: rgba(46, 53, 58, 0.5);
   text-align: center;
   margin-left: auto;
@@ -477,10 +472,6 @@ SMARTPHONES (PORTRAIT) UNDER 320px
     width: 320px;
   }
 
-  .question-title {
-    flex-direction: column;
-  }
-
   .question-count {
     margin-left: 0px;
     margin-bottom:10px;
@@ -519,14 +510,15 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   */
   .main-wrapper {
     width: 100%;
-    height: calc(100vh - 155px)
+    height: calc(100vh - 155px);
+    padding: 30px;
   }
 
   .landing-left {
     width: 100%;
     margin-right: 0px;
     margin-top: 0px;
-    padding: 30px;
+    padding: 0px;
   }
 
   .landing-right {
@@ -545,7 +537,7 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   RATINGS OVERVIEW SECTION
   */
   .overview-item p {
-    font-size: 0.7em;
+    font-size: 0.9rem;
     text-align: left;
   }
 
@@ -559,7 +551,7 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   LANDING PAGE
   */
   .main-wrapper {
-    width: 560px;
+    width: 100%;
   }
 
   .landing-right {
@@ -570,7 +562,7 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   QUESTIONS & ANSWERS SECTION
   */
   .wrapper {
-    width: 560px;
+    width: 100%;
   }
 
   /*
@@ -580,12 +572,12 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
     text-align: left;
   }
 
-  .overview-item p {
-    font-size: 1em;
-  }
-
   .overview-item img {
     width: 20%;
+  }
+
+  .overview-item p {
+    font-size: 1rem;
   }
 
 }
@@ -630,7 +622,7 @@ TABLETS (LANDSCAPE) OVER 768px
   TYPOGRAPHY
   */
   h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
 
   /*
@@ -639,9 +631,10 @@ TABLETS (LANDSCAPE) OVER 768px
   header {
     flex-direction: row;
     padding: 0px;
-    width: 95%;
+    width: 100%;
     background: none;
     box-shadow: 0 0 0 0;
+    padding: 0px 30px;
   }
 
   header nav {
@@ -652,13 +645,14 @@ TABLETS (LANDSCAPE) OVER 768px
   LANDING PAGE
   */
   .main-wrapper {
-    width: 95%;
-    min-height: calc(100vh - 114px)
+    width: 100%;
+    min-height: calc(100vh - 114px);
+    padding: 0px 30px;
     
   }
 
   .landing-left {
-    padding: 0px 30px;
+    padding: 0px 0px;
   }
 
   /*
@@ -673,6 +667,15 @@ TABLETS (LANDSCAPE) OVER 768px
     display: flex;
     justify-content: flex-start;
     margin-bottom: auto;
+  }
+
+  .question-title {
+    flex-direction: row;
+  }
+
+  .question-count {
+    justify-content: flex-end;
+    margin-left: auto;
   }
 
   /*
@@ -705,7 +708,7 @@ TABLETS (LANDSCAPE) OVER 768px
   FOOTER
   */
   footer p {
-    font-size: 0.9em;
+    font-size: 0.9rem;
   }
 
   /*
@@ -745,6 +748,7 @@ LAPTOPS/DESKTOPS OVER 992px
   */
   header {
     width: 942px;
+    padding: 0px 0px;
   }
 
   /*
