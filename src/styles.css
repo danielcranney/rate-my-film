@@ -660,7 +660,22 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 }
 
 /* ---------------------------
-LANDSCAPE SMARTPHONES (iPhone X)
+PORTRAIT iPHONE X
+--------------------------- */
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation : portrait) {
+      
+      .main-wrapper {
+        min-height: calc(100vh - 130px);
+      }
+
+    }
+
+/* ---------------------------
+LANDSCAPE iPHONE X
 --------------------------- */
 @media only screen 
     and (device-width : 812px) 
@@ -725,6 +740,7 @@ TABLETS (LANDSCAPE) OVER 768px
     width: 100%;
     min-height: calc(100vh - 114px);
     padding: 0px 30px;
+    box-sizing: border-box;
     
   }
 
