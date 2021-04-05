@@ -53,8 +53,8 @@ const App = () => {
       <main className="main-wrapper">
 
         <div className="column landing-left">
-          <animated.h1 style={noDelay}>Are you a filmmaker?</animated.h1>
-          <animated.h2 style={shortDelay} >Get your film rated for free.</animated.h2>
+          <animated.h1 style={noDelay}>Know your audience</animated.h1>
+          <animated.h2 style={shortDelay} >Get a BBFC rating for free.</animated.h2>
           <animated.p style={mediumDelay}>Find out how the British Board of Film Classification would (probably) rate your film.</animated.p>
           <animated.button
             onClick={() =>

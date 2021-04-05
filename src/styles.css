@@ -748,6 +748,11 @@ TABLETS (LANDSCAPE) OVER 768px
     padding: 0px 0px;
   }
 
+  .landing-right {
+    width: 50%;
+    display: flex;
+}
+
   /*
   QUESTIONS & ANSWERS SECTION
   */
