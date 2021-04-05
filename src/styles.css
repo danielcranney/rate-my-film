@@ -505,14 +505,6 @@ SMARTPHONES (PORTRAIT) UNDER 320px
 SMARTPHONES (LANDSCAPE) OVER 321px
 ------------------------------ */
 @media only screen and (min-width : 321px) {
-  /* 
-  ANIMATED BACKGROUND
-  */
-  #background-container {
-      background-image: url(minimal-bg.png);
-      background-size: cover;
-  }
-
   /*
   HEADER
   */
@@ -578,6 +570,25 @@ SMALL DEVICES UNDER 600px
 ------------------------------------------ */
 @media screen and (max-width: 600px) {
 
+  /*
+  BACKGROUND SHAPES
+  */
+  .shape-1, .shape-2, .shape-3 {
+    display:none;
+  }
+
+  /* 
+  ANIMATED BACKGROUND
+  */
+  #background-container {
+    background-image: url(minimal-bg.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+  /*
+  HEADER
+  */
   header nav a:not(:first-child) {
     display: none;
     padding: 8px 18px;
@@ -688,9 +699,6 @@ LANDSCAPE iPHONE X
       /*
       BACKGROUND CONTAINER
       */
-      #background-container {
-        display: none !important;
-      }
 
       /*
       FOOTER 
