@@ -139,11 +139,7 @@ HEADER
 
 header {
   display: flex;
-  align-items: center;
-}
-
-header nav {
-  margin-left: auto;
+  align-items: flex-start;
 }
 
 header a {
@@ -151,6 +147,35 @@ header a {
   text-transform: lowercase;
   padding: 0px 10px;
 }
+
+
+/* --------------------
+NAVIGATION
+-------------------- */
+header nav {
+  overflow: hidden;
+}
+
+header nav a {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+header nav a:hover {
+  color: #2e353a;
+}
+
+header nav a.active {
+  color: #000;
+}
+
+header nav .icon {
+  display: none;
+}
+
 
 /* --------------------
 LANDING PAGE WRAPPER
@@ -404,9 +429,6 @@ SIMILAR FILMS SECTION
   margin-right: 10px;
 }
 
-.film-items .item .info p {
-}
-
 /* --------------------
 FOOTER
 -------------------- */
@@ -494,15 +516,22 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   HEADER
   */
   header {
-    flex-direction: column;
-    width:100%;
+    flex-direction: row;
+    width: 100%;
     background: rgba(255, 255, 255, 0.9);
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     box-shadow: 0 0 18px 2px rgb(46 53 58 / 15%);
   }
 
   header nav {
-    margin-left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  header nav .block {
+    width: 100%;
   }
 
   /*
@@ -542,6 +571,40 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   }
 
 }
+
+/* ------------------------------------------
+SMALL DEVICES UNDER 600px
+------------------------------------------ */
+@media screen and (max-width: 600px) {
+  header nav a:not(:first-child) {
+    display: none;
+    padding: 8px 10px;
+  }
+  header nav a.icon {
+    float: right;
+    display: block;
+    margin-left: auto;
+  }
+}
+
+header nav .logo {
+  width: 70%;
+  text-align:left;
+}
+
+@media screen and (max-width: 600px) {
+  header nav.responsive {
+    position: relative
+  }
+
+  header nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
 
 /* ------------------------------------------
 TABLETS (PORTRAIT) & LARGE PHONES OVER 600px

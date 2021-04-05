@@ -6,6 +6,7 @@ import { useSpring, animated, config } from 'react-spring';
 
 const App = () => {
 
+  // Background Scroll Function
   window.addEventListener(
     "scroll",
     () => {
