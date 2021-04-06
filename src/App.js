@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from './Header';
-import Content from './Content';
 import Footer from './Footer';
-import { useSpring, animated, config } from 'react-spring';
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import Home from './Home';
+import About from "./About";
 
 const App = () => {
 
@@ -18,14 +19,8 @@ const App = () => {
     false
   );
 
-  // Landing Page Springs
-  const noDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 100 });
-  const shortDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 500 });
-  const mediumDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 900 });
-  const longDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 1200 });
-  const [showContent, setShowContent] = useState(false);
-
   return <>
+  <Router>
     <div id="background-container">
       <div className="shape-1">
         <svg data-name="BG-Triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
@@ -43,30 +38,16 @@ const App = () => {
 
     <div id="site-wrapper">
     <Header />
-    { showContent ? <Content /> : (
-      <main className="main-wrapper">
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/about" component={About} />
+   </Switch>
 
-        <div className="column landing-left">
-          <animated.h1 style={noDelay}>Know your audience</animated.h1>
-          <animated.h2 style={shortDelay} >Get a BBFC rating for free.</animated.h2>
-          <animated.p style={mediumDelay}>Find out how the British Board of Film Classification would (probably) rate your film.</animated.p>
-          <animated.button
-            onClick={() =>
-              setShowContent(true)
-            }
-            style={longDelay} 
-            className="start-button">Get Started</animated.button>
-        </div>
-        <animated.div style={shortDelay} className="circle-bg landing-right">
-          <animated.img src="/img/rmf-export.png" style={mediumDelay} className="mockup" />
-        </animated.div>
-
-      </main>
-    )}
     <Footer />
 
   </div>
-</>;
+  </Router>
+    </>;
 }
 
 export default App;
