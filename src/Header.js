@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
 
 const Header = () => {
+
+  const Mailto = ({ email, subject = '', body = '', children }) => {
+    let params = subject || body ? '?' : '';
+    if (subject) params += `subject=${encodeURIComponent(subject)}`;
+    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+  
+    return <a href={`mailto:${email}${params}`} target="_blank" rel="noreferrer">{children}</a>;
+  };
 
     return (
         <header>
           <nav className="navigation" id="navBar">
-            <a href={'/index.html'} className="active logo"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo" /></a>
+            <Link to="/" className="active logo"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo"></img></Link>
             <a href='index.html' className="icon" onClick={ (e) => {
                 e.preventDefault();
                 var nav = document.getElementById("navBar");
@@ -18,10 +27,10 @@ const Header = () => {
                 <i className="fa fa-bars"></i>
               </a>
               
-            <a href="http://" className="block">About</a>
+            <Link to="/about" className="block">About</Link>
             <a href="http://" className="block">Donate</a>
             <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a>
-            <a href="http://" className="block">Contact</a>
+            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact the Developer</Mailto>
           </nav>
         </header>
     );

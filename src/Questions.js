@@ -27,7 +27,7 @@ const Questions = ( { topics, handleAnswerOptionClick, i, currentTopic, setCurre
                     key={i++}
                   >
                     <span className="d-flex align-items-center">
-                      <img src={`/img/circle-${answerOption.ageRating}.svg`} alt=""/>
+                      <img src={`/img/circle-${answerOption.ageRating}.svg`} alt="Bullet point"/>
                       {answerOption.answerText}
                     </span>
                   </button>

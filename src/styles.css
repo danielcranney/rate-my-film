@@ -65,7 +65,7 @@ SITE WRAPPER
 #site-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
 }
 
@@ -174,6 +174,7 @@ header nav a.active {
 
 header nav .icon {
   display: none;
+  color: rgba(46, 53, 58, 0.5);
 }
 
 
@@ -183,7 +184,7 @@ LANDING PAGE WRAPPER
 
 .main-wrapper {
   background-color: transparent;
-  height: calc(100vh - 114px);
+  min-height: calc(100vh - 114px);
   display: flex;
   align-items: center;
 }
@@ -242,6 +243,25 @@ LANDING PAGE WRAPPER
 
 .mockup {
   width: 100%;
+}
+
+/* --------------------
+ABOUT PAGE
+-------------------- */
+.about-wrapper {
+  padding: 30px 30px;
+}
+
+.about-section {
+  display:flex;
+}
+
+.about-section img {
+  display: none;
+}
+
+.about-section div {
+  width:100%;
 }
 
 /* ----------------------------------------
@@ -436,6 +456,7 @@ FOOTER
 footer {
   height: 43px;
   display:flex;
+  margin-top:auto;
 }
 
 footer p {
@@ -448,7 +469,7 @@ footer p {
   background-color: #ffffff;
   padding: 8px 12px;
   border-radius: 5px 5px 0px 0px;
-  box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
+  box-shadow: 0 0 48px 16px rgb(46 53 58 / 8%);
 }
 
 /* -------------------------------------------------------------------------
@@ -532,7 +553,7 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   */
   .main-wrapper {
     width: 100%;
-    height: calc(100vh - 114px);
+    min-height: calc(100vh - 114px);
     padding: 30px;
   }
 
@@ -649,6 +670,19 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   }
 
   /*
+  ABOUT PAGE
+  */
+  .about-section img {
+    display:block;
+    width: 20%;
+    margin-right: 20px;
+  }
+
+  .about-section div {
+    width:80%;
+  }
+
+  /*
   QUESTIONS & ANSWERS SECTION
   */
   .wrapper {
@@ -699,6 +733,9 @@ LANDSCAPE iPHONE X
       /*
       BACKGROUND CONTAINER
       */
+      #background-container {
+        display:none;
+      }
 
       /*
       FOOTER 
@@ -867,6 +904,13 @@ LAPTOPS/DESKTOPS OVER 992px
   }
 
   /*
+  ABOUT PAGE
+  */
+  .about-wrapper{
+    width: 942px;
+  }
+
+  /*
   QUESTIONS & ANSWERS SECTION
   */
   .wrapper {
@@ -905,6 +949,13 @@ LARGE LAPTOPS/DESKTOPS OVER 1200px
   LANDING PAGE
   */
   .main-wrapper{
+    width: 1100px;
+  }
+
+  /*
+  ABOUT PAGE
+  */
+  .about-wrapper{
     width: 1100px;
   }
 
