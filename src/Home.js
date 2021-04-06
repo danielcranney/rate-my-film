@@ -16,7 +16,7 @@ const Home = () => {
             <main className="main-wrapper landing-bg">
       
               <div className="column landing-left">
-                <animated.h5 style={noDelay}>CALLING ALL FILMMAKERS</animated.h5>
+                <animated.h5 style={noDelay}>CALLING ALL FILMMAKERS!</animated.h5>
                 <animated.h1 style={noDelay}>Get to know your audience</animated.h1>
                 <animated.p style={mediumDelay}>Get a free age rating for your film in just a few clicks, using data provided by the British Board of Film Classification.</animated.p>
                 <animated.button
