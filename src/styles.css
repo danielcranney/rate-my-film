@@ -4,22 +4,22 @@ CORE STYLES
 
 body {
   margin: 0;
-  font-family: neue-haas-unica, sans-serif;
-  font-size: 17px;
+  font-family: stratos, sans-serif;
+  font-size: 18px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height:normal;
 }
 * {
-  font-family: neue-haas-unica, sans-serif;
+  font-family: stratos, sans-serif;
   font-style: normal;
-  color: #2e353a;
+  color: rgb(255 255 255 / 100%);
 }
 
 body {
   position: relative;
-  background-color: rgb(46 53 58 / 05%);
+  background-color: rgb(2 5 31 / 100%);
   background-image: none;
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,8 +41,7 @@ TYPOGRAPHY STYLES
 -------------------- */
 
 h1, h2, h3, h4, h5 {
-  font-weight: 900;
-  letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 h3 {
@@ -55,18 +54,46 @@ a {
 }
 
 a:hover {
-  color: rgba(46, 53, 58, 1);
+  color: rgba(255, 255, 255, 1);
   transition: 0.3s;
 }
+
+
+/* --------------------
+ADDITIONAL TYPOGRAPHY CLASSES
+-------------------- */
+.faded-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lead-in-text {
+  font-size: 1.2rem;
+}
+
+.main-wrapper h5 {
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  font-size: 1rem;
+  color: #fb4f93;
+}
+
 
 /* -------------------- 
 SITE WRAPPER
 -------------------- */
 #site-wrapper {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
+}
+
+/* -------------------- 
+MAIN
+-------------------- */
+main {
+  flex-grow: 1;
 }
 
 /* --------------------
@@ -142,10 +169,22 @@ header {
   align-items: flex-start;
 }
 
-header a {
-  color: rgb(46 53 58 / 50%);
-  text-transform: lowercase;
-  padding: 0px 10px;
+/* --------------------
+LOGO
+-------------------- */
+header nav .logo {
+  display:flex;
+  align-items: center;
+  width: 70%;
+  text-align:left;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  height: 71px;
+}
+
+header nav .logo:hover, header nav .icon:hover {
+  text-decoration: none;
 }
 
 
@@ -156,7 +195,10 @@ header nav {
   overflow: hidden;
 }
 
+
 header nav a {
+  color: rgb(255 255 255 / 50%);
+  padding: 0px 10px;
   float: left;
   display: block;
   text-align: center;
@@ -165,7 +207,7 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #2e353a;
+  color: rgb(255 255 255 / 100%);
 }
 
 header nav a.active {
@@ -184,9 +226,18 @@ LANDING PAGE WRAPPER
 
 .main-wrapper {
   background-color: transparent;
-  min-height: calc(100vh - 114px);
+  /* min-height: calc(100vh - 114px); */
   display: flex;
+  flex-grow: 1;
   align-items: center;
+}
+
+.landing-bg {
+  background-image: url(shape-bg.svg);
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-size: 50% 90%;
+  background-position: right center;
 }
 
 /* LANDING PAGE LEFT COLUMN */
@@ -194,51 +245,35 @@ LANDING PAGE WRAPPER
   margin-top: 10px;
   margin-right: 20px;
   width: 50%;
-}
-
-.landing-left h2 {
-  color: rgba(46, 53, 58, 0.5);
+  justify-content: center;
 }
 
 .landing-left p {
+  color: rgb(255 255 255 / 50%);
   line-height: 1.6em;
   margin-bottom: 20px;
 }
 
 .start-button {
-  background-color: #fb4f93;
-  border-color: #fb4f93;
+  background-color: transparent;
+  border-color: rgb(255 255 255 / 30%);
+  color: #fff;
+  border-width: 2px;
   width: fit-content;
   padding: 6px 15px;
   border-radius: 22px;
-  color: #fff;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   transition: 0.3s;
 }
 
 .start-button:hover {
-  background-color: #2e353a;
-  border-color: #2e353a;
+  background-color: #fb4f93;
+  border-color: #fb4f93;
+  border-width: 2px;
   color: #fff;
   transition: 0.3s;
-}
-
-/* LANDING PAGE RIGHT COLUMN */
-.landing-right {
-  display:none;
-}
-
-.circle-bg {
-  display: flex;
-  flex-direction: column;
-  background-image: url(triangle-bg.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
-  min-height: 490px;
-  justify-content: center;
 }
 
 .mockup {
@@ -263,6 +298,7 @@ ABOUT PAGE
 .about-section div {
   width:100%;
 }
+
 
 /* ----------------------------------------
 QUESTIONS, ANSWERS & RATINGS SECTION
@@ -293,7 +329,7 @@ QUESTIONS SECTION
   display: flex;
   width:50%;
   align-items: center;
-  color: rgb(46 53 58 / 50%);
+  color: rgb(255 255 255 / 50%);
   justify-content: flex-start;
 }
 
@@ -301,7 +337,7 @@ QUESTIONS SECTION
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 3px solid #1b1e35;
 }
 
 .question-description p {
@@ -316,19 +352,27 @@ QUESTIONS SECTION
   justify-content: space-between;
 }
 
+.answer-item button span {
+  font-size: 1rem;
+}
+
 button {
   width: 100%;
-  color: #2e353a;
-  background-color: rgb(0 0 0 / 05%);
+  color: rgb(255 255 255 / 70%);
+  background-color: rgb(255 255 255 / 5%);
   border-radius: 5px;
   display: flex;
   padding: 5px;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 1px solid rgb(0 0 0 / 10%);
+  border: 1px solid rgb(255 255 255 / 10%);
   margin: 10px 0px;
   cursor: pointer;
   text-align: left;
+}
+
+button span {
+  color: rgb(255 255 255 / 70%);
 }
 
 button span img {
@@ -338,8 +382,8 @@ button span img {
 }
 
 button:hover {
-  background-color: rgb(0 0 0 / 10%);
-  border: 1px solid rgb(0 0 0 / 10%);
+  background-color: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 10%);
 }
 
 button:focus {
@@ -418,6 +462,11 @@ RATINGS OVERVIEW SECTION
 /* --------------------
 SIMILAR FILMS SECTION
 -------------------- */
+.other-films-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 .film-items {
   display: flex;
@@ -446,6 +495,7 @@ SIMILAR FILMS SECTION
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
   margin-right: 10px;
 }
 
@@ -461,15 +511,14 @@ footer {
 
 footer p {
   font-size: 0.9rem;
-  color: rgba(46, 53, 58, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
   margin-left: auto;
   margin-top: auto;
   margin-bottom: 0px;
-  background-color: #ffffff;
+  background-color: rgb(255 255 255 / 10%);
   padding: 8px 12px;
   border-radius: 5px 5px 0px 0px;
-  box-shadow: 0 0 48px 16px rgb(46 53 58 / 8%);
 }
 
 /* -------------------------------------------------------------------------
@@ -532,9 +581,8 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   header {
     flex-direction: row;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(255 255 255 / 5%);
     padding-bottom: 0px;
-    box-shadow: 0 0 18px 2px rgb(46 53 58 / 15%);
   }
 
   header nav {
@@ -553,20 +601,16 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   */
   .main-wrapper {
     width: 100%;
-    min-height: calc(100vh - 114px);
+    flex-grow: 1;
+    /* min-height: calc(100vh - 114px); */
     padding: 30px;
   }
 
   .landing-left {
-    width: 100%;
+    width: 50%;
     margin-right: 0px;
     margin-top: 0px;
     padding: 0px;
-  }
-
-  .landing-right {
-    width: 0%;
-    display: none;
   }
 
   /*
@@ -577,9 +621,9 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   }
 
   /*
-  RATINGS OVERVIEW SECTION
+  RATINGS OVERVIEW 
   */
-  .overview-item p {
+  .overview-item p{
     font-size: 0.9rem;
     text-align: left;
   }
@@ -590,6 +634,13 @@ SMARTPHONES (LANDSCAPE) OVER 321px
 SMALL DEVICES UNDER 600px
 ------------------------------------------ */
 @media screen and (max-width: 600px) {
+
+  /*
+  WRAPPER
+  */
+  .wrapper {
+    padding: 15px 20px;
+  }
 
   /*
   BACKGROUND SHAPES
@@ -616,14 +667,39 @@ SMALL DEVICES UNDER 600px
   }
   header nav a.icon {
     float: right;
-    display: block;
+    display: flex;
     margin-left: auto;
   }
-}
 
-header nav .logo {
-  width: 70%;
-  text-align:left;
+  /*
+  LANDING PAGE BACKGROUND
+  */
+  .landing-bg {
+    background-image: none;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+  }
+
+  /*
+  LANDING PAGE LEFT COLUMN
+  */
+  .landing-left {
+    width: 100%
+  }
+
+  /*
+  OTHER FILMS
+  */
+  .film-items .item .info {
+    font-size: 0.9rem;
+  }
+
+  /*
+  MARGIN OVERRIDE
+  */
+  .mb-30 {
+    margin-bottom: 0px !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -634,7 +710,7 @@ header nav .logo {
 
   header nav.responsive a {
     float: none;
-    display: block;
+    display: flex;
     text-align: left;
   }
 }
@@ -645,6 +721,22 @@ header nav .logo {
 TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 ------------------------------------------ */
 @media only screen and (min-width: 600px) {
+
+  /*
+  HEADER
+  */
+  header {
+    background: none;
+    padding: 0px 10px;
+  }
+
+  /*
+  FOOTER 
+  */
+  footer {
+    margin-left: auto;
+  }
+
   /*
   LANDING PAGE
   */
@@ -652,9 +744,6 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
     width: 100%;
   }
 
-  .landing-right {
-    display:none;
-  }
 
   /*
   NAVIGATION
@@ -672,6 +761,11 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   /*
   ABOUT PAGE
   */
+  .about-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   .about-section img {
     display:block;
     width: 20%;
@@ -680,6 +774,7 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 
   .about-section div {
     width:80%;
+    margin-right: 30px;
   }
 
   /*
@@ -693,7 +788,7 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   RATINGS OVERVIEW
   */
   .overview-section {
-    text-align: left;
+    text-align: center;
   }
 
   .overview-item img {
@@ -702,6 +797,13 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 
   .overview-item p {
     font-size: 1rem;
+  }
+
+  /*
+  OTHER FILMS
+  */
+  .other-films-section {
+    text-align: center;
   }
 
 }
@@ -716,7 +818,7 @@ PORTRAIT iPHONE X
     and (orientation : portrait) {
       
       .main-wrapper {
-        min-height: calc(100vh - 130px);
+        /* min-height: calc(100vh - 130px); */
       }
 
     }
@@ -731,11 +833,11 @@ LANDSCAPE iPHONE X
     and (orientation : landscape) {
 
       /*
-      BACKGROUND CONTAINER
+      LANDING PAGE
       */
-      #background-container {
-        display:none;
-      }
+      .landing-left {
+        padding: 0px 10px 0px 0px !important;
+    }
 
       /*
       FOOTER 
@@ -750,12 +852,13 @@ LANDSCAPE iPHONE X
 TABLETS (LANDSCAPE) OVER 768px
 --------------------------- */
 @media only screen and (min-width: 768px) {
-  /*
-  BACKGROUND CONTAINER
-  */
-  #background-container {
-    display: block;
-  }
+  
+  #site-wrapper {
+    background-image: url(circle.svg);
+    background-repeat: no-repeat;
+    background-size: 70% 150%;
+    background-position: 160% -600px;
+    }
 
   /*
   TYPOGRAPHY
@@ -771,7 +874,6 @@ TABLETS (LANDSCAPE) OVER 768px
     flex-direction: row;
     padding: 0px;
     width: 100%;
-    background: none;
     box-shadow: 0 0 0 0;
     padding: 0px 30px;
   }
@@ -781,34 +883,36 @@ TABLETS (LANDSCAPE) OVER 768px
   }
 
   /*
+  FOOTER
+  */
+  footer {
+    width: 100%;
+  }
+
+  /*
   LANDING PAGE
   */
   .main-wrapper {
     width: 100%;
-    min-height: calc(100vh - 114px);
+    /* min-height: calc(100vh - 114px); */
     padding: 0px 30px;
     box-sizing: border-box;
     
   }
 
   .landing-left {
-    padding: 0px 0px;
+    padding: 0px 50px 0px 0px;
   }
 
-  .landing-right {
-    width: 50%;
-    display: flex;
-}
 
   /*
   QUESTIONS & ANSWERS SECTION
   */
   .wrapper {
     width: 95%;
-    background-color: #fff;
+    background-color: #14162f;
     border-radius: 15px;
     padding: 25px 30px;
-    box-shadow: 0 0 48px 16px rgb(46 53 58 / 15%);
     display: flex;
     justify-content: flex-start;
     margin-bottom: auto;
@@ -826,12 +930,23 @@ TABLETS (LANDSCAPE) OVER 768px
   /*
   RATINGS OVERVIEW SECTION
   */
+  .overview-section {
+    text-align: left;
+  }
+
   .overview-item-container {
     justify-content: center;
   }
 
   .overview-item {
     width: 33%;
+  }
+
+  /*
+  OTHER FILMS
+  */
+  .other-films-section {
+    text-align: left;
   }
 
   /*
@@ -889,9 +1004,9 @@ LAPTOPS/DESKTOPS OVER 992px
 ------------------------------------------ */
 @media only screen and (min-width: 992px) {
   /*
-  HEADER
+  HEADER & FOOTER
   */
-  header {
+  header, footer {
     width: 942px;
     padding: 0px 0px;
   }
@@ -939,9 +1054,9 @@ LARGE LAPTOPS/DESKTOPS OVER 1200px
 ------------------------------------------ */
 @media only screen and (min-width: 1200px) {
   /*
-  HEADER
+  HEADER & FOOTER
   */
-  header {
+  header, footer {
     width: 1100px;
   }
 
