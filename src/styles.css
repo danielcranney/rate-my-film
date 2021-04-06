@@ -504,22 +504,19 @@ FOOTER
 -------------------- */
 
 footer {
-  height: 43px;
+  height: 50px;
   width:100%;
   display:flex;
   margin-top:auto;
+  align-items: center;
+  padding: 0px 30px;
 }
 
 footer p {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: 0px;
-  background-color: rgb(255 255 255 / 10%);
-  padding: 8px 12px;
-  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 0px; /* Overriding browser standard */
 }
 
 /* -------------------------------------------------------------------------
@@ -724,6 +721,16 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
 @media only screen and (min-width: 600px) {
 
   /*
+  SITE WRAPPER
+  */
+  #site-wrapper {
+    background-image: url(circle.svg);
+    background-repeat: no-repeat;
+    background-size: 70% 150%;
+    background-position: 160% -400px;
+    }
+
+  /*
   HEADER
   */
   header {
@@ -736,6 +743,13 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   */
   .main-wrapper {
     width: 100%;
+  }
+
+  /*
+  FOOTER
+  */
+  footer {
+    padding: 0px 30px;
   }
 
 
@@ -836,12 +850,15 @@ LANDSCAPE iPHONE X
 TABLETS (LANDSCAPE) OVER 768px
 --------------------------- */
 @media only screen and (min-width: 768px) {
-  
+
+  /*
+  SITE WRAPPER
+  */
   #site-wrapper {
     background-image: url(circle.svg);
     background-repeat: no-repeat;
     background-size: 70% 150%;
-    background-position: 160% -600px;
+    background-position: 160% -460px;
     }
 
   /*
@@ -870,7 +887,8 @@ TABLETS (LANDSCAPE) OVER 768px
   FOOTER
   */
   footer {
-    width: 95%;
+    width: 100%;
+    padding: 0px 30px;
   }
 
   /*
@@ -988,11 +1006,19 @@ LAPTOPS/DESKTOPS OVER 992px
 ------------------------------------------ */
 @media only screen and (min-width: 992px) {
   /*
-  HEADER & FOOTER
+  HEADER
   */
-  header, footer {
+  header {
     width: 942px;
     padding: 0px 0px;
+  }
+
+  /*
+  FOOTER
+  */
+  footer {
+    width: 942px;
+    padding: 0px 30px;
   }
 
   /*
