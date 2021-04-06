@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <header>
           <nav className="navigation" id="navBar">
-            <Link to="/" className="active logo"><img src="/img/logo.svg" width="200px" height="71px" alt="Temporary Logo"></img></Link>
+            <Link to="/" className="active logo"><img src="/img/logo_icon.svg" width="50px" height="50px" alt="Temporary Logo"></img> Rate My Film</Link>
             <a href='index.html' className="icon" onClick={ (e) => {
                 e.preventDefault();
                 var nav = document.getElementById("navBar");
@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/about" className="block">About</Link>
             <a href="http://" className="block">Donate</a>
             <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a>
-            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact the Developer</Mailto>
+            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
           </nav>
         </header>
     );

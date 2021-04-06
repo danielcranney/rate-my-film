@@ -67,7 +67,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                     
                       {ratedCategoryList.length !== 0 ? (
                         <p>
-                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 900}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for an audience of this age.
+                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 700}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for an audience of this age.
                         </p>) : (
                           <p>
                             Please while we load your rating information...
@@ -98,20 +98,22 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
           </div>
 
           <div className="wrapper column mb-30">
-            { filmData ? 
-            <>
-            <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
-            <div className="film-items">
+            <div className="other-films-section">
+              { filmData ? 
+              <>
+              <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
+              <div className="film-items">
 
-              {filmData.slice(0, 3).map((film, index) => (
-              <Film key={`${index}-${film.original_title}`} film={film} />
-              ))}
+                {filmData.slice(0, 3).map((film, index) => (
+                <Film key={`${index}-${film.original_title}`} film={film} />
+                ))}
 
+              </div>
+              </>
+              : (
+                <p>Please wait...</p>
+              )}
             </div>
-            </>
-            : (
-              <p>Please wait...</p>
-            )}
           </div>
         </>
     )
