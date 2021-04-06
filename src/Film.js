@@ -9,7 +9,7 @@ const Film = ( { film }) => {
                 </div>
                 <div className="info">
                     <h5 className="info-item">{film.original_title} ({film.release_date.substr(0,4)})</h5>
-                    <p>{film.overview.substr(0,100)}...</p>
+                    <p className="info-description">{film.overview.substr(0,100)}...</p>
                 </div>
               </div>
     )

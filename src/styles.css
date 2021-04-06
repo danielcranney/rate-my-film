@@ -56,6 +56,7 @@ a {
 a:hover {
   color: rgba(255, 255, 255, 1);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 
@@ -95,70 +96,6 @@ MAIN
 main {
   flex-grow: 1;
 }
-
-/* --------------------
-ANIMATED BACKGROUND
--------------------- */
-
-#background-container {
-  position: fixed;
-  background-color: none;
-  width: 100%;
-  min-height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: -1;
-  align-self: stretch;
-}
-
-#background-container .shape-1 svg, #background-container .shape-2 svg, #background-container .shape-3 svg {
-  position: absolute;
-  z-index: -1;
-  animation: rotate 13s linear infinite;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-/* BLUE BG TRIANGLE */
-.shape-1 svg {
-  width: 700px;
-  bottom: -400px;
-  left: -350px;
-}
-
-.shape-1 svg path {
-  fill: #006ed2;
-}
-
-/* ORANGE BG TRIANGLE */
-.shape-2 svg {
-  width: 700px;
-  bottom: -50px;
-  right: -590px;
-}
-
-.shape-2 svg path {
-  fill: #fbad00;
-}
-
-/* GREEN BG CIRCLE */
-.shape-3 svg {
-  width: 570px;
-  top: -100px;
-  left: -500px;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 /* --------------------
 HEADER
@@ -203,7 +140,6 @@ header nav a {
   display: block;
   text-align: center;
   text-decoration: none;
-  font-size: 17px;
 }
 
 header nav a:hover {
@@ -226,7 +162,6 @@ LANDING PAGE WRAPPER
 
 .main-wrapper {
   background-color: transparent;
-  /* min-height: calc(100vh - 114px); */
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -527,13 +462,6 @@ footer p {
 SMARTPHONES (PORTRAIT) UNDER 320px
 ------------------------------ */
 @media only screen and (max-width : 320px) {
-  /* 
-  ANIMATED BACKGROUND
-  */
-
-  #background-container {
-    display:none;
-  }
 
   /*
   HEADER
@@ -600,7 +528,6 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   .main-wrapper {
     width: 100%;
     flex-grow: 1;
-    /* min-height: calc(100vh - 114px); */
     padding: 30px;
   }
 
@@ -622,7 +549,6 @@ SMARTPHONES (LANDSCAPE) OVER 321px
   RATINGS OVERVIEW 
   */
   .overview-item p{
-    font-size: 0.9rem;
     text-align: left;
   }
 
@@ -639,22 +565,6 @@ SMALL DEVICES UNDER 600px
   .wrapper {
     padding: 15px 20px;
   }
-
-  /*
-  BACKGROUND SHAPES
-  */
-  .shape-1, .shape-2, .shape-3 {
-    display:none;
-  }
-
-  /* 
-  ANIMATED BACKGROUND
-  */
-  #background-container {
-    background-image: url(minimal-bg.png);
-    background-size: cover;
-    background-position: center center;
-}
 
   /*
   HEADER
@@ -688,9 +598,10 @@ SMALL DEVICES UNDER 600px
   /*
   OTHER FILMS
   */
-  .film-items .item .info {
-    font-size: 0.9rem;
-  }
+  .info .info-description {
+    color: rgba(255, 255, 255, 0.5);
+    /* font-size: 0.9rem; */
+}
 
   /*
   MARGIN OVERRIDE
@@ -814,6 +725,11 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
     text-align: center;
   }
 
+  .info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7)
+}
+
 }
 
 /* ---------------------------
@@ -896,7 +812,6 @@ TABLETS (LANDSCAPE) OVER 768px
   */
   .main-wrapper {
     width: 100%;
-    /* min-height: calc(100vh - 114px); */
     padding: 0px 30px;
     box-sizing: border-box;
     
