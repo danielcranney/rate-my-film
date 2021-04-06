@@ -28,7 +28,6 @@ const Header = () => {
               </a>
               
             <Link to="/about" className="block">About</Link>
-            <a href="http://" className="block">Donate</a>
             <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a>
             <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
           </nav>
