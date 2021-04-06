@@ -17,9 +17,8 @@ const Home = () => {
       
               <div className="column landing-left">
                 <animated.h5 style={noDelay}>CALLING ALL FILMMAKERS</animated.h5>
-                <animated.h1 style={noDelay}>Know your audience</animated.h1>
-                {/* <animated.h2 style={shortDelay} >Get a BBFC rating for free.</animated.h2> */}
-                <animated.p style={mediumDelay}>In just a few clicks you can get a free age rating for your film, using data provided by the British Board of Film Classification.</animated.p>
+                <animated.h1 style={noDelay}>Get to know your audience</animated.h1>
+                <animated.p style={mediumDelay}>Get a free age rating for your film in just a few clicks, using data provided by the British Board of Film Classification.</animated.p>
                 <animated.button
                   onClick={() =>
                     setShowContent(true)

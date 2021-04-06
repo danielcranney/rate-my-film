@@ -505,6 +505,7 @@ FOOTER
 
 footer {
   height: 43px;
+  width:100%;
   display:flex;
   margin-top:auto;
 }
@@ -731,13 +732,6 @@ TABLETS (PORTRAIT) & LARGE PHONES OVER 600px
   }
 
   /*
-  FOOTER 
-  */
-  footer {
-    margin-left: auto;
-  }
-
-  /*
   LANDING PAGE
   */
   .main-wrapper {
@@ -816,10 +810,6 @@ PORTRAIT iPHONE X
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3)
     and (orientation : portrait) {
-      
-      .main-wrapper {
-        /* min-height: calc(100vh - 130px); */
-      }
 
     }
 
@@ -839,12 +829,6 @@ LANDSCAPE iPHONE X
         padding: 0px 10px 0px 0px !important;
     }
 
-      /*
-      FOOTER 
-      */
-      footer {
-        margin-left: auto;
-      }
 
      }
 
@@ -886,7 +870,7 @@ TABLETS (LANDSCAPE) OVER 768px
   FOOTER
   */
   footer {
-    width: 100%;
+    width: 95%;
   }
 
   /*

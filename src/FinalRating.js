@@ -115,6 +115,10 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
               )}
             </div>
           </div>
+
+          <div className="wrapper column mb-30 start-again">
+          <button onClick={(e) => { e.preventDefault(); window.location.reload() }} className="start-button">Start Again</button>
+          </div>
         </>
     )
 }
