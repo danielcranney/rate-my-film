@@ -4,7 +4,7 @@ CORE STYLES
 
 body {
   margin: 0;
-  font-family: stratos, sans-serif;
+  font-family: roboto, sans-serif;
   font-size: 18px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -12,7 +12,7 @@ body {
   line-height:normal;
 }
 * {
-  font-family: stratos, sans-serif;
+  font-family: roboto, sans-serif;
   font-style: normal;
   color: rgb(255 255 255 / 100%);
 }
@@ -41,7 +41,9 @@ TYPOGRAPHY STYLES
 -------------------- */
 
 h1, h2, h3, h4, h5 {
-  font-weight: 700;
+  font-family: archivo-black, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h3 {
@@ -115,7 +117,7 @@ header nav .logo {
   width: 70%;
   text-align:left;
   color: #fff !important;
-  font-weight: 700;
+  font-family: archivo-black, sans-serif;
   font-size: 1.4rem;
   height: 71px;
 }
@@ -197,6 +199,7 @@ LANDING PAGE WRAPPER
   width: fit-content;
   padding: 6px 15px;
   border-radius: 22px;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
