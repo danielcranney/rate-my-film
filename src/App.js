@@ -20,7 +20,8 @@ const App = () => {
       <Route path="/about" component={About} />
    </Switch> */}
 
-   <main className="main-wrapper flex-column landing-bg">
+   <main className="main-wrapper main-wrapper flex-column justify-content-center align-items-start landing-bg">
+   
    <h1>Back soon...</h1>
      <p>This site is currently undergoing maintenance.</p>
    </main>
