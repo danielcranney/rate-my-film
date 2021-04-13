@@ -20,7 +20,7 @@ const App = () => {
       <Route path="/about" component={About} />
    </Switch> */}
 
-   <main className="main-wrapper landing-bg">
+   <main className="main-wrapper flex-column landing-bg">
    <h1>Back soon...</h1>
      <p>This site is currently undergoing maintenance.</p>
    </main>
