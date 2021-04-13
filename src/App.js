@@ -1,9 +1,13 @@
 import React from "react";
 import Header from './Header';
 import Footer from './Footer';
-import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
-import Home from './Home';
-import About from "./About";
+import {
+  // Route,
+  BrowserRouter as Router,
+  // Switch
+} from "react-router-dom";
+// import Home from './Home';
+// import About from "./About";
 
 const App = () => {
 
