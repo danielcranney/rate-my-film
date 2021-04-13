@@ -21,6 +21,7 @@ const App = () => {
    </Switch> */}
 
    <main className="main-wrapper landing-bg">
+   <h1>Back soon...</h1>
      <p>This site is currently undergoing maintenance.</p>
    </main>
 
