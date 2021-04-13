@@ -27,8 +27,8 @@ const Header = () => {
                 <i className="fa fa-bars"></i>
               </a>
               
-            <Link to="/about" className="block">About</Link>
-            <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a>
+            {/* <Link to="/about" className="block">About</Link> */}
+            {/* <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a> */}
             <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
           </nav>
         </header>

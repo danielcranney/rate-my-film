@@ -7,26 +7,19 @@ import About from "./About";
 
 const App = () => {
 
-  // Background Scroll Function
-  window.addEventListener(
-    "scroll",
-    () => {
-      document.body.style.setProperty(
-        "--scroll",
-        window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-      );
-    },
-    false
-  );
-
   return <>
   <Router>
     <div id="site-wrapper">
     <Header />
-    <Switch>
+    {/* <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/about" component={About} />
-   </Switch>
+   </Switch> */}
+
+   <main className="main-wrapper landing-bg">
+     <p>This site is currently undergoing maintenance.</p>
+   </main>
+
 
     <Footer />
 
