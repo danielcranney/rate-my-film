@@ -1,4 +1,4 @@
-# BBFC Age Ratings App
+# Rate My Film
 
 ## Description
 
