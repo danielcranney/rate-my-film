@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import Content from './Content';
-import { useSpring, animated, config } from 'react-spring';
+import {
+  // useSpring,
+  // animated,
+  // config
+} from 'react-spring';
 
 const Home = () => {
 
     // Landing Page Springs
-    const noDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 100 });
-    const mediumDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 900 });
-    const longDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 1200 });
+    // const noDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 100 });
+    // const mediumDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 900 });
+    // const longDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 1200 });
     const [showContent, setShowContent] = useState(false);
     
     return (
         <>
         { showContent ? <Content /> : (
             <main className="main-wrapper landing-bg">
+
+            {setShowContent(false)}
       
               {/* <div className="column landing-left">
                 <animated.h5 style={noDelay}>CALLING ALL FILMMAKERS!</animated.h5>
