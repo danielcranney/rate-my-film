@@ -3,7 +3,8 @@ import React from 'react';
 const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic }) => {
 
     return (
-      
+      <>
+      {topics.map((card, index) => (
         <div className="wrapper column">
             <div className="question-section">
               <div className="question-title">
@@ -41,6 +42,8 @@ const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic }) => {
 
             </div>
           </div>
+      ))}
+      </>
     )
 }
 
