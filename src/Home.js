@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import Content from './Content';
+import React, {
+  // useState
+} from 'react';
+// import Content from './Content';
 import {
   // useSpring,
   // animated,
@@ -12,14 +14,13 @@ const Home = () => {
     // const noDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 100 });
     // const mediumDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 900 });
     // const longDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 1200 });
-    const [showContent, setShowContent] = useState(false);
+    // const [showContent, setShowContent] = useState(false);
     
     return (
         <>
-        { showContent ? <Content /> : (
+        {/* { showContent ? <Content /> : ( */}
             <main className="main-wrapper landing-bg">
 
-            {setShowContent(false)}
       
               {/* <div className="column landing-left">
                 <animated.h5 style={noDelay}>CALLING ALL FILMMAKERS!</animated.h5>
@@ -33,7 +34,7 @@ const Home = () => {
                   className="start-button">Get Started</animated.button>
               </div> */}
             </main>
-          )}
+          {/* )} */}
           </>
     )
 }
