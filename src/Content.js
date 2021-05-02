@@ -1,24 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FinalRating from './FinalRating';
 import Questions from "./Questions";
-
-    // const backgroundImages = [
-    //     // default
-    //     "/img/bg-4.svg",
-    //     // dangerousBehaviour
-    //     "/img/bg-2.svg",
-    //     // discrimination
-    //     "/img/bg-3.svg",
-    //     // drugs
-    //     "/img/bg-4.svg",
-    //     // language
-    //     "/img/bg-2.svg",
-    //     // sexAndNudity
-    //     "/img/bg-1.svg",
-    //     // threatAndHorror
-    //     "/img/bg-3.svg", 
-    // ]
-
     const topics = [
         // Dangerous behaviour
         {
@@ -127,16 +109,16 @@ import Questions from "./Questions";
     ];
   
     const colors = [
-        // green
-        "#0ac700",
-        // yellow
-        "#fbad00",
-        // orange
-        "#ff7d13",
+        // purple
+        "#6102d2",
         // pink
-        "#fb4f93",
-        // red
-        "#dc0a0a"
+        "#fe346e",
+        // yellow
+        "#fcdb00",
+        // turqoise
+        "#0cd68a",
+        // blue
+        "#2238af"
     ];
   
     const ratingsList = ["U", "PG", "12", "15", "18"];
@@ -155,27 +137,24 @@ const Content = () => {
     const [showRating, setShowRating] = useState(false);
     const [finalAgeRating, setFinalAgeRating] = useState(0);
     const [answers, setAnswers] = useState([]);
-    // const [siteBackgroundImage, setSiteBackgroundImage] = useState("")
-    const [ratingColor, setRatingColor] = useState("")
+    const [ratingColor, setRatingColor] = useState("");
 
+    
     const handleAnswerOptionClick = (ageRating, category) => {
-    setAnswers([...answers, addRatingItem(category, ageRating)]);
+        setAnswers([...answers, addRatingItem(category, ageRating)]);
 
-    const ratingRank = ratingsList.findIndex((rating) => rating === ageRating);
+        const ratingRank = ratingsList.findIndex((rating) => rating === ageRating);
 
-    const nextQuestion = currentTopic + 1;
-    if (nextQuestion < topics.length) {
-        setCurrentTopic(nextQuestion);
-    } else {
-        setShowRating(true);
-    }
+        const nextQuestion = currentTopic + 1;
+        if (nextQuestion < topics.length) {
+            setCurrentTopic(nextQuestion);
+        } else {
+            setShowRating(true);
+        }
 
-    // setSiteBackgroundImage(document.body.style.backgroundImage = `url(${backgroundImages[answers.length]})`);
-
-    if (finalAgeRating < ratingRank) {
-        setFinalAgeRating(ratingRank);
-    }
-
+        if (finalAgeRating < ratingRank) {
+            setFinalAgeRating(ratingRank);
+        }
     };
 
     useEffect(() => {

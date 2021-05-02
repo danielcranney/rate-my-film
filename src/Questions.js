@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Questions = ( { topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic }) => {
+const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic }) => {
+
     return (
+      
         <div className="wrapper column">
             <div className="question-section">
               <div className="question-title">
@@ -15,6 +17,7 @@ const Questions = ( { topics, handleAnswerOptionClick, i, currentTopic, setCurre
               </div>
             </div>
             <div className="answer-section d-flex">
+            
               {topics[currentTopic].answerOptions.map((answerOption) => (
                 <div className="answer-item">
                   <button
@@ -27,12 +30,15 @@ const Questions = ( { topics, handleAnswerOptionClick, i, currentTopic, setCurre
                     key={i++}
                   >
                     <span className="d-flex align-items-center">
-                      <img src={`/img/circle-${answerOption.ageRating}.svg`} alt="Bullet point"/>
+                    <svg height="20" width="20">
+                      <circle cx="10" cy="10" r="8" fill="red" />
+                    </svg>
                       {answerOption.answerText}
                     </span>
                   </button>
                 </div>
               ))}
+
             </div>
           </div>
     )

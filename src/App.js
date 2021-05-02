@@ -2,12 +2,12 @@ import React from "react";
 import Header from './Header';
 import Footer from './Footer';
 import {
-  // Route,
+  Route,
   BrowserRouter as Router,
-  // Switch
+  Switch
 } from "react-router-dom";
-// import Home from './Home';
-// import About from "./About";
+import Home from './Home';
+import About from "./About";
 
 const App = () => {
 
@@ -15,17 +15,10 @@ const App = () => {
   <Router>
     <div id="site-wrapper">
     <Header />
-    {/* <Switch>
+    <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/about" component={About} />
-   </Switch> */}
-
-   <main className="main-wrapper main-wrapper flex-column justify-content-center align-items-start landing-bg">
-   
-   <h1>Back soon...</h1>
-     <p>This site is currently undergoing maintenance.</p>
-   </main>
-
+   </Switch>
 
     <Footer />
 

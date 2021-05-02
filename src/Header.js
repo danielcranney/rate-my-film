@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {ReactComponent as Logo} from './images/logo.svg';
 
 const Header = () => {
 
@@ -14,7 +15,7 @@ const Header = () => {
     return (
         <header>
           <nav className="navigation" id="navBar">
-            <Link to="/" className="active logo"><img src="/img/logo_icon.svg" width="50px" height="50px" alt="Temporary Logo"></img> Rate My Film</Link>
+            <Link to="/" className="active logo"><Logo /> Rate My Film</Link>
             <a href='index.html' className="icon" onClick={ (e) => {
                 e.preventDefault();
                 var nav = document.getElementById("navBar");
