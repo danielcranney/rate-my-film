@@ -1,14 +1,74 @@
+.topic-card-carousel {
+  background-color: #ff0000;
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 200px;
+  margin: 0px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.topic-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 600px;
+  height: auto;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+  opacity: 0;
+  position: absolute;
+  -webkit-transform: scale(0.85) translateX(540px);
+          transform: scale(0.85) translateX(540px);
+}
+
+.topic-card h2,
+.topic-card p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.topic-card.active {
+  opacity: 1;
+  -webkit-transform: scale(1) translateX(0);
+          transform: scale(1) translateX(0);
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
+}
+
+.topic-card.next {
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.topic-card.prev {
+  -webkit-transform: scale(0.85) translateX(-540px);
+          transform: scale(0.85) translateX(-540px);
+  z-index: 0;
+  opacity: 0.15;
+}
+
 /* --------------------
 CORE STYLES
 -------------------- */
 body {
   margin: 0;
   font-family: roboto, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: normal;
+  line-height: 1.6;
 }
 
 * {
@@ -48,11 +108,13 @@ body {
 /* --------------------
   TYPOGRAPHY STYLES
   -------------------- */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5,
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #293543;
+  margin: 0.25em 0;
 }
 
 h3 {
@@ -226,14 +288,15 @@ header nav .icon {
   padding: 14px 24px;
   border-radius: 27px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.start-button:hover {
+.start-button:hover, .start-button:focus {
   background-color: #6102d2;
   border-color: #6102d2;
   border-width: 2px;
@@ -278,10 +341,10 @@ header nav .icon {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-}
-
-.mb-30 {
-  margin-bottom: 30px !important;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 
 /* ------------------------
@@ -290,19 +353,37 @@ header nav .icon {
 /* QUESTIONS */
 .question-section {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 17px;
+  border-bottom: 3px solid;
+  padding-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.question-icon {
+  width: 42px;
+  height: 42px;
+  padding: 7px;
+  border-radius: 8px;
+  margin-right: 12px;
 }
 
 .question-count {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   color: #66707A;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -316,12 +397,10 @@ header nav .icon {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #66707A;
 }
 
-.question-description p {
-  margin-bottom: 0px;
+.question-description {
+  font-weight: 600;
 }
 
 /* ANSWERS */
@@ -343,25 +422,39 @@ header nav .icon {
   font-size: 1rem;
 }
 
-button {
+button, button:focus {
   width: 100%;
   color: #66707A;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 5px;
+  padding: 10px 14px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 10px 0px;
+  border: 1px solid #e6e6e6;
+  margin: 6px 0px;
   cursor: pointer;
   text-align: left;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+button:hover {
+  background-color: #E4E6E9;
+  border: 1px solid #66707A;
+  color: #293543;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 button span {
@@ -372,11 +465,6 @@ button span img {
   width: 20px;
   height: 20px;
   margin: 0px 12px;
-}
-
-button:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 button:focus {
@@ -390,41 +478,30 @@ button svg {
 /* --------------------
   FINAL RATING SECTION
   -------------------- */
-.ratings-final {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.ratings-final .ratings-title {
-  width: 100%;
-}
-
-.ratings-final .ratings-content {
+.rating-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
+  text-align: left;
   margin-bottom: 0px;
+}
+
+.rating-section .icon {
+  width: 16%;
+}
+
+.rating-section .title {
+  width: 84%;
 }
 
 .ratings-title p {
   font-size: 1.1rem;
 }
 
-.ratings-final .ratings-content img {
-  width: 50%;
+.rating-section svg {
   margin-right: 0px;
   margin-bottom: 10px;
 }
@@ -432,7 +509,7 @@ button svg {
 /* --------------------
   RATINGS OVERVIEW SECTION
   -------------------- */
-.overview-section {
+.category-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,9 +518,10 @@ button svg {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  width: 100%;
 }
 
-.overview-item-container {
+.category-item-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,7 +536,7 @@ button svg {
           justify-content: flex-start;
 }
 
-.overview-item {
+.category-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,17 +548,21 @@ button svg {
   margin-top: 2px;
   width: 50%;
   max-height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.overview-item img {
+.category-item svg {
   width: 15%;
   margin-right: 8px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
-.overview-item p {
+.category-item p {
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 /* --------------------
@@ -660,7 +742,7 @@ footer p {
   /*
     RATINGS OVERVIEW 
     */
-  .overview-item p {
+  .category-item p {
     text-align: left;
   }
 }
@@ -704,13 +786,6 @@ footer p {
     */
   .landing-left {
     width: 100%;
-  }
-  /*
-    OTHER FILMS
-    */
-  .info .info-description {
-    color: rgba(255, 255, 255, 0.5);
-    /* font-size: 0.9rem; */
   }
   /*
     MARGIN OVERRIDE
@@ -806,13 +881,13 @@ footer p {
   /*
     RATINGS OVERVIEW
     */
-  .overview-section {
+  .category-section {
     text-align: center;
   }
-  .overview-item img {
+  .category-item img {
     width: 20%;
   }
-  .overview-item p {
+  .category-item p {
     font-size: 1rem;
   }
   /*
@@ -821,9 +896,12 @@ footer p {
   .other-films-section {
     text-align: center;
   }
+  .info h5 {
+    margin: 0px 0px 5px 0px;
+  }
   .info p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    margin: 0px;
   }
 }
 
@@ -910,32 +988,19 @@ footer p {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-bottom: auto;
-  }
-  .question-title {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .question-count {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    margin-left: auto;
   }
   /*
     RATINGS OVERVIEW SECTION
     */
-  .overview-section {
+  .category-section {
     text-align: left;
   }
-  .overview-item-container {
+  .category-item-container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .overview-item {
+  .category-item {
     width: 33%;
   }
   /*
@@ -947,7 +1012,7 @@ footer p {
   /*
     FINAL RATINGS SECTION
     */
-  .ratings-final .ratings-content {
+  .rating-section .ratings-content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -955,7 +1020,7 @@ footer p {
     text-align: left;
     width: 100%;
   }
-  .ratings-final .ratings-content img {
+  .rating-section .icon {
     width: 25%;
     margin-right: 20px;
     margin-bottom: 0px;
@@ -1034,15 +1099,15 @@ footer p {
   /*
     RATINGS OVERVIEW SECTION
     */
-  .overview-item-container {
+  .category-item-container {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  .overview-item {
+  .category-item {
     width: 25%;
   }
-  .overview-item img {
+  .category-item img {
     width: 20%;
   }
 }

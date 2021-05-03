@@ -1,5 +1,54 @@
 @import './variables';
 
+.topic-card-carousel {
+  background-color: #ff0000;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin: 0px auto;
+  align-items: center;
+  position: relative;
+}
+
+.topic-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 600px;
+  height: auto;
+  transition: all 0.75s ease;
+  opacity: 0;
+  position: absolute;
+  transform: scale(0.85) translateX(540px);
+}
+
+.topic-card h2,
+.topic-card p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.topic-card.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 2;
+  box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.05);
+}
+
+.topic-card.next {
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.topic-card.prev {
+  transform: scale(0.85) translateX(-540px);
+  z-index: 0;
+  opacity: 0.15;
+}
+
+
 /* --------------------
 CORE STYLES
 -------------------- */
@@ -7,11 +56,11 @@ CORE STYLES
 body {
     margin: 0;
     font-family: $bodyFont;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height:normal;
+    line-height: 1.6;
   }
   * {
     font-family: $bodyFont;
@@ -42,11 +91,13 @@ body {
   TYPOGRAPHY STYLES
   -------------------- */
   
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5,
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-family: $headerFont;
     font-weight: 400;
     font-style: normal;
     color: $headerColor;
+    margin: 0.25em 0;
   }
   
   h3 {
@@ -195,13 +246,14 @@ body {
     padding: 14px 24px;
     border-radius: 27px;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
+    font-family: $headerFont;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     transition: 0.3s;
   }
   
-  .start-button:hover {
+  .start-button:hover, .start-button:focus {
     background-color: $primaryColor;
     border-color: $primaryColor;
     border-width: 2px;
@@ -241,11 +293,11 @@ body {
     padding: 25px 20px;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
   }
-  
-  .mb-30 {
-    margin-bottom: 30px !important;
-  }
+
   
   /* ------------------------
   QUESTIONS SECTION
@@ -254,27 +306,39 @@ body {
   /* QUESTIONS */
   .question-section {
     width: 100%;
+    display: flex;
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 17px;
+    border-bottom: 3px solid;
+    padding-bottom: 20px;
+    align-items: center;
+  }
+
+  .question-icon {
+    width: 42px;
+    height: 42px;
+    padding:7px;
+    border-radius: 8px;
+    margin-right: 12px;
   }
   
   .question-count {
     display: flex;
-    width:50%;
     align-items: center;
     color: $bodyColor;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     justify-content: flex-start;
   }
   
   .question-title {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    border-bottom: 3px solid $bodyColor;
   }
   
-  .question-description p {
-    margin-bottom: 0px;
+  .question-description {
+    font-weight: 600;
   }
   
   /* ANSWERS */
@@ -289,19 +353,29 @@ body {
     font-size: 1rem;
   }
   
-  button {
+  button, button:focus {
     width: 100%;
     color: $bodyColor;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    background-color: $lightColor;
+    border-radius: 8px;
     display: flex;
-    padding: 5px;
+    padding: 10px 14px;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid  rgba(255, 255, 255, 0.2);
-    margin: 10px 0px;
+    border: 1px solid #e6e6e6;
+    margin: 6px 0px;
     cursor: pointer;
     text-align: left;
+    transition: 0.4s;
+    transform: scale(0.98);
+  }
+    
+  button:hover {
+    background-color: $hoverColor;
+    border: 1px solid $bodyColor;
+    color: $headerColor;
+    transition: 0.4s;
+    transform: scale(1);
   }
   
   button span {
@@ -314,11 +388,6 @@ body {
     margin: 0px 12px;
   }
   
-  button:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
   button:focus {
     outline: none;
   }
@@ -329,30 +398,27 @@ body {
   
   /* --------------------
   FINAL RATING SECTION
-  -------------------- */
-  .ratings-final {
-    display:flex;
-    flex-direction: column;
-  }
-  
-  .ratings-final .ratings-title {
-    width: 100%;
-  }
-  
-  .ratings-final .ratings-content {
+  -------------------- */  
+  .rating-section {
     display:flex;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
+    text-align: left;
     margin-bottom: 0px;
+  }
+
+  .rating-section .icon {
+    width: 16%;
+  }
+
+  .rating-section .title {
+    width: 84%;
   }
   
   .ratings-title p {
     font-size: 1.1rem;
   }
   
-  .ratings-final .ratings-content img {
-    width: 50%;
+  .rating-section svg {
     margin-right: 0px;
     margin-bottom: 10px;
   }
@@ -360,36 +426,39 @@ body {
   /* --------------------
   RATINGS OVERVIEW SECTION
   -------------------- */
-  .overview-section {
+  .category-section {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
   }
   
-  .overview-item-container {
+  .category-item-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:flex-start;
   }
   
-  .overview-item {
+  .category-item {
     display:flex;
     flex-direction:row;
     margin-bottom: 8px;
     margin-top: 2px;
     width: 50%;
     max-height: 40px;
+    align-items: center;
   }
   
-  .overview-item img {
+  .category-item svg {
     width: 15%;
     margin-right: 8px;
     flex-shrink: 0;
   }
   
-  .overview-item p {
+  .category-item p {
     margin-bottom: 0px;
+    margin-top: 0px;
   }
   
   /* --------------------
@@ -546,7 +615,7 @@ body {
     /*
     RATINGS OVERVIEW 
     */
-    .overview-item p{
+    .category-item p{
       text-align: left;
     }
   
@@ -592,14 +661,6 @@ body {
     .landing-left {
       width: 100%
     }
-  
-    /*
-    OTHER FILMS
-    */
-    .info .info-description {
-      color: rgba(255, 255, 255, 0.5);
-      /* font-size: 0.9rem; */
-  }
   
     /*
     MARGIN OVERRIDE
@@ -704,15 +765,15 @@ body {
     /*
     RATINGS OVERVIEW
     */
-    .overview-section {
+    .category-section {
       text-align: center;
     }
   
-    .overview-item img {
+    .category-item img {
       width: 20%;
     }
   
-    .overview-item p {
+    .category-item p {
       font-size: 1rem;
     }
   
@@ -722,10 +783,14 @@ body {
     .other-films-section {
       text-align: center;
     }
+
+    .info h5 {
+      margin: 0px 0px 5px 0px;
+    }
   
     .info p {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7)
+      margin: 0px;
   }
   
   }
@@ -828,30 +893,21 @@ body {
       padding: 25px 30px;
       display: flex;
       justify-content: flex-start;
-      margin-bottom: auto;
     }
-  
-    .question-title {
-      flex-direction: row;
-    }
-  
-    .question-count {
-      justify-content: flex-end;
-      margin-left: auto;
-    }
+
   
     /*
     RATINGS OVERVIEW SECTION
     */
-    .overview-section {
+    .category-section {
       text-align: left;
     }
   
-    .overview-item-container {
+    .category-item-container {
       justify-content: center;
     }
   
-    .overview-item {
+    .category-item {
       width: 33%;
     }
   
@@ -865,13 +921,13 @@ body {
     /*
     FINAL RATINGS SECTION
     */
-    .ratings-final .ratings-content {
+    .rating-section .ratings-content {
       flex-direction: row;
       text-align: left;
       width: 100%;
     }
   
-    .ratings-final .ratings-content img {
+    .rating-section .icon {
       width: 25%;
       margin-right: 20px;
       margin-bottom: 0px;
@@ -956,15 +1012,15 @@ body {
     /*
     RATINGS OVERVIEW SECTION
     */
-    .overview-item-container {
+    .category-item-container {
       justify-content:flex-start;
     }
   
-    .overview-item {
+    .category-item {
       width: 25%;
     }
   
-    .overview-item img {
+    .category-item img {
       width: 20%;
     }
   

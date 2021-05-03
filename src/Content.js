@@ -1,109 +1,122 @@
 import React, { useState, useEffect } from 'react';
 import FinalRating from './FinalRating';
 import Questions from "./Questions";
+
+// Icon imports
+import { ReactComponent as DangerIcon } from './images/danger-icon.svg';
+import { ReactComponent as DiscriminationIcon } from './images/discrimination-icon.svg';
+import { ReactComponent as DrugsIcon } from './images/drugs-icon.svg';
+import { ReactComponent as LanguageIcon } from './images/language-icon.svg';
+import { ReactComponent as SexNudityIcon } from './images/sex-nudity-icon.svg';
+import { ReactComponent as ThreatHorrorIcon } from './images/threat-horror-icon.svg';
+import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
+
     const topics = [
         // Dangerous behaviour
         {
+        id: 0,
+        icon: <DangerIcon fill="#FFF" />,
+        color: "#6102d2",
         categoryTitle: "Dangerous Behaviour",
-        categoryDescription: "Please describe how dangerous behaviour such as self-harm or risk acts are depicted in your film.",
+        categoryDescription: "Please select the option that best describes how dangerous behaviour features in your film:",
         answerOptions: [
-            {
-            answerText:
-                "Potentially dangerous or anti-social behaviour is clearly disapproved of, and no emphasis is placed on weapons.",
-            ageRating: "U"
-            },
-            {
-            answerText:
-                "Potentially dangerous behaviour is presented as safe or fun, but no detail is shown. Weapons (such as knives) are featured, but are not glamorised. No focus on anti-social behaviour.",
-            ageRating: "PG"
-            },
-            {
-            answerText:
-                "Potentially dangerous behaviour features but is not promoted, and weapons are featured, also (but not glamorised). Anti-social behaviour is not endorsed in the film.",
-            ageRating: "12"
-            },
-            {
-            answerText:
-                "Dangerous behaviour (for example, suicide, self-harming and asphyxiation) feature but with little detail, so they cannot be copied. Weapons are featured but are contextually appropriate.",
-            ageRating: "15"
-            },
-            {
-            answerText:
-                "Characters are shown engaging in dangerous behaviour such as self-harming and some gory detail is shown. If weapons are featured, they are used regularly throughout the film.",
-            ageRating: "18"
-            }
+            { answerText: "It is disapproved of, and weapons are not emphasised.", ageRating: "U" },
+            { answerText: "Weapons or mildly dangerous behaviour are featured, but are not glamorised.",
+            ageRating: "PG" },
+            { answerText: "Weapons or moderately dangerous behaviour feature, but are not glamorised.",
+            ageRating: "12" },
+            { answerText: "Dangerous behaviour (for example, suicide) features but without detail. Weapons are featured, but in an appropriate way.", ageRating: "15" },
+            { answerText: "Behaviour such as self-harm is shown, and with gory detail. If weapons feature, they are used regularly.", ageRating: "18" }
         ]
         },
         // Discrimination
         {
+        id: 1,
+        icon: <DiscriminationIcon fill="#FFF" />,
+        color: "#fe346e",
         categoryTitle: "Discrimination",
-        categoryDescription: "Please describe the way that discrimination such as racism or homophobic feature in your film.",
+        categoryDescription: "Please select the option that best describes how discrimination features in your film:",
         answerOptions: [
-            { answerText: "Discriminatory language does not feature at all, or is clearly disapproved of within the film.", ageRating: "U" },
-            { answerText: "Discriminatory language or behaviour features a small amount but is clearly disapproved of, or is in an educational or historical context.", ageRating: "PG" },
-            { answerText: "Discriminatory language or behaviour features but is not endorsed by the work as a whole. Aggressive discriminatory language or behaviour features but is clearly condemned.", ageRating: "12" },
-            { answerText: "The work as a whole must not endorse discriminatory language or behaviour, although there may be racist, homophobic or other discriminatory themes and language.", ageRating: "15" },
+            { answerText: "No discriminatory language.", ageRating: "U" },
+            { answerText: "It features a small amount but is disapproved of is contextually appropriate.", ageRating: "PG" },
+            { answerText: "Aggressive discriminatory language or behaviour features but is clearly condemned.", ageRating: "12" },
+            { answerText: "Some racist, homophobic or other discriminatory themes and language feature on occasion.", ageRating: "15" },
             { answerText: "Discriminatory language or behaviour features regularly throughout the film.", ageRating: "18" }
         ]
         },
         // Drugs
         {
+        id: 2,
+        icon: <DrugsIcon fill="#FFF" />,
+        color: "#fcdb00",
         categoryTitle: "Drugs",
-        categoryDescription: "Please describe the way that illegal drugs or drug misuse feature in your film.",
+        categoryDescription: "Please select the option that best describes how drugs feature in your film:",
         answerOptions: [
-            { answerText: "No mention of drugs, or references to illegal drugs or drug misuse are infrequent, or have a clear educational purpose or anti-drug message suitable for young children.", ageRating: "U" },
-            { answerText: "References to illegal drugs or drug misuse are innocuous or carry a suitable anti-drug message.", ageRating: "PG" },
-            { answerText: "Misuse of drugs is infrequent and does not glamorise or give detailed instruction.", ageRating: "12" },
-            { answerText: "Drug taking is shown but the work as a whole does not promote or encourage drug misuse (eg: through detailed instruction). Easily accessible and highly dangerous substances (for example, aerosols or solvents) do not feature.", ageRating: "15" },
-            { answerText: "Strong, frequent drug use or abuse of easily accessible and highly dangerous substances feature throughout the film.", ageRating: "18" }
+            { answerText: "None featured, or clear anti-drug themes.", ageRating: "U" },
+            { answerText: "Some very mild references.", ageRating: "PG" },
+            { answerText: "Some drug use shown, but it is infrequent.", ageRating: "12" },
+            { answerText: "Drug taking is shown, but it does promote or encourage drug misuse.", ageRating: "15" },
+            { answerText: "Strong, frequent drug use features throughout.", ageRating: "18" }
         ]
         },
         // Language
         {
+        id: 3,
+        icon: <LanguageIcon fill="#FFF" />,
+        color: "#0cd68a",
         categoryTitle: "Language",
-        categoryDescription: "Please describe the way that bad language features in your film.",
+        categoryDescription: "Please select the option that best describes how bad language features in your film:",
         answerOptions: [
-            { answerText: "Infrequent use only of very mild bad language.", ageRating: "U" },
-            { answerText: "Mild bad language only. Aggressive or very frequent use of mild bad language may result in a work being passed at a higher category.", ageRating: "PG" },
-            { answerText: "There may be moderate bad language. Strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.", ageRating: "12" },
-            { answerText: "There may be strong language. Very strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.", ageRating: "15" },
-            { answerText: "Strong language features frequently throughout the film.", ageRating: "18" }
+            { answerText: "Infrequent use of very mild bad language.", ageRating: "U" },
+            { answerText: "Mild bad language only.", ageRating: "PG" },
+            { answerText: "Moderate bad language, with rare instances of strong language.", ageRating: "12" },
+            { answerText: "Strong languages features with rare instances of very strong language.", ageRating: "15" },
+            { answerText: "Very strong language features frequently.", ageRating: "18" }
         ]
         },
         // Sex and Nudity
         {
+        id: 4,
+        icon: <SexNudityIcon fill="#FFF"/>,
+        color: "#2238af",
         categoryTitle: "Sex and Nudity",
-        categoryDescription: "Please describe the way that sexual activity and nudity feature in your film.",
+        categoryDescription: "Please select the option that best describes how sex or nudity feature in your film:",
         answerOptions: [
-            { answerText: "Occasional nudity, with no sexual context.", ageRating: "U" },
-            { answerText: "Some nudity, with no sexual context. Sexual activity is implied, but is discreet and infrequent. Some mild sex references and innuendo are featured.", ageRating: "PG" },
-            { answerText: "Some nudity, but in a sexual context it is brief and discreet.", ageRating: "12" },
-            { answerText: "Sexual activity, but without strong detail. There may be strong verbal references to sexual behaviour, but any depiction of the stronger forms of sexual violence is not detailed or prolonged.", ageRating: "15" },
-            { answerText: "Sexual activity, with some strong detail. Repeated strong verbal references to sexual behaviour, and references to sexual threat are more prolonged.", ageRating: "18" }
+            { answerText: "Occasional nudity, but with no sexual context.", ageRating: "U" },
+            { answerText: "Some nudity, with no sexual context. Sexual activity is implied, or innuendo features.", ageRating: "PG" },
+            { answerText: "Some nudity, but in a sexual context it is brief and only implied.", ageRating: "12" },
+            { answerText: "Sexual activity, but without strong detail.", ageRating: "15" },
+            { answerText: "Sexual activity, with some strong detail. Repeated strong verbal references to sexual behaviour.", ageRating: "18" }
         ]
         },
         // Threat and Horror
         {
+        id: 5,
+        icon: <ThreatHorrorIcon fill="#FFF" />,
+        color: "#fe346e",
         categoryTitle: "Threat and Horror",
-        categoryDescription: "Please describe the way that threat and horror feature in your film.",
+        categoryDescription: "Please select the option that best describes how threat or horror feature in your film:",
         answerOptions: [
-            { answerText: "Scary or potentially unsettling sequences are mild, brief and unlikely to cause undue anxiety to young children. The outcome is reassuring.", ageRating: "U" },
-            { answerText: "Frightening sequences or situations where characters are in danger are prolonged or intense. Fantasy settings and comedy may be mitigating factors.", ageRating: "PG" },
-            { answerText: "Moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone is not. Horror sequences are frequent or sustained.", ageRating: "12" },
+            { answerText: "Scary or potentially unsettling sequences are mild, brief and unlikely to upset children.", ageRating: "U" },
+            { answerText: "Frightening sequences where characters are in danger are not prolonged or intense.", ageRating: "PG" },
+            { answerText: "Moderate physical and psychological threat and horror sequences.", ageRating: "12" },
             { answerText: "Strong threat and horror, however there is not sustained focus on sadistic threat.", ageRating: "15" },
             { answerText: "Strong threat and horror feature regularly, and sadistic threat is more prolonged.", ageRating: "18" }
         ]
         },
         // Violence
         {
+        id: 6,
+        icon: <ViolenceIcon fill="#FFF" />,
+        color: "#6102d2",
         categoryTitle: "Violence",
-        categoryDescription: "Please describe the way that violence features in your film.",
+        categoryDescription: "Please select the option that best describes how violence features in your film:",
         answerOptions: [
-            { answerText: "Violence is generally very mild. Some mild violence features but is justified by context (for example, comedic, animated, wholly unrealistic).", ageRating: "U" },
-            { answerText: "Violence is mild. Some moderate violence, without detail, and it is justified by its context (for example, history, comedy or fantasy).", ageRating: "PG" },
-            { answerText: "Moderate violence but it does not dwell on detail. No emphasis on injuries or blood, but occasional gory moments feature and are justified by the context.", ageRating: "12" },
-            { answerText: "Strong violence features but it does not dwell on the infliction of pain or injury. No strong gory images, and no strong sadistic violence.", ageRating: "15" },
-            { answerText: "Strong or gory violence, with some detail of the infliction of pain or injury.", ageRating: "18" }
+            { answerText: "Violence is generally very mild, unrealistic or comedic.", ageRating: "U" },
+            { answerText: "Violence is mild. Some moderate violence, without detail.", ageRating: "PG" },
+            { answerText: "Moderate violence but it does not dwell on detail. No emphasis on injuries or blood.", ageRating: "12" },
+            { answerText: "Some strong violence but no focus on the infliction of pain or injury. No strong gore.", ageRating: "15" },
+            { answerText: "Strong or gory violence, with some focus on the infliction of pain or injury.", ageRating: "18" }
         ]
         }
     ];

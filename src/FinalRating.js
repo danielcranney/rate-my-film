@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Film from './Film';
 
+import { ReactComponent as AnyAgeIcon } from './images/icon-u.svg';
+import { ReactComponent as ChildrenWithParentsIcon } from './images/icon-pg.svg';
+import { ReactComponent as OlderChildrenIcon } from './images/icon-12.svg';
+import { ReactComponent as TeenagersIcon } from './images/icon-15.svg';
+import { ReactComponent as AdultsIcon } from './images/icon-18.svg';
+
+import { ReactComponent as RatingGraphic } from './images/rating-graphic.svg';
+
 let ratedCategories = [];
 let ratedCategoryList = []
 let ratedCategoryLastItem = [];
@@ -53,14 +61,28 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
 
     return (
         <>
-          <div className="wrapper mb-30">
-            <div className="ratings-final align-items-center">
+          <div className="wrapper">
+            <div className="rating-section align-items-center">
               {(finalAgeRating || finalAgeRating === 0) ? (
 
-                <div className="ratings-content">
-                  <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
-                  <div className="ratings-title">
-                    <h2>Your film is a <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> film</h2>
+                <>
+
+                  <div className="icon">
+                  <RatingGraphic />
+                  </div>
+                  
+                  <div className="title">
+                    <h2>Your film is suitable for <span style={{color: ratingColor}}>
+                    {
+                      (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
+                      (ratingsList[finalAgeRating] === "PG") ? "children when watching with adults" : 
+                      (ratingsList[finalAgeRating] === "12") ? "older children" : 
+                      (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
+                      (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                      null
+                    }
+                    
+                    </span>.</h2>
                     <p>
                     {ratingDescription[`${ratingsList[finalAgeRating]}`]}
                     </p>
@@ -75,7 +97,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                         )}
                   
                   </div>
-                </div>
+                </>
               ) : (
                 <>
                 </>
@@ -83,28 +105,50 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="wrapper mb-30">
-            <div className="overview-section">
+          {/* <div className="wrapper mb-30">
+            <div className="category-section">
                 <h3>Ratings by Category</h3>
-                <div className="overview-item-container">
+                <div className="category-item-container">
                   {answers.map((answer, i) => (
-                    <div key={i} className="overview-item">
-                      <img src={`/img/icon-${answer.categoryRating}.svg`} alt="" />
-                        <p className="d-flex flex-column justify-content-center">{answer.categoryTitle}</p>
+                    <div key={i} className="category-item">
+
+                    {
+                    (answer.categoryRating === "U") ?
+                    ( <AnyAgeIcon />) : 
+                    (answer.categoryRating === "PG") ?
+                    ( <ChildrenWithParentsIcon />) : 
+                    (answer.categoryRating === "12") ?
+                    ( <OlderChildrenIcon />) : 
+                    (answer.categoryRating === "15") ?
+                    ( <TeenagersIcon />) : 
+                    (answer.categoryRating === "18") ?
+                    ( <AdultsIcon />) : 
+                    null
+                    }
+
+                        <p>{answer.categoryTitle}</p>
                     </div>
                   ))}
                 </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="wrapper column mb-30">
             <div className="other-films-section">
               { filmData ? 
               <>
-              <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
+              <h3>Other films suitable for <span style={{color: ratingColor}}>{
+                (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
+                (ratingsList[finalAgeRating] === "PG") ? "children when watching with adults" : 
+                (ratingsList[finalAgeRating] === "12") ? "older children" : 
+                (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
+                (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                null
+              }</span></h3>
+              
               <div className="film-items">
 
-                {filmData.slice(0, 3).map((film, index) => (
+                {filmData.slice(0, 6).map((film, index) => (
                 <Film key={`${index}-${film.original_title}`} film={film} />
                 ))}
 
