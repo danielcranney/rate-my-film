@@ -25,7 +25,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
             ageRating: "PG" },
             { answerText: "Weapons or moderately dangerous behaviour feature, but are not glamorised.",
             ageRating: "12" },
-            { answerText: "Dangerous behaviour (for example, suicide) features but without detail. Weapons are featured, but in an appropriate way.", ageRating: "15" },
+            { answerText: "Dangerous behaviour (for example, suicide or the use of weapons) features but without detail.", ageRating: "15" },
             { answerText: "Behaviour such as self-harm is shown, and with gory detail. If weapons feature, they are used regularly.", ageRating: "18" }
         ]
         },
@@ -38,7 +38,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         categoryDescription: "Please select the option that best describes how discrimination features in your film:",
         answerOptions: [
             { answerText: "No discriminatory language.", ageRating: "U" },
-            { answerText: "It features a small amount but is disapproved of is contextually appropriate.", ageRating: "PG" },
+            { answerText: "It features a small amount but is disapproved of and is contextually appropriate.", ageRating: "PG" },
             { answerText: "Aggressive discriminatory language or behaviour features but is clearly condemned.", ageRating: "12" },
             { answerText: "Some racist, homophobic or other discriminatory themes and language feature on occasion.", ageRating: "15" },
             { answerText: "Discriminatory language or behaviour features regularly throughout the film.", ageRating: "18" }

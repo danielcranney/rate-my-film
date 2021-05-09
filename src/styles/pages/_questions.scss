@@ -8,13 +8,9 @@
     flex-grow: 1;
     align-items: flex-start;
     justify-content: center;
-    min-height: calc(100vh - 39px);
+    min-height: calc(100vh + 15px);
     padding: 40px 0px 0px 0px;
     position: relative;
-
-    @media only screen and (min-width : 321px) {
-      min-height: calc(100vh - 39px);
-    }
   }
   
   /* QUESTIONS */
@@ -122,23 +118,25 @@
         font-weight: 400;
         border-radius: 8px;
         display: flex;
-        padding: 10px 14px;
+        padding: 13px 14px;
         justify-content: flex-start;
         align-items: flex-start;
         border: 1px solid $lightColor;
-        margin: 6px 0px;
+        margin: 8px 0px;
         cursor: pointer;
         text-align: left;
         transition: 0.4s;
         letter-spacing: normal;
         box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.03);
+        transform:scale(1);
 
 
         &:hover {
-            background-color: $hoverColor;
+            background-color: $lightColor;
             border: 1px solid $bodyColor;
             color: $headerColor;
             transition: 0.4s;
+            transform:scale(1.01);
           }
       }
   }

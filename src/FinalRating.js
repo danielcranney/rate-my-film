@@ -16,11 +16,11 @@ function search(objectItem, answersArray){
 }
 
 const ratingDescription = {
-  U: `Films like yours should be suitable for audiences of any age. Even though films like yours might feature some very light violence, threat or horror, they often contain a positive ending.`,
-  PG: `Films like yours might contain some scenes that are unsuitable for young children, but are generally acceptable for children eight years or older. Children can generally watch films like this on their own, but parents should think about whether it could be upsetting for more sensitive, children.`,
-  12: `Films like yours are not generally suitable for younger children (approximately under 12). They may contain some mild violence, threat or horror, bad language or other content that may upset a younger child, but not a significant amount.`,
-  15: `Films like yours contain content that is unsuitable for viewers in their early-teens (13 or 14) because they might contain content that could upset younger viewers. Films like this are not adult-only, so teenagers may be under the age of 18.`,
-  18: `Films like yours are unsuitable for anyone that is under the age of 18, should only be viewed by adults. These kinds of films contain more extreme content.`
+  U: `Your film is likely to be suitable for audiences of any age. Even though it might feature some very light violence, threat, horror, nudity or bad language, audiences are reassured and the film has a mostly-positive ending.`,
+  PG: `Your film might contain some scenes that are unsuitable for very young children, but is likely to be generally acceptable for children eight years or older. Children can generally watch films like this on their own, but parents should think about whether it could be upsetting for more sensitive children.`,
+  12: `Your film might contain some content that is unsuitable for younger children (for example those under 12). Your film might feature some bad language or distressing scenes, but they are light enough (or featured in a minor enough way) to be suitable for pre-teens.`,
+  15: `Your film contains content that is unsuitable for viewers in their early-teens (13 or 14) as it could upset younger viewers. Films like this are not adult-only, but may contain some strong language or distressing scenes.`,
+  18: `Films like yours are unsuitable for anyone that is under the age of 18, and should only be viewed by adults. These kinds of films contain more extreme content or themes.`
 }
 
 const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
