@@ -21,11 +21,17 @@
 
     .logo {
       display:flex;
+      width: 100%;
       flex-grow: 1;
       align-items: center;
       margin-bottom: 15px;
       filter: grayscale(100%);
       opacity: 0.5;
+
+      svg {
+        width: 60px;
+        height: 60px;
+      }
 
       a {
         color: $headerColor;
@@ -33,6 +39,7 @@
         font-size: 1.4rem;
         text-decoration: none;
         opacity: 0.8;
+        margin-left: 8px;
 
         &:hover {
           opacity: 1;

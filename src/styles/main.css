@@ -553,12 +553,18 @@ header .logo {
           align-items: center;
 }
 
+header .logo svg {
+  width: 60px;
+  height: 60px;
+}
+
 header .logo a {
   color: #293543;
   font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   opacity: 0.8;
+  margin-left: 8px;
 }
 
 header .logo a:hover {
@@ -627,6 +633,7 @@ footer .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -639,12 +646,18 @@ footer .logo {
   opacity: 0.5;
 }
 
+footer .logo svg {
+  width: 60px;
+  height: 60px;
+}
+
 footer .logo a {
   color: #293543;
   font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   opacity: 0.8;
+  margin-left: 8px;
 }
 
 footer .logo a:hover {

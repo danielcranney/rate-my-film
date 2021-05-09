@@ -25,12 +25,18 @@
         flex-grow: 1;
         align-items: center;
 
+        svg {
+            width: 60px;
+            height: 60px;
+          }
+
         a {
             color: $headerColor;
             font-family: $headerFont;
             font-size: 1.4rem;
             text-decoration: none;
             opacity: 0.8;
+            margin-left: 8px;
 
             &:hover {
                 opacity: 1;
