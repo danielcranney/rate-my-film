@@ -4,14 +4,10 @@
   
   header {
     @include flexRow;
-    background-color: $lightColor;
     min-height: 52px;
     overflow:auto;
     width: 100%;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 20px 0px;
-    box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.05);
 
     .inner-wrapper {
         @include flexRow;
@@ -20,6 +16,8 @@
         overflow: auto;
         margin-left: auto;
         margin-right: auto;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
       }
 
     .logo {

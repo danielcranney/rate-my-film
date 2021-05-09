@@ -11,6 +11,15 @@
     min-height: calc(100vh + 15px);
     padding: 40px 0px 0px 0px;
     position: relative;
+
+    @media only screen and (min-width : 600px) {
+      min-height: calc(100vh - 36px);
+      }
+
+    @media only screen and (min-width : 768px) {
+    min-height: calc(100vh - 119px);
+    }
+
   }
   
   /* QUESTIONS */

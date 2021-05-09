@@ -32,8 +32,8 @@ const Header = () => {
                   <i className="fa fa-bars"></i>
                 </a>
 
-              <Link to="/" className="block">Home</Link> 
-              <Link to="/about" className="block">About</Link>
+              {/* <Link to="/" className="block">Home</Link>  */}
+              
               <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
             </nav>
           </div>
