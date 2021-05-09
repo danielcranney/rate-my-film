@@ -1,0 +1,49 @@
+/* --------------------
+  FOOTER
+  -------------------- */
+  
+  footer {
+    @include flexRow;
+    width:90%;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: 52px;
+    overflow: auto;
+    padding: 40px 0px;
+
+    .inner-wrapper {
+      @include flexCol;
+      width: 100%;
+      align-items: flex-start;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .logo {
+      display:flex;
+      flex-grow: 1;
+      align-items: center;
+      margin-bottom: 15px;
+      filter: grayscale(100%);
+      opacity: 0.5;
+
+      a {
+        color: $headerColor;
+        font-family: $headerFont;
+        font-size: 1.4rem;
+        text-decoration: none;
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px; /* Overriding browser standard */
+      margin-top: 10px;
+    }
+
+  }

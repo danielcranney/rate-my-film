@@ -1,0 +1,28 @@
+/* -------------------- 
+  ENTIRE SITE WRAPPER
+  -------------------- */
+  #site-wrapper {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    align-items: center;
+    position: relative;
+  }
+
+  /* --------------------
+  MAIN WRAPPER
+  -------------------- */
+  .main-wrapper {
+    width:90%;
+    min-height: calc(100vh - 94px);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0px;
+  }

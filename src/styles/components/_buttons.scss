@@ -1,0 +1,42 @@
+button {
+    background-color: transparent;
+    border-color: $primaryColor;
+    color: $primaryColor;
+    border-width: 2px;
+    width: fit-content;
+    padding: 14px 24px;
+    border-radius: 27px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: $headerFont;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    transition: 0.3s;
+    border-style: solid;
+
+    &:hover, &:focus {
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+        border-width: 2px;
+        color: $lightColor;
+        transition: 0.3s;
+      }
+  }
+
+  button span {
+    color: $bodyColor;
+  }
+  
+  button span img {
+    width: 20px;
+    height: 20px;
+    margin: 0px 12px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button svg {
+    margin-right: 5px;
+  }

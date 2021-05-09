@@ -1,0 +1,19 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/reset';
+@import './base/typography';
+
+@import './layout/containers';
+
+@import './pages/home';
+@import './pages/questions';
+@import './pages/finalrating';
+
+@import './layout/header';
+@import './layout/footer';
+
+@import './components/buttons';
+
+
+  

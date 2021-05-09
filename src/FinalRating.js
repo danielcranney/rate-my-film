@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Film from './Film';
 
+import { ReactComponent as RatingGraphic } from './images/rating-graphic.svg';
+
 let ratedCategories = [];
 let ratedCategoryList = []
 let ratedCategoryLastItem = [];
@@ -14,11 +16,11 @@ function search(objectItem, answersArray){
 }
 
 const ratingDescription = {
-  U: `A U-rated film is likely to be suitable for audiences aged four years and over, although it is impossible to predict what might upset any particular child. U films should be set within a positive framework and should offer reassuring counterbalances to any violence, threat or horror that might exist.`,
-  PG: `A PG-rated film might feature scenes unsuitable for young children, though it should not unsettle a child aged around eight or older. Unaccompanied children of any age may watch a film like this, but parents are advised to consider whether the content may upset younger, or more sensitive, children.`,
-  12: `A 12 or 12A-rated film contain material that is not generally suitable for children aged under 12. The 12A rating is given to films when they are displayed in a cinema, and mean that no one younger than 12 may see this unless accompanied by an adult. Adults planning to take a child under 12 to view a 12A film should consider whether the film is suitable for that child, and the BBFC provide ratings information to help adults decide. No one younger than 12 may rent or buy a 12 rated video work.`,
-  15: `A 15-rated film is likely to contain content that is unsuitable for younger children, and so no one younger than 15 may see one of these films in a cinema, or rent or buy a 15-rated video work.`,
-  18: `An 18-rated film is considered to be unsuitable for children, and so no one younger than 18 may see an 18 film in a cinema. In addition to this, no one younger than 18 may rent or buy an 18 rated video work. However, the BBFC say that adults should be free to choose their own entertainment.`
+  U: `Films like yours should be suitable for audiences of any age. Even though films like yours might feature some very light violence, threat or horror, they often contain a positive ending.`,
+  PG: `Films like yours might contain some scenes that are unsuitable for young children, but are generally acceptable for children eight years or older. Children can generally watch films like this on their own, but parents should think about whether it could be upsetting for more sensitive, children.`,
+  12: `Films like yours are not generally suitable for younger children (approximately under 12). They may contain some mild violence, threat or horror, bad language or other content that may upset a younger child, but not a significant amount.`,
+  15: `Films like yours contain content that is unsuitable for viewers in their early-teens (13 or 14) because they might contain content that could upset younger viewers. Films like this are not adult-only, so teenagers may be under the age of 18.`,
+  18: `Films like yours are unsuitable for anyone that is under the age of 18, should only be viewed by adults. These kinds of films contain more extreme content.`
 }
 
 const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
@@ -52,22 +54,35 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
   }, [ratingsList, finalAgeRating, answers]);
 
     return (
-        <>
-          <div className="wrapper mb-30">
-            <div className="ratings-final align-items-center">
+      <main className="main-wrapper column">
+          <div className="content-box column">
+            <div className="rating-section">
               {(finalAgeRating || finalAgeRating === 0) ? (
 
-                <div className="ratings-content">
-                  <img src={`/img/icon-${ratingsList[finalAgeRating]}.svg`} alt="Final film rating icon" />
-                  <div className="ratings-title">
-                    <h2>Your film is a <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> film</h2>
+                <>
+                  <div className="icon">
+                  <RatingGraphic />
+                  </div>
+                  
+                  <div className="title">
+                    <h2>Your film is suitable for <span style={{color: ratingColor}}>
+                    {
+                      (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
+                      (ratingsList[finalAgeRating] === "PG") ? "children" : 
+                      (ratingsList[finalAgeRating] === "12") ? "older children" : 
+                      (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
+                      (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                      null
+                    }
+                    
+                    </span></h2>
                     <p>
                     {ratingDescription[`${ratingsList[finalAgeRating]}`]}
                     </p>
                     
                       {ratedCategoryList.length !== 0 ? (
                         <p>
-                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 700}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for an audience of this age.
+                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 700}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for this audience.
                         </p>) : (
                           <p>
                             Please while we load your rating information...
@@ -75,7 +90,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                         )}
                   
                   </div>
-                </div>
+                </>
               ) : (
                 <>
                 </>
@@ -83,29 +98,51 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="wrapper mb-30">
-            <div className="overview-section">
+          {/* <div className="content-box mb-30">
+            <div className="category-section">
                 <h3>Ratings by Category</h3>
-                <div className="overview-item-container">
+                <div className="category-item-container">
                   {answers.map((answer, i) => (
-                    <div key={i} className="overview-item">
-                      <img src={`/img/icon-${answer.categoryRating}.svg`} alt="" />
-                        <p className="d-flex flex-column justify-content-center">{answer.categoryTitle}</p>
+                    <div key={i} className="category-item">
+
+                    {
+                    (answer.categoryRating === "U") ?
+                    ( <AnyAgeIcon />) : 
+                    (answer.categoryRating === "PG") ?
+                    ( <ChildrenWithParentsIcon />) : 
+                    (answer.categoryRating === "12") ?
+                    ( <OlderChildrenIcon />) : 
+                    (answer.categoryRating === "15") ?
+                    ( <TeenagersIcon />) : 
+                    (answer.categoryRating === "18") ?
+                    ( <AdultsIcon />) : 
+                    null
+                    }
+
+                        <p>{answer.categoryTitle}</p>
                     </div>
                   ))}
                 </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="wrapper column mb-30">
+          <div className="content-box">
             <div className="other-films-section">
               { filmData ? 
               <>
-              <h3>Other <span style={{color: ratingColor}}>{ratingsList[finalAgeRating]}-rated</span> Films</h3>
-              <div className="film-items">
+              <h2>Other films suitable for <span style={{color: ratingColor}}>{
+                (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
+                (ratingsList[finalAgeRating] === "PG") ? "children" : 
+                (ratingsList[finalAgeRating] === "12") ? "older children" : 
+                (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
+                (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                null
+              }</span></h2>
+              
+              <div className="items">
 
-                {filmData.slice(0, 3).map((film, index) => (
-                <Film key={`${index}-${film.original_title}`} film={film} />
+                {filmData.slice(0, 6).map((film, index) => (
+                <Film key={`${index}-${film.original_title}`} film={film} ratingColor={ratingColor} />
                 ))}
 
               </div>
@@ -116,10 +153,10 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="wrapper column mb-30 start-again">
+          <div className="content-box column start-again">
           <button onClick={(e) => { e.preventDefault(); window.location.reload() }} className="start-button">Start Again</button>
           </div>
-        </>
+        </main>
     )
 }
 

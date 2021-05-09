@@ -19,7 +19,6 @@ const App = () => {
       <Route path="/" exact component={Home} />
       <Route path="/about" component={About} />
    </Switch>
-
     <Footer />
 
   </div>
