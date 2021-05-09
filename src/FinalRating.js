@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Film from './Film';
 
-import { ReactComponent as AnyAgeIcon } from './images/icon-u.svg';
-import { ReactComponent as ChildrenWithParentsIcon } from './images/icon-pg.svg';
-import { ReactComponent as OlderChildrenIcon } from './images/icon-12.svg';
-import { ReactComponent as TeenagersIcon } from './images/icon-15.svg';
-import { ReactComponent as AdultsIcon } from './images/icon-18.svg';
-
 import { ReactComponent as RatingGraphic } from './images/rating-graphic.svg';
 
 let ratedCategories = [];
