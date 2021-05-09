@@ -17,7 +17,7 @@ const Header = () => {
           <div className="inner-wrapper">
             <div className="logo">
               <Logo />
-              <Link to="/" className="active"><a>Rate My Film</a></Link>
+              <Link to="/" className="active">Rate My Film</Link>
             </div>
             <nav className="navigation" id="navBar">
               <a href='index.html' className="icon" onClick={ (e) => {

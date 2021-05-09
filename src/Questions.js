@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 function determineClasses(indexes, cardIndex) {
   if (indexes.currentIndex === cardIndex) {
@@ -38,7 +38,7 @@ const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurren
             : prevState.currentIndex + 2
       }));
     }
-  }, [indexes.currentIndex]);
+  }, [indexes.currentIndex, topics.length]);
 
     return (
     <>
