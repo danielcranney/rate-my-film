@@ -14,24 +14,29 @@ const Header = () => {
 
     return (
         <header>
-          <nav className="navigation" id="navBar">
-            <Link to="/" className="active logo"><Logo /> Rate My Film</Link>
-            <a href='index.html' className="icon" onClick={ (e) => {
-                e.preventDefault();
-                var nav = document.getElementById("navBar");
-                  if (nav.className === "navigation") {
-                    nav.className += " responsive";
-                  } else {
-                    nav.className = "navigation";
-                  }
-              }}>
-                <i className="fa fa-bars"></i>
-              </a>
-              
-            {/* <Link to="/about" className="block">About</Link> */}
-            {/* <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer" className="block">Visit BBFC</a> */}
-            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
-          </nav>
+          <div className="inner-wrapper">
+            <div className="logo">
+              <Logo />
+              <Link to="/" className="active"><a>Rate My Film</a></Link>
+            </div>
+            <nav className="navigation" id="navBar">
+              <a href='index.html' className="icon" onClick={ (e) => {
+                  e.preventDefault();
+                  var nav = document.getElementById("navBar");
+                    if (nav.className === "navigation") {
+                      nav.className += " responsive";
+                    } else {
+                      nav.className = "navigation";
+                    }
+                }}>
+                  <i className="fa fa-bars"></i>
+                </a>
+
+              <Link to="/" className="block">Home</Link> 
+              <Link to="/about" className="block">About</Link>
+              <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
+            </nav>
+          </div>
         </header>
     );
 }

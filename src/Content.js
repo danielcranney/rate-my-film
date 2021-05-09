@@ -64,7 +64,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         id: 3,
         icon: <LanguageIcon fill="#FFF" />,
         color: "#0cd68a",
-        categoryTitle: "Language",
+        categoryTitle: "Bad Language",
         categoryDescription: "Please select the option that best describes how bad language features in your film:",
         answerOptions: [
             { answerText: "Infrequent use of very mild bad language.", ageRating: "U" },
@@ -175,13 +175,13 @@ const Content = () => {
     }, [finalAgeRating]);
 
     return (
-        <>
-        {showRating ? (
+    <>
+    {showRating ? (
         <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} ratingsList={ratingsList} answers={answers} />
-      ) : (
+        ) : (
         <Questions topics={topics} handleAnswerOptionClick={handleAnswerOptionClick} i={i} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />
-      )} 
-        </>
+    )} 
+    </>
     )
 }
 

@@ -1,0 +1,19 @@
+/* --------------------
+HOME
+-------------------- */
+.intro {
+
+  h5 {
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    font-size: 1rem;
+    color: $primaryColor;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $bodyColor;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+  }
+}

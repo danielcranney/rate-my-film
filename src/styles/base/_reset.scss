@@ -1,0 +1,40 @@
+/* --------------------
+BASE STYLES
+-------------------- */
+
+html, body {
+    height: 100vh;
+}
+  
+body {
+    background-color: $backgroundColor;
+    position: relative;
+    display: flex;
+    margin: 0;
+    font-family: $bodyFont;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
+    justify-content: center;
+    align-items: stretch;
+}
+* {
+    font-family: $bodyFont;
+    font-style: normal;
+    color: $bodyColor;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    width:100%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
