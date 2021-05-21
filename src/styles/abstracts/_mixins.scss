@@ -7,3 +7,9 @@
     display: flex;
     flex-direction: column;
 }
+
+@mixin contentBox {
+    background-color: $lightColor;
+    padding: 34px;
+    border-radius: 20px;
+}

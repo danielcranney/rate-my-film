@@ -159,6 +159,56 @@ HOME
   margin-bottom: 20px;
 }
 
+.form-container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+}
+
+.form-container .w-70 {
+  width: 70%;
+  z-index: 5;
+}
+
+.form-container .w-30 {
+  width: 30%;
+  z-index: 10;
+}
+
+.form-container .w-30 h2 {
+  color: #2a2e43;
+}
+
+.form-container .w-30 .pagination {
+  background-color: #ffffff;
+  padding: 34px;
+  border-radius: 20px;
+}
+
+.form-container .w-30 .pagination .item {
+  width: 100%;
+  background-color: #f0f0f2;
+  border: 0px;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 13px 8px;
+  margin: 5px 0px;
+  border-radius: 8px;
+  color: #a6aabb;
+  font-weight: 600;
+}
+
+.form-container .w-30 .pagination .item:hover {
+  background-color: #d2d3d7;
+  border: 0px;
+  color: #2a2e43;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
 /* ----------------------------------------
   QUESTIONS, ANSWERS & RATINGS SECTION
   ---------------------------------------- */
@@ -170,7 +220,7 @@ HOME
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 90%;
+  width: 100%;
   background-color: transparent;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -212,7 +262,7 @@ HOME
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 70%;
+  width: 100%;
   padding: 0px;
   -webkit-margin-before: 0;
           margin-block-start: 0;
@@ -234,7 +284,7 @@ HOME
   display: flex;
   position: relative;
   margin-bottom: 17px;
-  border-bottom: 3px solid #a6aabb;
+  border-bottom: 3px solid #f0f0f2;
   padding-bottom: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;

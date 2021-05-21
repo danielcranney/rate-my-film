@@ -79,7 +79,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                     
                       {ratedCategoryList.length !== 0 ? (
                         <p>
-                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 700}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for this audience.
+                        Your film has been rated this way because it features <span style={{color: ratingColor, fontWeight: 600}}>{ratedCategoryList} {ratedCategoryLastItem}</span> deemed appropriate for this audience.
                         </p>) : (
                           <p>
                             Please while we load your rating information...
