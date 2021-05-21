@@ -16,7 +16,6 @@
         overflow: auto;
         margin-left: auto;
         margin-right: auto;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 20px 0;
       }
 
@@ -33,6 +32,7 @@
         a {
             color: $headerColor;
             font-family: $headerFont;
+            font-weight: 600;
             font-size: 1.4rem;
             text-decoration: none;
             opacity: 0.8;
@@ -62,7 +62,7 @@
       
     .icon {
         display: none;
-        color: $primaryColor;
+        color: $brandColor;
     }
     
   }

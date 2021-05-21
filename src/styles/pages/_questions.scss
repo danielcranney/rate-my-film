@@ -7,9 +7,9 @@
     background-color: transparent;
     flex-grow: 1;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: calc(100vh + 15px);
-    padding: 40px 0px 0px 0px;
+    padding: 0px;
     position: relative;
 
     @media only screen and (min-width : 600px) {
@@ -21,50 +21,6 @@
     }
 
   }
-  
-  /* QUESTIONS */
-  .question-section {
-    width: 100%;
-    display: flex;
-    position: relative;
-    margin-bottom: 17px;
-    border-bottom: 3px solid;
-    padding-bottom: 20px;
-    align-items: center;
-
-    .icon {
-        width: 70px;
-        height: 70px;
-        padding:7px;
-        border-radius: 8px;
-        margin-right: 12px;
-      }
-      
-      .count {
-        display: flex;
-        align-items: center;
-        color: $bodyColor;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        justify-content: flex-start;
-      }
-      
-      .title {
-        display: flex;
-        flex-direction: column;
-
-        h2 {
-          margin: 0 0;
-        }
-      }
-  }
-
-  .description {
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 1rem;
-  }
 
   .card-carousel {
     list-style: none;
@@ -73,17 +29,64 @@
     margin: 0px auto;
     align-items: center;
     position: absolute;
-    width: 100%;
+    width: 70%;
     padding: 0px;
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0;
+
+    /* QUESTIONS */
+    .question-section {
+      width: 100%;
+      display: flex;
+      position: relative;
+      margin-bottom: 17px;
+      border-bottom: 3px solid $bodyColor;
+      padding-bottom: 20px;
+      align-items: center;
+
+      .icon {
+          width: 70px;
+          height: 70px;
+          padding:7px;
+          border-radius: 8px;
+          margin-right: 12px;
+        }
+        
+        .count {
+          display: flex;
+          align-items: center;
+          color: $bodyColor;
+          font-weight: 600;
+          letter-spacing: 0.09em;
+          text-transform: uppercase;
+          justify-content: flex-start;
+        }
+        
+        .title {
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            margin: 0 0;
+            color: $backgroundColor;
+          }
+        }
+    }
+
+    .description {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    
   }
   
   .card {
-    border-radius: 8px;
+    background-color: $lightColor;
+    padding: 34px;
+    border-radius: 20px;
     width: 100%;
     height: auto;
     transition: all 0.75s ease;
@@ -120,32 +123,28 @@
       .item button {
         width: 100%;
         color: $bodyColor;
-        background-color: $lightColor;
-        font-size: 1rem;
+        background-color: $lightBackgroundColor;
         text-transform: none;
-        font-family: roboto, "Helvetica Neue", Helvetica, sans-serif;
         font-weight: 400;
-        border-radius: 8px;
+        border-radius: 10px;
         display: flex;
-        padding: 13px 14px;
+        padding: 15px 15px;
         justify-content: flex-start;
         align-items: flex-start;
-        border: 1px solid $lightColor;
+        border: 0px;
         margin: 8px 0px;
         cursor: pointer;
         text-align: left;
         transition: 0.4s;
         letter-spacing: normal;
-        box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.03);
         transform:scale(1);
 
 
         &:hover {
-            background-color: $lightColor;
-            border: 1px solid $bodyColor;
-            color: $headerColor;
+            background-color: $mediumBackgroundColor;
+            border: 0px;
+            color: $backgroundColor;
             transition: 0.4s;
-            transform:scale(1.01);
           }
       }
   }

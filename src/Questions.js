@@ -11,7 +11,7 @@ function determineClasses(indexes, cardIndex) {
   return "inactive";
 }
 
-const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic }) => {
+const Questions = ({ topics, handleAnswerOptionClick, i }) => {
 
   const [indexes, setIndexes] = useState({
     previousIndex: 0,
@@ -45,20 +45,19 @@ const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurren
 
       <main className="questions-wrapper">
 
-
           <ul className="card-carousel">
         {topics.map((topic, index) => (
           <li key={topic.id}
               className={`card ${determineClasses(indexes, index)}`}
               >
 
-              <div className="question-section" style={{ borderColor: topic.color }}>
+              <div className="question-section">
 
                 <div className="icon" style={{ backgroundColor: topic.color }}>
                   {topic.icon}
                 </div>
                 <div className="title">
-                  <h2>{topic.categoryTitle}</h2>
+                  <h2 style={{ color: topic.color }}>{topic.categoryTitle}</h2>
                   <div className="count">
                     Step {topic.id + 1} of {topics.length}
                   </div>

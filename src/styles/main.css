@@ -6,14 +6,14 @@ html, body {
 }
 
 body {
-  background-color: #f3f4f6;
+  background-color: #2a2e43;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0;
-  font-family: roboto, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
   font-style: normal;
   line-height: 1.6;
   -webkit-box-pack: center;
@@ -25,9 +25,9 @@ body {
 }
 
 * {
-  font-family: roboto, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
   font-style: normal;
-  color: #66707A;
+  color: #a6aabb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -56,9 +56,9 @@ body {
   TYPOGRAPHY STYLES
   -------------------- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
-  color: #293543;
-  font-weight: 400;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -67,7 +67,7 @@ h1 {
 }
 
 h2, h3, h4 {
-  color: #293543;
+  color: #fff;
   margin: 0.25em 0 1em 0;
   line-height: 1.2;
 }
@@ -77,22 +77,22 @@ h5, h6 {
 }
 
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 400;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600;
   font-style: normal;
   margin: 0.25em 0;
   line-height: 1.2;
 }
 
 a {
-  color: #6102d2;
+  color: #3598fe;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
 }
 
 a:hover {
-  color: #293543;
+  color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: underline;
@@ -146,15 +146,15 @@ a:hover {
 HOME
 -------------------- */
 .intro h5 {
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.09em;
   font-size: 1rem;
-  color: #6102d2;
+  color: #3598fe;
   text-transform: uppercase;
 }
 
 .intro p {
-  color: #66707A;
+  color: #a6aabb;
   line-height: 1.6em;
   margin-bottom: 20px;
 }
@@ -178,11 +178,11 @@ HOME
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   min-height: calc(100vh + 15px);
-  padding: 40px 0px 0px 0px;
+  padding: 0px;
   position: relative;
 }
 
@@ -196,65 +196,6 @@ HOME
   .questions-wrapper {
     min-height: calc(100vh - 119px);
   }
-}
-
-/* QUESTIONS */
-.question-section {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  margin-bottom: 17px;
-  border-bottom: 3px solid;
-  padding-bottom: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.question-section .icon {
-  width: 70px;
-  height: 70px;
-  padding: 7px;
-  border-radius: 8px;
-  margin-right: 12px;
-}
-
-.question-section .count {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #66707A;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.question-section .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.question-section .title h2 {
-  margin: 0 0;
-}
-
-.description {
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 1rem;
 }
 
 .card-carousel {
@@ -271,7 +212,7 @@ HOME
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 100%;
+  width: 70%;
   padding: 0px;
   -webkit-margin-before: 0;
           margin-block-start: 0;
@@ -283,10 +224,71 @@ HOME
           margin-inline-end: 0px;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
+  /* QUESTIONS */
+}
+
+.card-carousel .question-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 17px;
+  border-bottom: 3px solid #a6aabb;
+  padding-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-carousel .question-section .icon {
+  width: 70px;
+  height: 70px;
+  padding: 7px;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.card-carousel .question-section .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #a6aabb;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card-carousel .question-section .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-carousel .question-section .title h2 {
+  margin: 0 0;
+  color: #2a2e43;
+}
+
+.card-carousel .description {
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .card {
-  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 34px;
+  border-radius: 20px;
   width: 100%;
   height: auto;
   -webkit-transition: all 0.75s ease;
@@ -333,44 +335,38 @@ HOME
 
 .answer-section .item button {
   width: 100%;
-  color: #66707A;
-  background-color: #ffffff;
-  font-size: 1rem;
+  color: #a6aabb;
+  background-color: #f0f0f2;
   text-transform: none;
-  font-family: roboto, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
-  border-radius: 8px;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 13px 14px;
+  padding: 15px 15px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border: 1px solid #ffffff;
+  border: 0px;
   margin: 8px 0px;
   cursor: pointer;
   text-align: left;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   letter-spacing: normal;
-  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.03);
-          box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.03);
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
 .answer-section .item button:hover {
-  background-color: #ffffff;
-  border: 1px solid #66707A;
-  color: #293543;
+  background-color: #d2d3d7;
+  border: 0px;
+  color: #2a2e43;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
 }
 
 /* --------------------
@@ -378,10 +374,8 @@ HOME
   -------------------- */
 .content-box {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.05);
+  padding: 34px;
+  border-radius: 20px;
   margin: 20px 0px;
   width: 100%;
 }
@@ -411,6 +405,14 @@ HOME
   width: 100%;
 }
 
+.rating-section .title h2 {
+  color: #2a2e43;
+}
+
+.rating-section .title h2 span {
+  font-weight: 600;
+}
+
 /* --------------------
 SIMILAR FILMS SECTION
 -------------------- */
@@ -423,6 +425,14 @@ SIMILAR FILMS SECTION
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
+}
+
+.other-films-section h2 {
+  color: #2a2e43;
+}
+
+.other-films-section h2 span {
+  font-weight: 600;
 }
 
 .other-films-section .items {
@@ -537,7 +547,6 @@ header .inner-wrapper {
   overflow: auto;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px 0;
 }
 
@@ -559,8 +568,9 @@ header .logo svg {
 }
 
 header .logo a {
-  color: #293543;
-  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600;
   font-size: 1.4rem;
   text-decoration: none;
   opacity: 0.8;
@@ -584,12 +594,12 @@ header nav a {
 }
 
 header nav a.active {
-  color: #293543;
+  color: #fff;
 }
 
 header .icon {
   display: none;
-  color: #6102d2;
+  color: #3598fe;
 }
 
 /* --------------------
@@ -652,8 +662,9 @@ footer .logo svg {
 }
 
 footer .logo a {
-  color: #293543;
-  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600;
   font-size: 1.4rem;
   text-decoration: none;
   opacity: 0.8;
@@ -672,9 +683,9 @@ footer p {
 }
 
 button {
-  background-color: transparent;
-  border-color: #6102d2;
-  color: #6102d2;
+  background-color: #3598fe;
+  border-color: #3598fe;
+  color: #ffffff;
   border-width: 2px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -682,8 +693,8 @@ button {
   padding: 14px 24px;
   border-radius: 27px;
   font-size: 1rem;
-  font-weight: 400;
-  font-family: archivo-black, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600;
+  font-family: canada-type-gibson, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   -webkit-transition: 0.3s;
@@ -692,8 +703,8 @@ button {
 }
 
 button:hover, button:focus {
-  background-color: #6102d2;
-  border-color: #6102d2;
+  background-color: #c940ea;
+  border-color: #c940ea;
   border-width: 2px;
   color: #ffffff;
   -webkit-transition: 0.3s;
@@ -701,7 +712,7 @@ button:hover, button:focus {
 }
 
 button span {
-  color: #66707A;
+  color: #a6aabb;
 }
 
 button span img {

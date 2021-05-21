@@ -5,7 +5,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: $headerFont;
     color: $headerColor;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
   }
 
@@ -25,14 +25,14 @@
 
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-family: $headerFont;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     margin: 0.25em 0;
     line-height: 1.2;
   }
   
   a {
-    color: $primaryColor;
+    color: $brandColor;
     transition: 0.3s;
     text-decoration: none;
 

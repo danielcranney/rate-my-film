@@ -16,7 +16,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 0,
         icon: <DangerIcon fill="#FFF" />,
-        color: "#6102d2",
+        color: "#c940ea",
         categoryTitle: "Dangerous Behaviour",
         categoryDescription: "Please select the option that best describes how dangerous behaviour features in your film:",
         answerOptions: [
@@ -33,7 +33,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 1,
         icon: <DiscriminationIcon fill="#FFF" />,
-        color: "#fe346e",
+        color: "#ff5f99",
         categoryTitle: "Discrimination",
         categoryDescription: "Please select the option that best describes how discrimination features in your film:",
         answerOptions: [
@@ -48,7 +48,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 2,
         icon: <DrugsIcon fill="#FFF" />,
-        color: "#fcdb00",
+        color: "#ff9057",
         categoryTitle: "Drugs",
         categoryDescription: "Please select the option that best describes how drugs feature in your film:",
         answerOptions: [
@@ -63,7 +63,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 3,
         icon: <LanguageIcon fill="#FFF" />,
-        color: "#0cd68a",
+        color: "#febd35",
         categoryTitle: "Bad Language",
         categoryDescription: "Please select the option that best describes how bad language features in your film:",
         answerOptions: [
@@ -78,7 +78,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 4,
         icon: <SexNudityIcon fill="#FFF"/>,
-        color: "#2238af",
+        color: "#3598fe",
         categoryTitle: "Sex and Nudity",
         categoryDescription: "Please select the option that best describes how sex or nudity feature in your film:",
         answerOptions: [
@@ -93,7 +93,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 5,
         icon: <ThreatHorrorIcon fill="#FFF" />,
-        color: "#fe346e",
+        color: "#c940ea",
         categoryTitle: "Threat and Horror",
         categoryDescription: "Please select the option that best describes how threat or horror feature in your film:",
         answerOptions: [
@@ -108,7 +108,7 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
         {
         id: 6,
         icon: <ViolenceIcon fill="#FFF" />,
-        color: "#6102d2",
+        color: "#ff5f99",
         categoryTitle: "Violence",
         categoryDescription: "Please select the option that best describes how violence features in your film:",
         answerOptions: [
@@ -154,6 +154,7 @@ const Content = () => {
 
     
     const handleAnswerOptionClick = (ageRating, category) => {
+        
         setAnswers([...answers, addRatingItem(category, ageRating)]);
 
         const ratingRank = ratingsList.findIndex((rating) => rating === ageRating);

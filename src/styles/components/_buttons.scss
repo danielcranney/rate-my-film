@@ -1,13 +1,13 @@
 button {
-    background-color: transparent;
-    border-color: $primaryColor;
-    color: $primaryColor;
+    background-color: $brandColor;
+    border-color: $brandColor;
+    color: $lightColor;
     border-width: 2px;
     width: fit-content;
     padding: 14px 24px;
     border-radius: 27px;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     font-family: $headerFont;
     text-transform: uppercase;
     letter-spacing: 0.07em;

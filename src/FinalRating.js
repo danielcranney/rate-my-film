@@ -60,10 +60,7 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
               {(finalAgeRating || finalAgeRating === 0) ? (
 
                 <>
-                  <div className="icon">
-                  <RatingGraphic />
-                  </div>
-                  
+
                   <div className="title">
                     <h2>Your film is suitable for <span style={{color: ratingColor}}>
                     {
@@ -97,34 +94,6 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
               )}
             </div>
           </div>
-
-          {/* <div className="content-box mb-30">
-            <div className="category-section">
-                <h3>Ratings by Category</h3>
-                <div className="category-item-container">
-                  {answers.map((answer, i) => (
-                    <div key={i} className="category-item">
-
-                    {
-                    (answer.categoryRating === "U") ?
-                    ( <AnyAgeIcon />) : 
-                    (answer.categoryRating === "PG") ?
-                    ( <ChildrenWithParentsIcon />) : 
-                    (answer.categoryRating === "12") ?
-                    ( <OlderChildrenIcon />) : 
-                    (answer.categoryRating === "15") ?
-                    ( <TeenagersIcon />) : 
-                    (answer.categoryRating === "18") ?
-                    ( <AdultsIcon />) : 
-                    null
-                    }
-
-                        <p>{answer.categoryTitle}</p>
-                    </div>
-                  ))}
-                </div>
-            </div>
-          </div> */}
 
           <div className="content-box">
             <div className="other-films-section">
