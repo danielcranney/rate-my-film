@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import FinalRating from './FinalRating';
 import Questions from "./Questions";
 
@@ -10,6 +10,8 @@ import { ReactComponent as LanguageIcon } from './images/language-icon.svg';
 import { ReactComponent as SexNudityIcon } from './images/sex-nudity-icon.svg';
 import { ReactComponent as ThreatHorrorIcon } from './images/threat-horror-icon.svg';
 import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
+
+
 
     const topics = [
         // Dangerous behaviour
@@ -122,16 +124,11 @@ import { ReactComponent as ViolenceIcon } from './images/violence-icon.svg';
     ];
   
     const colors = [
-        // purple
-        "#6102d2",
-        // pink
-        "#fe346e",
-        // yellow
-        "#fcdb00",
-        // turqoise
-        "#0cd68a",
-        // blue
-        "#2238af"
+    "#c940ea", // Purple
+    "#ff5f99", // Pink
+    "#ff9057", // Orange
+    "#febd35", // Yellow
+    "#3598fe", // Blue
     ];
   
     const ratingsList = ["U", "PG", "12", "15", "18"];
@@ -180,7 +177,21 @@ const Content = () => {
     {showRating ? (
         <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} ratingsList={ratingsList} answers={answers} />
         ) : (
-        <Questions topics={topics} handleAnswerOptionClick={handleAnswerOptionClick} i={i} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />
+        <main className="form-container">
+            <div className="w-70">
+                <Questions topics={topics} handleAnswerOptionClick={handleAnswerOptionClick} i={i} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />
+            </div>
+            <div className="w-30">
+                <div className="pagination">
+                <h2>Topics</h2>
+                    { topics.map((topic) => ( 
+                        <button className="item">
+                        { topic.categoryTitle }
+                        </button>
+                    )) }
+                </div>
+            </div>
+        </main>
     )} 
     </>
     )

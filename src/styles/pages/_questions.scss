@@ -3,7 +3,7 @@
   ---------------------------------------- */
   .questions-wrapper {
     @include flexRow;
-    width: 90%;
+    width: 100%;
     background-color: transparent;
     flex-grow: 1;
     align-items: flex-start;
@@ -29,7 +29,7 @@
     margin: 0px auto;
     align-items: center;
     position: absolute;
-    width: 70%;
+    width: 100%;
     padding: 0px;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -43,7 +43,7 @@
       display: flex;
       position: relative;
       margin-bottom: 17px;
-      border-bottom: 3px solid $bodyColor;
+      border-bottom: 3px solid $lightBackgroundColor;
       padding-bottom: 20px;
       align-items: center;
 
@@ -84,9 +84,7 @@
   }
   
   .card {
-    background-color: $lightColor;
-    padding: 34px;
-    border-radius: 20px;
+    @include contentBox;
     width: 100%;
     height: auto;
     transition: all 0.75s ease;

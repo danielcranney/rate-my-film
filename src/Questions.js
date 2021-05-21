@@ -43,7 +43,7 @@ const Questions = ({ topics, handleAnswerOptionClick, i }) => {
     return (
     <>
 
-      <main className="questions-wrapper">
+      <div className="questions-wrapper">
 
           <ul className="card-carousel">
         {topics.map((topic, index) => (
@@ -96,7 +96,7 @@ const Questions = ({ topics, handleAnswerOptionClick, i }) => {
         ))}
         </ul>
       
-      </main>
+      </div>
     
     </>
     )

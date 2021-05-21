@@ -1,0 +1,45 @@
+.form-container {
+
+    width: 90%;
+    display: flex;
+    gap: 35px;
+
+    .w-70 {
+        width: 70%;
+        z-index: 5;
+    }
+
+    .w-30 {
+        width: 30%;
+        z-index: 10;
+
+        h2 {
+            color: $backgroundColor;
+        }
+
+        .pagination {
+            @include contentBox;
+            
+            .item {
+                width: 100%;
+                background-color: $lightBackgroundColor;
+                border: 0px;
+                text-align: left;
+                text-transform: none;
+                letter-spacing: normal;
+                padding: 13px 8px;
+                margin: 5px 0px;
+                border-radius: 8px;
+                color: $bodyColor;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: $mediumBackgroundColor;
+                    border: 0px;
+                    color: $backgroundColor;
+                    transition: 0.4s;
+                  }
+            }
+        }
+    }
+}
