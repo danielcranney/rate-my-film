@@ -51,6 +51,10 @@ const Questions = ({ topics, handleAnswerOptionClick, i }) => {
               className={`card ${determineClasses(indexes, index)}`}
               >
 
+              <button>
+                Back
+              </button>
+
               <div className="question-section">
 
                 <div className="icon" style={{ backgroundColor: topic.color }}>
