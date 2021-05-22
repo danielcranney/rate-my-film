@@ -11,7 +11,7 @@ function determineClasses(indexes, cardIndex) {
   return "inactive";
 }
 
-const Questions = ({ topics, handleAnswerOptionClick, i }) => {
+const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic, answers }) => {
 
   const [indexes, setIndexes] = useState({
     previousIndex: 0,
@@ -40,8 +40,39 @@ const Questions = ({ topics, handleAnswerOptionClick, i }) => {
     }
   }, [indexes.currentIndex, topics.length]);
 
+  const handleBackCardTransition = useCallback(() => {
+    // Remove last item from answers list
+    answers.pop();
+    // If we've reached the end, start again from the first card,
+    // but carry previous value over
+    if (indexes.currentIndex >= topics.length - 1) {
+      setIndexes({
+        previousIndex: topics.length - 1,
+        currentIndex: 0,
+        nextIndex: 1
+      });
+    } else {
+      setIndexes((prevState) => ({
+        previousIndex: prevState.currentIndex - 2 === topics.length
+        ? 0
+        : prevState.currentIndex - 2,
+        currentIndex: prevState.currentIndex - 1,
+        nextIndex: prevState.currentIndex
+      }));
+    }
+  }, [indexes.currentIndex, topics.length, answers]);
+
     return (
     <>
+
+    <div>
+      <button onClick={() => {
+        setCurrentTopic(currentTopic - 1)
+        handleBackCardTransition()
+      }}>
+        Back
+      </button>
+    </div>
 
       <div className="questions-wrapper">
 
