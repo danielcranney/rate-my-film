@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Film from './Film';
 
-import { ReactComponent as RatingGraphic } from './images/rating-graphic.svg';
-
 let ratedCategories = [];
 let ratedCategoryList = []
 let ratedCategoryLastItem = [];
@@ -58,7 +56,6 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
           <div className="content-box column">
             <div className="rating-section">
               {(finalAgeRating || finalAgeRating === 0) ? (
-
                 <>
 
                   <div className="title">
