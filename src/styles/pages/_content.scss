@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
-    height: 600px;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
@@ -13,15 +12,36 @@
     .w-70 {
         z-index: 5;
         @include contentBox;
-        height: 700px;
+        margin: 10px 0px 0px 0px;
+        height: 874px;
+
+        @media screen and (min-width: 320px) {
+            height: 836px;
+        }
+
+        @media screen and (min-width: 480px) {
+            height: 687px;
+        }
 
         @media screen and (min-width: 768px) {
-            width: 70%;
+        }
+
+        @media screen and (min-width: 900px) {
+            height: 668px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            height: 630px;
+        }
+        
+        @media screen and (min-width: 1200px) {
+            height: 565px;
         }
     }
 
     .w-30 {
         @include contentBox;
+        margin: 10px 0px 0px 0px;
         z-index: 10;
         display: none;
 

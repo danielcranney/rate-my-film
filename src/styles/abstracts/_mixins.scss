@@ -29,6 +29,7 @@
 
 @mixin contentBox {
     background-color: $lightColor;
+    width: 100%;
     padding: 26px;
     border-radius: 20px;
     margin: 0px 0px 35px 0px;

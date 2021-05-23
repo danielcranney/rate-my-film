@@ -91,7 +91,7 @@ a:hover {
   color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* -------------------- 
@@ -216,7 +216,6 @@ HOME
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 35px;
-  height: 600px;
 }
 
 @media screen and (min-width: 768px) {
@@ -231,23 +230,51 @@ HOME
 .form-container .w-70 {
   z-index: 5;
   background-color: #ffffff;
+  width: 100%;
   padding: 26px;
   border-radius: 20px;
   margin: 0px 0px 35px 0px;
-  height: 700px;
+  margin: 10px 0px 0px 0px;
+  height: 874px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 320px) {
   .form-container .w-70 {
-    width: 70%;
+    height: 836px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .form-container .w-70 {
+    height: 687px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .form-container .w-70 {
+    height: 668px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-container .w-70 {
+    height: 630px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-container .w-70 {
+    height: 565px;
   }
 }
 
 .form-container .w-30 {
   background-color: #ffffff;
+  width: 100%;
   padding: 26px;
   border-radius: 20px;
   margin: 0px 0px 35px 0px;
+  margin: 10px 0px 0px 0px;
   z-index: 10;
   display: none;
 }
@@ -423,8 +450,8 @@ HOME
 
 .card {
   width: 100%;
-  -webkit-transition: all 0.75s ease;
-  transition: all 0.75s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   opacity: 0;
   position: absolute;
   -webkit-transform: translateY(20px);
@@ -545,6 +572,7 @@ HOME
   -------------------- */
 .content-box {
   background-color: #ffffff;
+  width: 100%;
   padding: 26px;
   border-radius: 20px;
   margin: 0px 0px 35px 0px;
@@ -694,7 +722,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  min-height: 100px;
   overflow: auto;
   width: 100%;
   -webkit-box-align: center;
@@ -706,18 +733,18 @@ header .inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 90%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   overflow: auto;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 header .logo {
@@ -730,11 +757,12 @@ header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 header .logo svg {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 header .logo a {
@@ -778,8 +806,72 @@ header nav a.active {
 }
 
 header .icon {
-  display: none;
+  display: block;
   color: #3598fe;
+}
+
+/* sidebar Nav */
+.top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-row button {
+  border: 0px;
+  padding: 0px;
+  background: none;
+  width: 32px;
+  height: 32px;
+}
+
+.top-row button:hover, .top-row button:focus {
+  border: 0px;
+  background: none;
+}
+
+.top-row button svg {
+  margin: 0px;
+}
+
+.menuNav {
+  position: relative;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.menuNav.showMenu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.menuNav.showMenu a.link {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #a6aabb;
+  text-decoration: none;
+}
+
+.menuNav.showMenu a.link:hover {
+  color: #ffffff;
 }
 
 /* --------------------
@@ -836,8 +928,8 @@ footer .logo {
 }
 
 footer .logo svg {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 footer .logo a {
@@ -882,8 +974,8 @@ button {
 }
 
 button:hover, button:focus {
-  background-color: #3bcde2;
-  border-color: #3bcde2;
+  background-color: #ff5f99;
+  border-color: #ff5f99;
   border-width: 2px;
   color: #ffffff;
   -webkit-transition: 0.3s;

@@ -1,5 +1,4 @@
 import React, { useCallback, useState, useContext } from 'react';
-import { Link } from "react-router-dom";
 import { ShowContentContext } from './Home';
 
 const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic, answers }) => {
@@ -89,14 +88,13 @@ const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurren
             </div>
             ) : (
               <div className="back-button">
-              <Link to="/" className="block">
               <button onClick={() => {
+                handleBackCardTransition();
                 setShowContent(false);
               }}>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 Back
               </button>
-              </Link> 
             </div>
             )
             }

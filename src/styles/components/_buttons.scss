@@ -15,8 +15,8 @@ button {
     border-style: solid;
 
     &:hover, &:focus {
-        background-color: $lightBrandColor;
-        border-color: $lightBrandColor;
+        background-color: $secondaryColor;
+        border-color: $secondaryColor;
         border-width: 2px;
         color: $lightColor;
         transition: 0.3s;
