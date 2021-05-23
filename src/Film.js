@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Film = ( { film, ratingColor }) => {
-    console.log(film)
+    
+    // console.log(film)
+
     return (
         <div className="item">
                 <div className="image">

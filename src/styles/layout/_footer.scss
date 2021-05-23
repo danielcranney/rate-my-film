@@ -4,16 +4,15 @@
   
   footer {
     @include flexRow;
-    width:90%;
+    width:100%;
     align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
     min-height: 52px;
     overflow: auto;
     padding: 40px 0px;
 
     .inner-wrapper {
       @include flexCol;
-      width: 100%;
+      width: 90%;
       align-items: flex-start;
       margin-left: auto;
       margin-right: auto;

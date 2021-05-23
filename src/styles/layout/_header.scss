@@ -4,8 +4,8 @@
   
   header {
     @include flexRow;
-    min-height: 52px;
-    overflow:auto;
+    min-height: 100px;
+    overflow: auto;
     width: 100%;
     align-items: center;
 
@@ -49,11 +49,21 @@
     }
 
     nav a {
-        padding: 0px 15px;
+        padding-left: 40px;
+        font-size: 1rem;
         float: left;
         display: block;
         text-align: center;
         font-weight: 600;
+        color: $bodyColor;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        opacity: 0.7;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 1;
+        }
     }
      
     nav a.active {

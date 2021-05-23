@@ -8,17 +8,17 @@
     flex-grow: 1;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: calc(100vh + 15px);
+    // min-height: calc(100vh + 15px);
     padding: 0px;
     position: relative;
 
-    @media only screen and (min-width : 600px) {
-      min-height: calc(100vh - 36px);
-      }
+    // @media only screen and (min-width : 600px) {
+    //   min-height: calc(100vh - 36px);
+    //   }
 
-    @media only screen and (min-width : 768px) {
-    min-height: calc(100vh - 119px);
-    }
+    // @media only screen and (min-width : 768px) {
+    // min-height: calc(100vh - 119px);
+    // }
 
   }
 
@@ -84,13 +84,12 @@
   }
   
   .card {
-    @include contentBox;
     width: 100%;
-    height: auto;
     transition: all 0.75s ease;
     opacity: 0;
     position: absolute;
-    transform: scale(0.85) translateX(100%);
+    transform: translateY(20px);
+    transition-delay: 0.5s;
   }
   
   .card.active {
@@ -105,9 +104,43 @@
   }
   
   .card.prev {
-    transform: scale(0.85) translateX(-100%);
+    transform: translateY(-20px);
+    transition-delay: 0s;
     z-index: 0;
     opacity: 0;
+    
+  }
+
+  .back-button {
+    padding: 0px;
+
+    button {
+      padding: 0px;
+      display: inline-flex;
+      background-color: $lightColor;
+      border: 0px;
+      align-items: center;
+      margin-bottom: 25px;
+      color: $bodyColor;
+      stroke: $bodyColor;
+
+      &:hover, &:focus {
+        border: 0px;
+        background-color: transparent;
+        color: $backgroundColor;
+
+        svg {
+            stroke: $backgroundColor;
+            transition: 0.3s;
+        }
+      }
+
+      svg {
+        min-width: 18px;
+      }
+
+    }
+
   }
   
   /* ANSWERS */

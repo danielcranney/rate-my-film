@@ -5,7 +5,7 @@ button {
     border-width: 2px;
     width: fit-content;
     padding: 14px 24px;
-    border-radius: 27px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 600;
     font-family: $headerFont;
@@ -15,8 +15,8 @@ button {
     border-style: solid;
 
     &:hover, &:focus {
-        background-color: $primaryColor;
-        border-color: $primaryColor;
+        background-color: $lightBrandColor;
+        border-color: $lightBrandColor;
         border-width: 2px;
         color: $lightColor;
         transition: 0.3s;

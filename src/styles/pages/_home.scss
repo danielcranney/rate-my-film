@@ -3,10 +3,10 @@ HOME
 -------------------- */
 .intro {
 
-  h5 {
+  .sublead {
+    margin: 0.25em 0 0 0;
     font-weight: 600;
-    letter-spacing: 0.09em;
-    font-size: 1rem;
+    letter-spacing: 0.1em;
     color: $brandColor;
     text-transform: uppercase;
   }
@@ -14,6 +14,17 @@ HOME
   p {
     color: $bodyColor;
     line-height: 1.6em;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
   }
+}
+
+.intro-bg {
+  background-image: url('/src/images/bg-image.png');
+  background-size: cover;
+}
+
+
+.w-50 {
+  width: 50%;
 }

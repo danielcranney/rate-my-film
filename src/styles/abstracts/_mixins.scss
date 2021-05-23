@@ -8,8 +8,28 @@
     flex-direction: column;
 }
 
+@mixin wrapperDiv {
+    width:100%;
+    min-height: calc(100vh - 100px);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+@mixin innerWrapperDiv {
+    width: 90%;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @mixin contentBox {
     background-color: $lightColor;
-    padding: 34px;
+    padding: 26px;
     border-radius: 20px;
+    margin: 0px 0px 35px 0px;
 }
