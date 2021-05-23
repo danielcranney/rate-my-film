@@ -21,8 +21,7 @@ const Home = () => {
                 <div className="intro column">
                   <animated.p style={noDelay} className="sublead">Are you a filmmaker?</animated.p>
                   <animated.h1 style={noDelay}>Get to know your audience.</animated.h1>
-                  <animated.h1 style={noDelay}>Find out who your film is suitable for.</animated.h1>
-                  <animated.p style={mediumDelay}>In just a few clicks, you can learn more about who your film might be suitable for.</animated.p>
+                  <animated.p style={mediumDelay}>Learn more about who your film is suitable for, and find similar films in under 60 seconds.</animated.p>
                   <animated.button
                     onClick={() =>
                       setShowContent(true)
