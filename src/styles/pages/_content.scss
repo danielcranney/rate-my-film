@@ -2,26 +2,62 @@
 
     width: 90%;
     display: flex;
+    flex-direction: column;
     gap: 35px;
+    height: 600px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
 
     .w-70 {
-        width: 70%;
         z-index: 5;
+        @include contentBox;
+        height: 700px;
+
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
     }
 
     .w-30 {
-        width: 30%;
+        @include contentBox;
         z-index: 10;
+        display: none;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            width: 30%;
+        }
 
         h2 {
             color: $backgroundColor;
         }
 
         .pagination {
-            @include contentBox;
+
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            h2 {
+                margin: 0 0 0.5em 0;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0 0;
+
+                li {
+                    position: relative;
+                    margin-left: 0px;
+                }
+            }
             
             .item {
                 width: 100%;
+                height: auto;
                 background-color: $lightBackgroundColor;
                 border: 0px;
                 text-align: left;
@@ -32,13 +68,6 @@
                 border-radius: 8px;
                 color: $bodyColor;
                 font-weight: 600;
-
-                &:hover {
-                    background-color: $mediumBackgroundColor;
-                    border: 0px;
-                    color: $backgroundColor;
-                    transition: 0.4s;
-                  }
             }
         }
     }

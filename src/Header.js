@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {ReactComponent as Logo} from './images/logo.svg';
 
 const Header = () => {
@@ -32,7 +32,9 @@ const Header = () => {
                   <i className="fa fa-bars"></i>
                 </a>
 
-              {/* <Link to="/" className="block">Home</Link>  */}
+              <Link to="/" className="block">Home</Link> 
+
+              <Link to="/about" className="block">About</Link> 
               
               <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!">Contact</Mailto>
             </nav>

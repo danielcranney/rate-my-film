@@ -5,10 +5,11 @@ let ratedCategories = [];
 let ratedCategoryList = []
 let ratedCategoryLastItem = [];
 
-function search(objectItem, answersArray){
-  for (var i = 0; i < answersArray.length; i++) {
-      if (answersArray[i].categoryRating === objectItem) {
-        ratedCategories.push(answersArray[i].categoryTitle.toLowerCase());
+function search(objItem, array){
+  for (var i = 0; i < array.length; i++) {
+    // console.log(array[i]);
+      if (array[i].categoryRating === objItem) {
+        ratedCategories.push(array[i].categoryTitle.toLowerCase());
       }
   }
 }
@@ -21,24 +22,17 @@ const ratingDescription = {
   18: `Films like yours are unsuitable for anyone that is under the age of 18, and should only be viewed by adults. These kinds of films contain more extreme content or themes.`
 }
 
-const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => {
+const FinalRating = ({ finalAgeRating, ratingColor, answers }) => {
+
+  // console.log(answers)
 
   const [filmData, setFilmData] = useState(null);
 
-  const filmListUrl = `https://api.themoviedb.org/3/discover/movie?api_key=8af1272c35921dca7a2a0cba4b65f165&certification_country=GB&certification=${ratingsList[finalAgeRating]}&with_original_language=en&sort_by=revenue.desc`;
-  
   useEffect(() => {
-    const getFilmData = async () => {
-      const response = await fetch(filmListUrl);
-      const jsonData = await response.json();
-      setFilmData(jsonData.results);
-    };
 
-    getFilmData();
-  }, [filmListUrl]);
+    // console.log(finalAgeRating);
 
-  useEffect(() => {
-    search(ratingsList[finalAgeRating], answers);
+    search(finalAgeRating, answers);
 
     ratedCategoryList.push(ratedCategories.slice(0, -1).join(", "));
 
@@ -49,10 +43,25 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
     } else {
     console.log(`No conditions have been met`); 
     }
-  }, [ratingsList, finalAgeRating, answers]);
+  });
+
+  useEffect(() => {
+
+    let filmListUrl = `https://api.themoviedb.org/3/discover/movie?api_key=8af1272c35921dca7a2a0cba4b65f165&certification_country=GB&certification=${finalAgeRating}&with_original_language=en&sort_by=revenue.desc`;
+    // console.log(filmListUrl)
+
+    const getFilmData = async () => {
+      const response = await fetch(filmListUrl);
+      const jsonData = await response.json();
+      setFilmData(jsonData.results);
+    };
+
+    getFilmData();
+  }, [finalAgeRating]);
 
     return (
-      <main className="main-wrapper column">
+      <main className="rating-wrapper column">
+        <div className="inner-wrapper column">
           <div className="content-box column">
             <div className="rating-section">
               {(finalAgeRating || finalAgeRating === 0) ? (
@@ -61,17 +70,17 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
                   <div className="title">
                     <h2>Your film is suitable for <span style={{color: ratingColor}}>
                     {
-                      (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
-                      (ratingsList[finalAgeRating] === "PG") ? "children" : 
-                      (ratingsList[finalAgeRating] === "12") ? "older children" : 
-                      (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
-                      (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                      (finalAgeRating === "U") ? "people of any age" : 
+                      (finalAgeRating === "PG") ? "children" : 
+                      (finalAgeRating === "12") ? "older children" : 
+                      (finalAgeRating === "15") ? "teenagers" : 
+                      (finalAgeRating === "18") ? "adults" : 
                       null
                     }
                     
                     </span></h2>
                     <p>
-                    {ratingDescription[`${ratingsList[finalAgeRating]}`]}
+                    {ratingDescription[`${finalAgeRating}`]}
                     </p>
                     
                       {ratedCategoryList.length !== 0 ? (
@@ -97,11 +106,11 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
               { filmData ? 
               <>
               <h2>Other films suitable for <span style={{color: ratingColor}}>{
-                (ratingsList[finalAgeRating] === "U") ? "people of any age" : 
-                (ratingsList[finalAgeRating] === "PG") ? "children" : 
-                (ratingsList[finalAgeRating] === "12") ? "older children" : 
-                (ratingsList[finalAgeRating] === "15") ? "teenagers" : 
-                (ratingsList[finalAgeRating] === "18") ? "adults" : 
+                (finalAgeRating === "U") ? "people of any age" : 
+                (finalAgeRating === "PG") ? "children" : 
+                (finalAgeRating === "12") ? "older children" : 
+                (finalAgeRating === "15") ? "teenagers" : 
+                (finalAgeRating === "18") ? "adults" : 
                 null
               }</span></h2>
               
@@ -119,10 +128,11 @@ const FinalRating = ( { finalAgeRating, ratingColor, ratingsList, answers }) => 
             </div>
           </div>
 
-          <div className="content-box column start-again">
+          <div className="start-again">
           <button onClick={(e) => { e.preventDefault(); window.location.reload() }} className="start-button">Start Again</button>
           </div>
-        </main>
+        </div>
+      </main>
     )
 }
 
