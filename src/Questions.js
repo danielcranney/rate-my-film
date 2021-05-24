@@ -1,9 +1,11 @@
 import React, { useCallback, useState, useContext } from 'react';
-import { ShowContentContext } from './Home';
+import { ShowContentContext } from './App';
+import { AnswersContext } from './App';
 
-const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic, answers }) => {
+const Questions = ({ topics, handleAnswerOptionClick, i, currentTopic, setCurrentTopic }) => {
 
   const { setShowContent } = useContext(ShowContentContext);
+  const { answers } = useContext(AnswersContext);
 
   // Determine classes when cards are clicked
   function determineClasses(indexes, cardIndex) {

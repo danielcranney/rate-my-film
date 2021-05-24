@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Film from './Film';
-import { ShowContentContext } from './Home';
+import { ShowContentContext } from './App';
+import { AnswersContext } from './App';
 
 let ratedCategories = [];
 let ratedCategoryList = []
@@ -23,9 +24,10 @@ const ratingDescription = {
   18: `Films like yours are unsuitable for anyone that is under the age of 18, and should only be viewed by adults. These kinds of films contain more extreme content or themes.`
 }
 
-const FinalRating = ({ finalAgeRating, ratingColor, answers }) => {
+const FinalRating = ({ finalAgeRating, ratingColor }) => {
 
   const { setShowContent } = useContext(ShowContentContext);
+  const { answers } = useContext(AnswersContext);
 
   // console.log(answers)
 

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
 import FinalRating from './FinalRating';
 import Questions from "./Questions";
+import { AnswersContext } from './App';
 
 // Icon imports
 import { ReactComponent as DangerIcon } from './images/danger-icon.svg';
@@ -145,8 +146,8 @@ const Content = () => {
     const [currentTopic, setCurrentTopic] = useState(0);
     const [showRating, setShowRating] = useState(false);
     const [finalAgeRating, setFinalAgeRating] = useState("U");
-    const [answers, setAnswers] = useState([]);
     const [ratingColor, setRatingColor] = useState("");
+    const { answers, setAnswers } = useContext(AnswersContext);
 
     // Memoize userSelections array
     const userSelections = useMemo(
@@ -209,7 +210,7 @@ const Content = () => {
     return (
     <>
     {showRating ? (
-        <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} answers={answers} />
+        <FinalRating finalAgeRating={finalAgeRating} ratingColor={ratingColor} />
         ) : (
         <main className="form-container">
         <div className="w-30">
@@ -228,7 +229,7 @@ const Content = () => {
             </div>
         </div>
         <div className="w-70">
-            <Questions key={i++} topics={topics} handleAnswerOptionClick={handleAnswerOptionClick} handleBackButton={handleBackButton} i={i} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} answers={answers} />
+            <Questions key={i++} topics={topics} handleAnswerOptionClick={handleAnswerOptionClick} handleBackButton={handleBackButton} i={i} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />
         </div>
         </main>
     )} 

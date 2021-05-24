@@ -1,8 +1,7 @@
-import React, { useState, createContext } from 'react';
-import Content from './Content';
+import React, { useContext } from 'react';
 import { useSpring, animated, config } from 'react-spring';
-
-export const ShowContentContext = createContext({ showContent: false, setShowContent: () => {} });
+import Content from './Content';
+import { ShowContentContext } from './App';
 
 const Home = () => {
 
@@ -10,10 +9,11 @@ const Home = () => {
     const noDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 100 });
     const mediumDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 900 });
     const longDelay = useSpring({opacity: 1, from: {opacity: 0}, config: config.slow, delay: 1200 });
-    const [showContent, setShowContent] = useState(false);
+
+    const { showContent, setShowContent } = useContext(ShowContentContext);
     
     return (
-      <ShowContentContext.Provider value={{showContent, setShowContent}}>
+        <>
         { showContent ? <Content /> : (
             <main className="main-wrapper intro-bg">
 
@@ -33,7 +33,7 @@ const Home = () => {
 
             </main>
           )}
-          </ShowContentContext.Provider>
+        </>
     )
 }
 

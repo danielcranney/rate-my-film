@@ -1,10 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from './images/logo.svg';
+import { AnswersContext, ShowContentContext } from './App';
 
 const Header = () => {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { setAnswers, answers } = useContext(AnswersContext);
+  const { setShowContent } = useContext(ShowContentContext);
+
+  useEffect(() => {
+    console.log(answers);
+  }, [answers])
+
 
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen)
@@ -28,7 +36,10 @@ const Header = () => {
             <div className="top-row">
               <div className="logo">
                 <Logo width={50} height={50} />
-                <Link to="/" className="active">Rate My Film</Link>
+                <Link to="/" onClick={() => {
+                  setShowContent(false)
+                  setAnswers([])
+                }} className="active">Rate My Film</Link>
               </div>
 
               <button onClick={handleToggle}>
