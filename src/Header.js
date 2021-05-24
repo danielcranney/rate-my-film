@@ -42,14 +42,14 @@ const Header = () => {
             <Link
                 to={'/'}
                 onClick={() => closeMenu()}
-                exact><a className="link">Home</a></Link>
+                exact><a href="/#" className="link">Home</a></Link>
 
             <Link
                 to={'/about'}
                 onClick={() => closeMenu()}
-                exact><a className="link">About</a></Link>
+                exact><a href="/#" className="link">About</a></Link>
 
-            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!" onClick={() => closeMenu()}><a className="link">Contact</a></Mailto>
+            <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!" onClick={() => closeMenu()}><a href="/#" className="link">Contact</a></Mailto>
 
               </div>
 
