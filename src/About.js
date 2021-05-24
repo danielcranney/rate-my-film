@@ -2,15 +2,18 @@ import React from 'react'
 
 export default function About() {
     return (
-        <main className="about-wrapper">
-            <div className="about-section">
-                    <div>
-                        <h1>About</h1>
-                        <p className="lead-in-text">Rate My Film was built in April 2021 by web developer and filmmaking teacher Daniel Cranney as a way to help student, amateur, no-budget or low-budget filmmakers learn more about how films are age rated in the UK, in a user-friendly and hassle-free way.</p>
-                        <p className="faded-text">The <a href="https://www.bbfc.co.uk/" target="_blank" rel="noreferrer">British Board of Film Classification</a> (BBFC) are in charge of age rating films in the UK, and their website has plenty of information about what makes a film U-rated, or only suitable for over 18's (and everything in between).</p>
-                        <p className="faded-text">Rate My Film is built using data made available by the BBFC (and some from IMDB, too), and while it can't give you an official rating, it can help you get a better idea of who your film might be suitable for, and why.</p>
-                    </div>
-                    <img src={`/img/logo_icon.svg`} alt=""/>
+        <main className="main-wrapper intro-bg">
+            <div className="inner-wrapper">
+                <div className="about-section">
+                        <div>
+                            <h1>About</h1>
+                            <p>Rate My Film was built in April 2021 by web developer and teacher Dan Cranney.</p>
+                            <p>If you're writing a script or producing a film, it's often difficult to know who your film might be suitable for. Perhaps it features bad language, or scenes of violence that might not be suitable for young children. It's important to be aware of this if your film is going to appeal to your target audience.</p>
+                            <p>Rate My Film lets students and amateur filmmakers makes this process simple, and in just a few clicks you can learn more about who your film is suitable for (and find some similar films at the same time!).</p>
+                            <p>We would also like to make our visitors aware that Rate My Film is a demonstration tool only and is not in any way affiliated with any official certification organisation. Furthermore it is not intended as a replacement for services that are required by law if you are to release your film to the public.</p>
+                        </div>
+                        <img src={`/img/logo_icon.svg`} alt=""/>
+                </div>
             </div>
         </main>
     );

@@ -19,9 +19,17 @@
     @include wrapperDiv;
     border-top: 1px solid #1e2233;
     border-bottom: 1px solid #1e2233;
+    
 
     .inner-wrapper {
       @include innerWrapperDiv;
+      padding: 20px 0px;
+
+      @media screen and (min-width: 768px) {
+        padding: 0px 0;
+      }
+
+
     }
   }
 

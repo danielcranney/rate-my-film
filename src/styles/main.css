@@ -147,6 +147,13 @@ a:hover {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper .inner-wrapper {
+    padding: 0px 0;
+  }
 }
 
 /* --------------------
@@ -861,7 +868,7 @@ header .icon {
   margin-top: 20px;
 }
 
-.menuNav.showMenu a.link {
+.menuNav.showMenu .link {
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -870,7 +877,7 @@ header .icon {
   text-decoration: none;
 }
 
-.menuNav.showMenu a.link:hover {
+.menuNav.showMenu .link:hover {
   color: #ffffff;
 }
 
