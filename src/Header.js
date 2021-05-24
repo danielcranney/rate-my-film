@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from './images/logo.svg';
 
 const Header = () => {
@@ -40,14 +40,12 @@ const Header = () => {
             
             <div className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
             <Link
-                to={'/'}
-                onClick={() => closeMenu()}
-                exact><span className="link">Home</span></Link>
+                to='/'
+                onClick={() => closeMenu()}><span className="link">Home</span></Link>
 
             <Link
-                to={'/about'}
-                onClick={() => closeMenu()}
-                exact><span className="link">About</span></Link>
+                to='/about'
+                onClick={() => closeMenu()}><span className="link">About</span></Link>
 
             <Mailto email="danieljamescranney@gmail.com" subject="Rate my Film" body="Hi!" onClick={() => closeMenu()} className="link"><span className="link">Contact</span></Mailto>
 

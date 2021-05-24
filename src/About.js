@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About() {
+const About = () => {
     return (
         <main className="main-wrapper intro-bg">
             <div className="inner-wrapper">
@@ -18,3 +18,5 @@ export default function About() {
         </main>
     );
 }
+
+export default About;
